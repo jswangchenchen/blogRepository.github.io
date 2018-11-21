@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          [U3D+Vuforia+VR眼镜] 分屏设置指南 - Wangchenchen | Blog
+          Wangchenchen | Blog
         
     </title>
 
-    <link rel="canonical" href="http://www.jsWangchenchen.com/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/">
+    <link rel="canonical" href="http://www.jsWangchenchen.com/article/[Github+Haxo+域名]免费博客搭建指南/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -86,14 +86,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#XR" title="XR">XR</a>
+                              <a class="tag" href="/tags/#Blog" title="Blog">Blog</a>
                             
                         </div>
-                        <h1>[U3D+Vuforia+VR眼镜] 分屏设置指南</h1>
-                        <h2 class="subheading">一份AR实操指南.</h2>
+                        <h1></h1>
+                        <h2 class="subheading">一切开始的源头.</h2>
                         <span class="meta">
                             Posted by Wangchenchen on
-                            2018-10-15
+                            2018-11-21
                         </span>
                     </div>
                 
@@ -210,47 +210,57 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h6 id="版本"><a href="#版本" class="headerlink" title="版本:"></a>版本:</h6><p>​    unity 2018.2.14f1   Vuforia 7.2.20</p>
-<h6 id="关键"><a href="#关键" class="headerlink" title="关键:"></a>关键:</h6><p>​    添加cardboard</p>
-<p>​    将视觉改变为“video see Through”（windows-&gt; Vuforia Configuration-&gt;Digtal Eyewear），</p>
-<h6 id="简介"><a href="#简介：" class="headerlink" title="简介："></a>简介：</h6><p>​    准备工作：</p>
-<p>​        本地正确安装，并且成功配置Android SDK，NDK ，java JDK 的unity3D（注意版本，可参考我的版本）</p>
-<p>​        Vurforia官网利用待测物体分析模型成功得到.unitypage的数据集 并成功生成 public key。</p>
-<p>​        附：版本很重要，Vuforia 6.5之前的版本并没有自带VR眼镜的的功能，建议在安装U3D（unity3D以下用U3D代替）的时候确保在Vuforia一栏点选了默认安装系统会自动下载最新的Vuforia。</p>
-<h6 id="步骤"><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h6><p>​        下面开始干活。进入U3D， 首先导入上面提到的待检测的.unitypage数据集:下面工具栏中project界面中的Assects，右击-&gt;import Package -&gt;Custom Package-&gt;进入自己存放数据集的地方直接点击import</p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\导入待测数据集.png" alt="导入待测数据集"></p>
-<p>​        下一步添加ARCamera（正常的MainCamera在AR的时候是不够的）：\<sample sence\="">空白处右击-&gt;vuforia-&gt;ARCamera（记得删除原有的MainCamera哦，右击delete）；</sample></p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\导入ARCamera.png" alt="导入ARCamera"></p>
-<p>​        设置Camera的数据，在主屏右侧Inspector中选择（贴图参考）；</p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\ARCamera参数参考.png" alt="ARCamera参数参考"></p>
-<p>​        添加AR参照物(image Target)到Scence中：\<sample sence\="">空白处右击-&gt;Vuforia-&gt;Image</sample></p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\添加Image Traget.png" alt="添加Image Traget"></p>
-<p>​        添加你想显示的虚拟对象，这里就直接从Asset Store中找一个免费的红武士进入搜索栏搜索“red Samurai”直接回车第二个标注Free的就是。没错点它-&gt;import</p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\添加 红武士.png" alt="添加 红武士"></p>
-<p>​        将添加到本地项目的红武士添加到界面中：Assets-&gt;prefab-&gt;红武士文件直接拖到image Target子目录下。</p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\导入红武士.png" alt="导入红武士"></p>
-<p>​        导入Vuforia配置：File-Bulid Setting 进入Build Setting界面点击android，右侧bulid system 选择Internal，-&gt;点击Player Settings进入inspector做以下几件事：</p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\play Settings 改system.png" alt="play Settings 改system"></p>
-<p>​            1.填写Company Name （随便填）；</p>
-<p>​            2.点击Other Setting-&gt;identification 填写Package Name 注意格式com.Company Name.Product Name，需要注意的是，Company Name必须和上面填写的一样，Product Name可以不填。我的是com.chenchen.ProductName(参考)；</p>
-<p>​            3.更改Minimum ARI Level等级，默认是16但是里面并不能支持此次开发，需要改成19，</p>
-<p>​            4.在上面的基础上下拉，到Configurition栏，找到Android TV Compatbility系统默认是将这个选项是选上的你需要的是将它取消选择。</p>
-<p>​            5.点开XR Settings三个选择点击第三个（Virtual augmented Reality）和第一个（Virtual Reality supported ），第三个如果不点在手机端生成的就是支持VR的不是不是AR的（看不到画面），第一个选择-&gt;为Virtual Reality SDKs添加-&gt;右下角“+”号-&gt;点击最下面的Vuforia</p>
-<p>​        前四步：</p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\play settings 前期多步.png" alt="play settings 前期多步"></p>
-<p>​        第五步：<img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\添加vuforia.png" alt="添加vuforia"></p>
-<p>​        下面一步比较重要，将Vuforia官网生成的PublicKey，配置进系统中激活U3D中的Vuforia：上面工具栏Window-&gt;Vuforia configuration,进入inspect，APP License Key 中将相关key 复制进去（这部是激活Vuforia）；</p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\导入publicKey.png" alt="导入publicKey"></p>
-<p>​        安装Cardboard：File-Bulid Setting 进入Build Setting界面点击android-&gt;点击Player Settings进入inspector-&gt;XR Settings 点击刚刚的第一个-&gt;“+”号-&gt;选择第一cardboard；</p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\填加cardboard.png" alt="填加cardboard"></p>
-<p>下一步更改视觉成像，改变成“video see Through”；回到上面加key的页面下面Digital Eyewear-&gt;Device Type -&gt;选择最后一个Phone + viewer 其他的根据自己的实际情况进行选择，我都是直接默认的。</p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\public Key+Through.png" alt="public Key+Through"></p>
-<p>​        最后一步直接生成apk 文件File-Bulid Setting 进入Build Setting 界面-&gt;android-&gt;Build;<img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\生成build.png" alt="生成build"></p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\生成apk文件.png" alt="生成apk文件"></p>
-<p>以上就会用U3D Vuforia为基础创建一个在VR眼镜上的AR程序，手机显示分屏的哦。</p>
-<p>​    手机成果：</p>
-<p><img src="[U3D+Vuforia+VR眼镜]分屏设置指南\content_img\手机生成结果.png" alt="手机生成结果"></p>
-<h6 id="结语"><a href="#结语：" class="headerlink" title="结语："></a>结语：</h6><p>如有不足之处望各位大佬打脸，如果对你有帮助也希望有机会一起提高。</p>
+                <h5 id="目的"><a href="#目的：" class="headerlink" title="目的："></a>目的：</h5><p>​    本地通过WordPress编写blog然后git进行版本的管理，在浏览器上只需要输入自己购买的域名就可以成功访问。</p>
+<h5 id="准备工作"><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h5><p>​    1.本地下载安装git ：<a href="https://git-scm.com/download/" target="_blank" rel="noopener">git官网下载地址</a></p>
+<p>​    2.本地下载安装node：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node官网下载地址</a></p>
+<p>​    3.本地下载安装Hexo： </p>
+<p>​        安装好上面的两项后直接打开cmd输入：npm install hexo-cli -g</p>
+<p><img src="免费博客搭建指南\contentImg\安装HexoCMD.png" alt="安装HexoCMD"></p>
+<p>​    4.创建github账号   格式 - 你为仓库取的名字.github.io(例如：blog.github.io因为普通的github会混淆)</p>
+<p><img src="免费博客搭建指南\contentImg\创建仓库-1.png" alt="创建仓库-1"></p>
+<p>​    <img src="免费博客搭建指南\contentImg\创建仓库-2.png" alt="创建仓库-2"></p>
+<h5 id="主要过程"><a href="#主要过程：" class="headerlink" title="主要过程："></a>主要过程：</h5><p>​    确定存放blog的路径，我的是e:/Blog；</p>
+<p>​    Git Bash Here 打开：右键你的文件单击Git Bash Here；</p>
+<p>​    在保证Git是在你的blog下操作的前提，开始初始化Hexo的文件夹：hexo init 你的仓库名字.github.io</p>
+<p><img src="免费博客搭建指南\contentImg\初始化.png" alt="初始化"></p>
+<p>​    稍等一会之后目录下就会有个文件夹，文件夹的名字就是你初始化的名字也就是仓库的名字</p>
+<p><img src="免费博客搭建指南\contentImg\初始化后.png" alt="初始化后"></p>
+<p>​    里面的文件及每个文件的作用如下：</p>
+<p><img src="免费博客搭建指南\contentImg\本地文件含义.png" alt="本地文件含义"></p>
+<p>​    走到这里就表示本地的简单搭建已经好了，默认的主题是landscape的主题</p>
+<p>​    生成静态页面</p>
+<p>​        进入到blog.github.io里面输入创建 hexo输入如下：</p>
+<p><img src="免费博客搭建指南\contentImg\hexo创建.png" alt="hexo创建"></p>
+<p>​        启动本地服务器，开启端口默认是4000.</p>
+<p><img src="免费博客搭建指南\contentImg\hexo开启服务器.png" alt="hexo开启服务器"></p>
+<p>​        浏览器输入<a href="https://link.jianshu.com/?t=http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
+<p>​        下面会出先两种情况，一种顺利通过（跳过下面内容），另一种显示加载失败（端口被占/检查名字是否和仓库中一样）如果端口被占先Ctrl+C停止程序更改端口这里我改成5000。</p>
+<p><img src="免费博客搭建指南\contentImg\该端口.png" alt="该端口"></p>
+<p><img src="免费博客搭建指南\contentImg\本地4000预览命令.png" alt="本地4000预览命令"></p>
+<p>​        这时候你就可以进行预览了。</p>
+<p><img src="免费博客搭建指南\contentImg\本地4000预览博客.png" alt="本地4000预览博客"></p>
+<p>提交到GitHub</p>
+<p>​        更改全局配置可以让hex直接和远端仓库连接打开_config.yml(注意格式，顺序，空格)</p>
+<p><img src="免费博客搭建指南\contentImg\全局github库配置.png" alt="全局github库配置"></p>
+<p>​        上面的repository填写的就是仓库的地址，下图位置复制进来就可；</p>
+<p><img src="免费博客搭建指南\contentImg\拿到地址.png" alt="拿到地址"></p>
+<p>​        首次部署附加内容：</p>
+<p><img src="免费博客搭建指南\contentImg\首次部署内容.png" alt="首次部署内容"></p>
+<p>​    添加完成后github的库就会增加一定的内容。看上图</p>
+<p>​    下次更新时只需要先删除hexo在创建一个然后将配置上传就好</p>
+<p><img src="免费博客搭建指南\contentImg\重新上传.png" alt="重新上传"></p>
+<p>​    常用命令解释:</p>
+<p>​    <img src="免费博客搭建指南\contentImg\常用命令.png" alt="常用命令"></p>
+<p>​    直接访问github博客 Settings-&gt;Github Pages -&gt;Source-&gt; master branch</p>
+<p><img src="免费博客搭建指南\contentImg\ssettings访问-2.png" alt="ssettings访问-2"></p>
+<p><img src="免费博客搭建指南\contentImg\settings访问-1.png" alt="settings访问-1"></p>
+<p>​    打开后因为css和js路径不对所以更换自定义的域名最好；<img src="C:\Users\lenovo\Desktop\BLOG\blog 配图\创建个人博客\失败Hexo.png" alt="失败Hexo"></p>
+<p>​    买域名-&gt;解析-&gt;添加俩A类记录 WWW 和 @ 服务器IP就填github的IP固定的151.101.72.133</p>
+<p>​    在仓库中新建CNAME，文中写上你的域名，果断时间就可以直接访问了。</p>
+<p>​    由于每次提交都会覆盖前一次，所以最好的是在本地留个位置，进入source看到_posts添加CNAME文件，加上自己的域名；</p>
+<p><img src="免费博客搭建指南\contentImg\本地添加Blog地址.png" alt="本地添加Blog地址"></p>
+<p><img src="免费博客搭建指南\contentImg\添加域名.png" alt="添加域名"></p>
+<h6 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h6><p>​    到这里你在浏览器上输入自己的域名就能直接访问自己的bolg了，最后恭喜你成功入坑，如果有什么不好的欢迎指教。如果对你有帮助希望有机会可以互相学习。</p>
 
                 
 
@@ -258,13 +268,9 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/article/[Github+Haxo+域名]免费博客搭建指南/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/article/[Typora]操作指南/" data-toggle="tooltip" data-placement="top" title="[Typora]操作指南">Next Post &rarr;</a>
+                            <a href="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/" data-toggle="tooltip" data-placement="top" title="[U3D+Vuforia+VR眼镜] 分屏设置指南">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -299,7 +305,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#版本"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><a href="#&#x7248;&#x672C;" class="headerlink" title="&#x7248;&#x672C;:"></a>&#x7248;&#x672C;:</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#关键"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><a href="#&#x5173;&#x952E;" class="headerlink" title="&#x5173;&#x952E;:"></a>&#x5173;&#x952E;:</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#简介"><span class="toc-nav-number">3.</span> <span class="toc-nav-text"><a href="#&#x7B80;&#x4ECB;&#xFF1A;" class="headerlink" title="&#x7B80;&#x4ECB;&#xFF1A;"></a>&#x7B80;&#x4ECB;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#步骤"><span class="toc-nav-number">4.</span> <span class="toc-nav-text"><a href="#&#x6B65;&#x9AA4;&#xFF1A;" class="headerlink" title="&#x6B65;&#x9AA4;&#xFF1A;"></a>&#x6B65;&#x9AA4;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#结语"><span class="toc-nav-number">5.</span> <span class="toc-nav-text"><a href="#&#x7ED3;&#x8BED;&#xFF1A;" class="headerlink" title="&#x7ED3;&#x8BED;&#xFF1A;"></a>&#x7ED3;&#x8BED;&#xFF1A;</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#目的"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><a href="#&#x76EE;&#x7684;&#xFF1A;" class="headerlink" title="&#x76EE;&#x7684;&#xFF1A;"></a>&#x76EE;&#x7684;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#准备工作"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><a href="#&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;" class="headerlink" title="&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;"></a>&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#主要过程"><span class="toc-nav-number">3.</span> <span class="toc-nav-text"><a href="#&#x4E3B;&#x8981;&#x8FC7;&#x7A0B;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x8981;&#x8FC7;&#x7A0B;&#xFF1A;"></a>&#x4E3B;&#x8981;&#x8FC7;&#x7A0B;&#xFF1A;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#结束"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text"><a href="#&#x7ED3;&#x675F;" class="headerlink" title="&#x7ED3;&#x675F;"></a>&#x7ED3;&#x675F;</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -319,7 +325,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#XR" title="XR">XR</a>
+                          <a class="tag" href="/tags/#Blog" title="Blog">Blog</a>
                         
                     </div>
                 </section>
