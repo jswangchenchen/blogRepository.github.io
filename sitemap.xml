@@ -3,17 +3,12 @@
 
     <sitemap>
         <loc>http://www.jsWangchenchen.com/post-sitemap.xml</loc>
-        <lastmod>2018-11-03T10:15:35.929Z</lastmod>
+        <lastmod>2018-11-20T10:18:07.399Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://www.jsWangchenchen.com/page-sitemap.xml</loc>
         <lastmod>2018-11-13T08:09:44.543Z</lastmod>
-    </sitemap>
-
-    <sitemap>
-        <loc>http://www.jsWangchenchen.com/tag-sitemap.xml</loc>
-        <lastmod>2018-10-22T04:29:25.000Z</lastmod>
     </sitemap>
 
 </sitemapindex>
