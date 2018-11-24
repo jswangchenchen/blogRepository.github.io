@@ -7,8 +7,16 @@
     </url>
 
     <url>
-        <loc>http://www.jsWangchenchen.com/article/%5BGithub+Haxo+%E5%9F%9F%E5%90%8D%5D%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</loc>
-        <lastmod>2018-11-22T02:03:38.323Z</lastmod>
+        <loc>http://www.jsWangchenchen.com/GithubPage-hexo/Github-Hexo-%E5%9F%9F%E5%90%8D-%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</loc>
+        <lastmod>2018-11-24T12:00:47.207Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/VR-AR%EF%BC%9B-Vuforia%EF%BC%9B-Unity3D/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97/</loc>
+        <lastmod>2018-11-22T07:03:29.237Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,14 +25,6 @@
     <url>
         <loc>http://www.jsWangchenchen.com/article/%5BTypora%5D%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</loc>
         <lastmod>2018-11-21T10:31:52.483Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/VR-AR%EF%BC%9B-Vuforia%EF%BC%9B-Unity3D/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97/</loc>
-        <lastmod>2018-11-21T08:31:44.609Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
