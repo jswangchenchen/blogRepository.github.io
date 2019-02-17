@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          [unity3D+3DMAX]下载安装使用指南 - Wangchenchen | Blog
+          test - Wangchenchen | Blog
         
     </title>
 
-    <link rel="canonical" href="http://www.jsWangchenchen.com/unity3D-Vuforia/unity3D-下载安装指南/">
+    <link rel="canonical" href="http://www.jsWangchenchen.com/article/test/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/img/article_header/archives-widget.jpg')
+            background-image: url('/img/article_header/article_bg.jpg')
             /*post*/
         
     }
@@ -86,14 +86,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#XR" title="XR">XR</a>
+                              <a class="tag" href="/tags/#encryption" title="encryption">encryption</a>
                             
                         </div>
-                        <h1>[unity3D+3DMAX]下载安装使用指南</h1>
-                        <h2 class="subheading">从无到有，自己制作一个会动的AR项目</h2>
+                        <h1>test</h1>
+                        <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Wangchenchen on
-                            2018-11-02
+                            2019-02-17
                         </span>
                     </div>
                 
@@ -210,71 +210,16 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h6 id="概述"><a href="#概述：" class="headerlink" title="概述："></a>概述：</h6><p>​    1.下载安装unity3D</p>
-<p>​    2.下载安装JavaJDK</p>
-<p>​    3.下载安装AndroidSDK</p>
-<p>​    4.下载安装NDK</p>
-<p>​    5.在unity3D中将2-4安装的地址在制定位置连接上[最重要的一步]</p>
-<p>​    6.3DMax下载安装</p>
-<p>​    7.3DMax基本使用</p>
-<p>​    8.3DMax 创建一个移动的物体</p>
-<p>​    9.将移动的物体成功导入到unity中。</p>
-<h6 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h6><p>​    可直接进入unity3d官网下载最新的版本，点击download，进入到选择界面在进入后选择免费试用版，下面的参考的下载链接。</p>
-<p><a href="https://store.unity.com/cn/download?ref=personal" target="_blank" rel="noopener">unity3D官方下载地址</a></p>
-<p>​    首先双击打开安装包之后直接在前面两个直接“NEXT”在进入选择安装插件一栏中将Vuforia是下面AR专用的包，如果你不是AR项目则是按照自己的实际情况进行选择，后面步骤都是next一直到finish（中途需要选择项目存储路径的就按照自己的节奏来）。</p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/unity安装选择.png" alt="unity安装选择"></p>
-<p>​    JDK，SDK，NDK下载：</p>
-<p>​        jdk安装就不做累述下面找到个连接说的很详细给大家参考，鉴于oracle开始收费所以个人在个人网盘里保存了一份包括下面SDK,NDK</p>
-<p>​        <a href="https://blog.csdn.net/Bao_Yaun/article/details/64132823" target="_blank" rel="noopener">jdk安装步骤指南</a></p>
-<p>​        <a href="https://pan.baidu.com/s/1rCXNUmQVXcAGhdYiqsMajQ" target="_blank" rel="noopener">jdk-1.8-Windows-64安装包</a></p>
-<p>​        <a href="https://pan.baidu.com/s/1lE62GHq5h5iBvW8I832_IA" target="_blank" rel="noopener">SDK NDK-windows-64-安装文件</a></p>
-<p>​        下面就是将从网盘中下载的文件放到一个路径下（jdk需要安装，SDK和NDK是安装好的文件直接放就好）</p>
-<p>在unity中指定上面安装好的路径，下面就可以用了，</p>
-<p>​    首先打开上面安装好的unity，工具栏中点击Edit-&gt;preference-&gt;external tools在下面的android选项中将自己安装的地址指定就好了。</p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/unity指定相关连接.png" alt="unity指定相关连接"></p>
-<p>当到这里的时候一个unity就已经安装好了并且你也可以开始制作一个属于自己的AR项目，如果想了解一个基础的AR项目的使用情况，可以出门左转在XR下面还有一篇关于u3D的实际操作。    </p>
-<p>由于我们的目的是为了在3Dmax中创建动态模型然后可以在unity中直接使用所以我们下面就来直接进行到3DMax这一块；</p>
-<p>​    下载安装3DMax</p>
-<p>​        <a href="https://www.autodesk.com.cn/products/3ds-max/overview" target="_blank" rel="noopener">3DMax 下载官网</a></p>
-<p>​            在进入官网时需要用自己的邮箱注册一下才能使用，试用版试用是30天官网评判标准是邮箱；另外在下载时需要注意自己c盘空间因为3DMax下载是exe文件直接点开他自动安装并且路径固定。</p>
-<p>​    安装直接一路“next”就好，最后你进入3DMax会看到这样的图片，有四个部分组成分别是顶视图，前视图，和左视图，还有个透视图</p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/首次进入unity界面.png" alt="首次进入unity界面"></p>
-<p>首先创建二维的平面图形轮廓，右侧工具栏加号-&gt;平面-&gt;线，由点连成一条条的线，注意线不能出现交叉，而且还要合上如图：</p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/创建一个二维箭头.png" alt="创建一个二维箭头"></p>
-<p>当一个二维轮廓建好之后就需要建一个三维的体，点击加号后面一个视图-&gt;编辑器-&gt;挤出</p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/修改为三维.jpg" alt="修改为三维"></p>
-<p>通过对参数中数量的修改就可以改便物体的厚度</p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/修改厚度.jpg" alt="修改厚度"></p>
-<p>这样就生成了一个三维的图形下一步就将这个里面的图形动起来做成一个动画，下方工具-&gt;先选定目标，点击自动/手动设置关节点开始记录当前对象的地理位置，移动对象改变对象的地理坐标，通过在不同的时间轴坐标中的时间和对应的对象的地理坐标就可以得到一个按照自己轨迹运动的动画。</p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/将物体运动.jpg" alt="将物体运动"></p>
-<p>下面就是将这个文件导出准备放到unity3D中进行数据集和模型的结合，首先在上方工具栏-&gt;文件-&gt;导出-&gt;导出-&gt;选定指定的文件地址就可以了。</p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/将文件导出为FBX格式.jpg" alt="将文件导出为FBX格式"></p>
-<p>走到这里就说明3DMAX这个步骤中已经结束了。</p>
-<p>下面你主要做的就是将里面导入到unity中并且要保证能够有动画效果的，如果直接放进项目是只有模型没有动作的如果相加一些动作是要在加一下设置的操作如下：</p>
-<p>​    将之前导出的FBX文件直接直接放在Assets的目录-&gt;点击文件-&gt;右侧inspector-&gt;Rig-&gt;Animation Type 选择Legacy -&gt;Animation WrapMode选择Loop（上下两个都选）-&gt;单击文件-&gt;Apply就可以导入动图了。</p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/动图Rig.jpg" alt="动图Rig"></p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/动图Animation.jpg" alt="动图Animation"></p>
-<p>到这里就能显示一个带有固定动作的AR小程序；</p>
-<p>​    下面说一个题外话，我在做demo’的时候有遇到要将一张图片转换成显示的图像也一起来和大家分享一下，首先我的图像是一个png的普通图片并且做过一个处理将背景全部透明，由于直接将图片放在程序中所以就需要在设置上做一写改便首先是将本地的图片导入到Assets中-&gt;单击-&gt;进入Inspector-&gt;将Texture Type 切换成 Sprite(2D and UI)-&gt;图片就可以在程序里面显示了。</p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/图片转换.jpg" alt="图片转换"></p>
-<p>下面直接就可以play-&gt;build就可以生成一个apk文件直接安装在手机里了，如果你之前没有成功生成apk文件过您可以出门右转我有一篇<a href="http://jswangchenchen.com/VR-AR%EF%BC%9B-Vuforia%EF%BC%9B-Unity3D/[U3D+Vuforia+VR%E7%9C%BC%E9%95%9C]%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener">《[U3D+Vuforia+VR眼镜]分屏设置指南》</a>里面有详细的过程可以参考。我生成的结果如下；</p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/成果1.jpg" alt="成果1"></p>
-<p><img src="/unity3D-Vuforia/unity3D-下载安装指南/成果2.jpg" alt="成果2"></p>
-<p>如有不足之处多多指教。</p>
-
+                
                 
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/article/密码学理论总结/" data-toggle="tooltip" data-placement="top" title="密码学理论基础指南">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/GithubPage-hexo/Github-Hexo-域名-免费博客搭建指南/" data-toggle="tooltip" data-placement="top" title="[GithubPage+Hexo+域名]免费博客搭建指南">Next Post &rarr;</a>
+                            <a href="/article/密码学关键总结/" data-toggle="tooltip" data-placement="top" title="密码学关键总结指南">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -315,7 +260,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#概述"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><a href="#&#x6982;&#x8FF0;&#xFF1A;" class="headerlink" title="&#x6982;&#x8FF0;&#xFF1A;"></a>&#x6982;&#x8FF0;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#下载安装"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><a href="#&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;" class="headerlink" title="&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;"></a>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;</span></a></li></ol>
+          <ol class="nav">none</ol>
         
         </div>
       </aside>
@@ -335,7 +280,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#XR" title="XR">XR</a>
+                          <a class="tag" href="/tags/#encryption" title="encryption">encryption</a>
                         
                     </div>
                 </section>
