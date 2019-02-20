@@ -7,24 +7,16 @@
     </url>
 
     <url>
+        <loc>http://www.jsWangchenchen.com/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%90%86%E8%AE%BA%E6%80%BB%E7%BB%93/</loc>
+        <lastmod>2019-02-20T15:20:33.249Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.jsWangchenchen.com/article/Hexo%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%9B%BE%E7%89%87%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%8A%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
         <lastmod>2019-02-20T15:17:44.648Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/article/Test/</loc>
-        <lastmod>2019-02-20T14:44:15.386Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%90%86%E8%AE%BA%E6%80%BB%E7%BB%93/</loc>
-        <lastmod>2019-02-20T14:42:37.301Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
