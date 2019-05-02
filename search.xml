@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title>19-03-24-m3uu8 字段解释</title>
+      <title>19-03-24-m3u8 字段解释</title>
       <link href="/HLS/19-03-24-m3uu8-%E5%AD%97%E6%AE%B5%E8%A7%A3%E9%87%8A/"/>
       <url>/HLS/19-03-24-m3uu8-%E5%AD%97%E6%AE%B5%E8%A7%A3%E9%87%8A/</url>
       
@@ -12,14 +12,14 @@
       
       <categories>
           
-          <category> -HLS </category>
+          <category> HLS </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> -HLS </tag>
+            <tag> HLS </tag>
             
         </tags>
       
@@ -35,21 +35,21 @@
       
       <categories>
           
-          <category> -HLS </category>
+          <category> HLS </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> -HLS </tag>
+            <tag> HLS </tag>
             
         </tags>
       
     </entry>
     
     <entry>
-      <title>c++编译原理</title>
+      <title>19-09-10 c++编译原理</title>
       <link href="/C-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/c-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
       <url>/C-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/c-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</url>
       
@@ -72,7 +72,7 @@
     </entry>
     
     <entry>
-      <title>Hexo上传的图片在网页上无法显示的解决办法</title>
+      <title>19-02-20 建博之图片不显示</title>
       <link href="/article/Hexo%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%9B%BE%E7%89%87%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%8A%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
       <url>/article/Hexo%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%9B%BE%E7%89%87%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%8A%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
       
@@ -89,7 +89,7 @@
     </entry>
     
     <entry>
-      <title>密码学关键总结指南</title>
+      <title>19-02-17 密码学分析</title>
       <link href="/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%B3%E9%94%AE%E6%80%BB%E7%BB%93/"/>
       <url>/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%B3%E9%94%AE%E6%80%BB%E7%BB%93/</url>
       
@@ -106,7 +106,7 @@
     </entry>
     
     <entry>
-      <title>密码学理论基础指南</title>
+      <title>19-01-07 密码基础指南</title>
       <link href="/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%90%86%E8%AE%BA%E6%80%BB%E7%BB%93/"/>
       <url>/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%90%86%E8%AE%BA%E6%80%BB%E7%BB%93/</url>
       
@@ -123,7 +123,7 @@
     </entry>
     
     <entry>
-      <title>[unity3D+3DMAX]下载安装使用指南</title>
+      <title>18-11-02 AR创建指南</title>
       <link href="/unity3D-3DMax%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/unity3D-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/"/>
       <url>/unity3D-3DMax%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/unity3D-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
       
@@ -146,7 +146,7 @@
     </entry>
     
     <entry>
-      <title>[GithubPage+Hexo+域名]免费博客搭建指南</title>
+      <title>18-10-15 建博指南</title>
       <link href="/GithubPage-hexo/Github-Hexo-%E5%9F%9F%E5%90%8D-%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/"/>
       <url>/GithubPage-hexo/Github-Hexo-%E5%9F%9F%E5%90%8D-%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/</url>
       
@@ -169,7 +169,7 @@
     </entry>
     
     <entry>
-      <title>[U3D+Vuforia+VR眼镜] 分屏设置指南</title>
+      <title>19-05-02 AR创建之分屏</title>
       <link href="/VR-AR%EF%BC%9B-Vuforia%EF%BC%9B-Unity3D/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97/"/>
       <url>/VR-AR%EF%BC%9B-Vuforia%EF%BC%9B-Unity3D/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97/</url>
       
@@ -192,7 +192,7 @@
     </entry>
     
     <entry>
-      <title>[Typora]操作指南</title>
+      <title>18-10-10 建博之工具操作</title>
       <link href="/article/%5BTypora%5D%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/"/>
       <url>/article/%5BTypora%5D%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
       
