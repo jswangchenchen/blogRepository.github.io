@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>19-05-02 URI URL URN区别</title>
+      <link href="/Computer-Organization/19-05-02-URI-URL-URN%E5%8C%BA%E5%88%AB/"/>
+      <url>/Computer-Organization/19-05-02-URI-URL-URN%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<p><strong>名词解释：</strong></p><p>​    URI(Uniform Resource Identifier) :统一资源标识符，用来唯一的标识一个资源</p><p>​    URL(Uniform Resource Locator)：统一资源定位符，统一资源定位器，它是一种具体的URI可以用标识一个资源</p><p>​    URN(uniform Resource Name): 统一资源名称，是通过名字来标识资源，如：mailto:<a href="mailto:java-net@java.sun.com" target="_blank" rel="noopener">java-net@java.sun.com</a>;</p><p>如图：</p><p><img src="/Computer-Organization/19-05-02-URI-URL-URN区别/URL URI区别.png" alt="URL URI区别"></p><p>总结:</p><p>URI可以分为URL，URN；形象点的说法就是URN确定了名字，而URL确定了怎么去找到它；</p><p>以上就是总结，不足之处，望多提出宝贵意见</p><p>E-mail</p><p><a href="mailto:jsntwangchenchen@outlook.com" target="_blank" rel="noopener">jsntwangchenchen@outlook.com</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Computer Organization </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Computer Organization </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>19-05-02 网络连接(1)</title>
       <link href="/Computer-Organization/19-05-02-%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5-1/"/>
       <url>/Computer-Organization/19-05-02-%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5-1/</url>
