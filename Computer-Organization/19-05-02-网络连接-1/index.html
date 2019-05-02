@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          19-03-24 m3u8字段解释 - Wangchenchen | Blog
+          19-05-02 网络连接(1) - Wangchenchen | Blog
         
     </title>
 
-    <link rel="canonical" href="http://www.jsWangchenchen.com/HLS/19-03-24-m3uu8-字段解释/">
+    <link rel="canonical" href="http://www.jsWangchenchen.com/Computer-Organization/19-05-02-网络连接-1/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/img/article_header/A003.jpg')
+            background-image: url('/img/article_header/A004.jpg')
             /*post*/
         
     }
@@ -86,14 +86,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#HLS" title="HLS">HLS</a>
+                              <a class="tag" href="/tags/#Computer Organization" title="Computer Organization">Computer Organization</a>
                             
                         </div>
-                        <h1>19-03-24 m3u8字段解释</h1>
-                        <h2 class="subheading">m3u8文件字段解释</h2>
+                        <h1>19-05-02 网络连接(1)</h1>
+                        <h2 class="subheading">从浏览器输入网址到页面显示内容，发生了什么？</h2>
                         <span class="meta">
                             Posted by Wangchenchen on
-                            2019-03-24
+                            2019-05-02
                         </span>
                     </div>
                 
@@ -210,74 +210,54 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>上次我在之前的一篇博客又说HLS是基于Http协议的，里面的传输内容包括两部分，一个是m3u8文件还有一个就是ts的媒体文件；</p>
-<p> 在m3u8中会有许多的标签，每个标签都有自己相对应的意思；</p>
-<p>在</p>
-<p>今天我从一些博客找到一个关于标签解释的list如下：</p>
-<table>
-<thead>
-<tr>
-<th>#EXTM3U</th>
-<th style="text-align:left">每个M3U文件第一行必须是这个tag。</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>#EXTINF:<duration>,<title></title></duration></td>
-<td style="text-align:left">duration表示持续的时间（秒）必须是整数，如果版本在3以上可以是浮点数。</td>
-</tr>
-<tr>
-<td>#EXTINF</td>
-<td style="text-align:left">指定每个媒体段(ts)的持续时间，这个仅对其后面的URI有效，每两个媒体段URI间被这个tag分隔开。</td>
-</tr>
-<tr>
-<td>#EXT-X-BYTERANGE</td>
-<td style="text-align:left">表示媒体段是一个媒体URI资源中的一段，只对其后的media URI有效，格式如下：#EXT-X-BYTERANGE:<n>[@o]其中n表示这个区间的大小，o表在URI中的offset；”The EXT-X-BYTERANGE tag appeared in version 4 of the protocol“。</n></td>
-</tr>
-<tr>
-<td>#EXT-X-TARGETDURATION</td>
-<td style="text-align:left">指定最大的媒体段时间长（秒）。所以#EXTINF中指定的时间长度必须小于或是等于这个最大值。这个tag在整个PlayList文件中只能出现一 次（在嵌套的情况下，一般有真正ts url的m3u8才会出现该tag）。格式如下：#EXT-X-TARGETDURATION:<s>：s表示最大的秒数。</s></td>
-</tr>
-<tr>
-<td>#EXT-X-MEDIA-SEQUENCE</td>
-<td style="text-align:left">每一个media URI 在 PlayList中只有唯一的序号，相邻之间序号+1。</td>
-</tr>
-<tr>
-<td>#EXT-X-MEDIA-SEQUENCE:<number></number></td>
-<td style="text-align:left">一个media URI并不是必须要包含的，如果没有，默认为0。</td>
-</tr>
-<tr>
-<td>#EXT-X-KEY</td>
-<td style="text-align:left">表示怎么对media segments进行解码。其作用范围是下次该tag出现前的所有media URI，格式如下：#EXT-X-KEY:<attribute-list>：NONE 或者 AES-128。如果是NONE，则URI以及IV属性必须不存在，如果是AES-128(Advanced EncryptionStandard)，则URI必须存在，IV可以不存在。对于AES-128的情况，keytag和URI属性共同表示了一个key文件，通过URI可以获得这个key，如果没有IV（Initialization Vector）,则使用序列号作为IV进行编解码，将序列号的高位赋到16个字节的buffer中，左边补0；如果有IV，则将改值当成16个字节的16进制数。</attribute-list></td>
-</tr>
-<tr>
-<td>#EXT-X-PROGRAM-DATE-TIME</td>
-<td style="text-align:left">将一个绝对时间或是日期和一个媒体段中的第一个sample相关联，只对下一个meida URI有效，格式如下：#EXT-X-PROGRAM-DATE-TIME:<a href="YYYY-MM-DDThh:mm:ssZ" target="_blank" rel="noopener">YYYY-MM-DDThh:mm:ssZ</a>例如:#EXT-X-PROGRAM-DATE-TIME:2010-02-19T14:54:23.031+08:00</td>
-</tr>
-<tr>
-<td>#EXT-X-ALLOW-CACHE：</td>
-<td style="text-align:left">是否允许做cache，这个可以在PlayList文件中任意地方出现，并且最多出现一次，作用效果是所有的媒体段。格式如下：#EXT-X-ALLOW-CACHE:&lt;YES\</td>
-<td>NO&gt;</td>
-</tr>
-<tr>
-<td>#EXT-X-PLAYLIST-TYPE</td>
-<td style="text-align:left">提供关于PlayList的可变性的信息， 这个对整个PlayList文件有效，是可选的，格式如下：#EXT-X-PLAYLIST-TYPE:&lt;EVENT\</td>
-<td>VOD&gt; ：如果是VOD，则服务器不能改变PlayList 文件；如果是EVENT，则服务器不能改变或是删除PlayList文件中的任何部分，但是可以向该文件中增加新的一行内容。</td>
-</tr>
-<tr>
-<td>#EXT-X-ENDLIST</td>
-<td style="text-align:left">表示PlayList的末尾了，它可以在PlayList中任意位置出现，但是只能出现一个，格式如下：#EXT-X-ENDLIST</td>
-</tr>
-<tr>
-<td>#EXT-X-MEDIA</td>
-<td style="text-align:left">被用来在PlayList中表示相同内容的不用语种/译文的版本，比如可以通过使用3个这种tag表示3中不用语音的音频，或者用2个这个tag表示不同角度的video在PlayLists中。这个标签是独立存在的，其格式如下：#EXT-X-MEDIA:<attribute-list>：该属性列表中包含：URI、TYPE、GROUP-ID、LANGUAGE、NAME、DEFAULT、AUTOSELECT。URI：如果没有，则表示这个tag描述的可选择版本在主PlayList的EXT-X-STREAM-INF中存在;TYPE:AUDIO and VIDEO;GROUP-ID:具有相同ID的MEDIAtag，组成一组样式；LANGUAGE：identifies the primary language used in the rendition。NAME：The value is a quoted-string containing a human-readable description of the rendition. If the LANGUAGE attribute is present then this description SHOULD be in that language。DEFAULT： YES或是NO，默认是No，如果是YES，则客户端会以这种选项来播放，除非用户自己进行选择。AUTOSELECT：YES或是NO，默认是No，如果是YES，则客户端会根据当前播放环境来进行选择（用户没有根据自己偏好进行选择的前提下）。The EXT-X-MEDIA tag appeared in version 4 of the protocol。o All EXT-X-MEDIA tags in the same group MUST have the same TYPEattribute.o All EXT-X-MEDIA tags in the same group MUST have different NAMEattributes.o A group MUST NOT have more than one member with a DEFAULTattribute of YES.o All members of a group whose AUTOSELECT attribute has a value ofYES MUST have LANGUAGE [RFC5646] attributes with unique values.o All members of a group with TYPE=AUDIO MUST use the same audiosample format.o All members of a group with TYPE=VIDEO MUST use the same videosample format。</attribute-list></td>
-</tr>
-<tr>
-<td>#EXT-X-STREAM-INF</td>
-<td style="text-align:left">指定一个包含多媒体信息的 media URI 作为PlayList，一般做M3U8的嵌套使用，它只对紧跟后面的URI有效，格式如下：#EXT-X-STREAM-INF:<attribute-list><uri>有以下属性：BANDWIDTH：带宽，必须有。PROGRAM-ID：该值是一个十进制整数，惟一地标识一个在PlayList文件范围内的特定的描述。一个PlayList 文件中可能包含多个有相同ID的此tag。CODECS：不是必须的。RESOLUTION：分辨率。AUDIO：这个值必须和AUDIO类别的“EXT-X-MEDIA”标签中“GROUP-ID”属性值相匹配。VIDEO：同上</uri></attribute-list></td>
-</tr>
-</tbody>
-</table>
+                <h5 id="主题"><a href="#主题：" class="headerlink" title="主题："></a>主题：</h5><p>​    从浏览器中输入网址，随后相关的网页内容就会出现相关的内容，但是当我在地址栏输入网页地址敲回车的那一刻，我的电脑发生了什么？</p>
+<p><strong>名词解释：</strong></p>
+<ol>
+<li><p>URL(统一资源定位符:Uniform Resource Locator)：在浏览器中输入的网址；</p>
+</li>
+<li><p>IP(网络协议地址:Internet Protocol Address):在网络中所有设备都会被分配到一个地址，相当于现实中的某路上的xx号xx室 其中 “号”对应的号码是对应整个子网的，而”室”对应的号码是分配给子网中计算机的，也就是网络中的地址，“号” 对应的是网络号，“室”对应的是主机号，这个地址的整体称为IP地址；</p>
+<p>​    常见的IP地址分为IPV4与IPV6两大类，但是也有其他不同的小分类</p>
+<p>​    每个IP可唯一标识一台主机，但是IP地址是一个32位的数字，为了便于记忆，我们通常把按每字节(8位)划分，然后用10进制表示出来，及常用的点分十进制，而IPV6是冒号分十六进制，</p>
+</li>
+<li><p>TCP/IP:就是由一些小的子网，通过路由器连接组成一个大的网络，子网也可以理解为用集线器连接的几台计算机； </p>
+</li>
+<li><p>Host文件：电脑本地一个没有后缀的文件，可以在本地使用编辑器打开，里面主要存储了常用的网址域名与其对应的IP地址建立一个关联的“数据库”当用户在浏览器中输入一个需要登陆的网址时系统首先就会进入host’文件中进行查找，</p>
+</li>
+<li><p>域名(域名:Doman Name) 由一串用点分割的名字组成intenate上某个计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位</p>
+<pre><code>例：http://baidu.com为例，http是通信时使用的协议，baidu.com是域名，www是提供服务器的名字，计算机名+域名才是主机名，即www.baidu.com是主机名。
+</code></pre></li>
+<li><p>DNS(域名系统: Doman Name System): DNS服务器主要是接收客户端的信息，然后返回相应的内容，通常我们本机都会有个DNS的客户端，这个就称为DNS解析器；</p>
+<p>​    a. 域名</p>
+<p>​        服务器，邮件服务器(邮件地址中@后半部分)的名称；</p>
+<p>​    b. Class</p>
+<p>​        这是最早的时候设计的DNS方案，考虑到DNS在互联网以外的其他网络应用，利用Class来识别网络信息，但是目前除了互联网没有其他网络，所以现在的class值就永远是代表互联网的  IN；</p>
+<p>​    c.记录类型</p>
+<p>​        关于域名对应何种类型的记录，如类型是A 表示 域名对应的是IP地址， 类型是MX，表示对应的是邮件服务器，所以对于不同的记录类型，服务器就会返回不同的信息内容；</p>
+<p>​    DNS服务器上会事先存上上面三种信息的对应记录数据；</p>
+</li>
+</ol>
+<p><strong>运行过程</strong></p>
+<p>当我们在浏览器输入URL，（<a href="http://jswangchenchen.com）" target="_blank" rel="noopener">http://jswangchenchen.com）</a></p>
+<p>1.缓存查找</p>
+<pre><code>打个比方，你出门找一个地方，第一个想法肯定是先想这个地方你有没有去过，如果你去过就不需要问人直接过去就好了，所以，在写好URL点击回车前，浏览器会从历史记录，书签或缓存中查找地址， 然后是在host文件中，最后是在路由器缓存中进行查找，如果有就会打开相应的网页，如果没有就会直接将消息传到DNS对IP地址进行解析。
+</code></pre><p>2.DNS解析</p>
+<pre><code>先发送一个DNS请求到本地DNS服务器，DNS本地服务器进行递归查询，如果本地服务器没有就会向根服务器发送消息； 
+根服务器并没有记录具体的域名和IP地址的对应关系，而是告诉本地DNS服务器到域服务器上去继续查找，并给出域的地址；
+本地服务器继续向域服务器发出请求，在这个例子中，访问的是.com域服务器，与服务器接到请求后，也不会返回域名和IP地址的对应关系，而是告诉本地DNS服务器，你的域名解析服务器地址；
+最后，本地DNS服务器向域名的解析服务器发出请求，这时就能收到一个域名和IP地址的对应关系，本地DNS服务器不仅要把IP地址返回给用户电脑，还要把这个对应关系保存在缓存中，以备下次别的用户查询时可以直接返回结果；
+</code></pre><p>3.建立TCP连接</p>
+<pre><code>拿到IP地址后，客户端会以一个随机端口(1024&lt;端口号&lt;65535)向服务器的WEB程序80端口发起TCP的连接请求。请求到达端口后，进入网卡，进入到内核的TCP/IP协议栈(用于识别该链接请求，解封包，一层层的拨开)最终到达WEB程序，最终建立TCP/IP连接；关于TCP/IP协议以后会进行详细讲解（三次挥手）；
+</code></pre><p>4.发送Http请求</p>
+<pre><code>与服务器建立TCP安全连接后就可以进行Http请求，后期会专门开一章讲解Http 现在先简单讲下发送Http请求过程就是构建Http请求报文并通过TCP协议发送到服务器指定端口；
+</code></pre><p>5.服务器处理请求并返回Http响应</p>
+<pre><code>响应报文主要分为三部分：状态行，相应头和相应正文；
+</code></pre><p>6.最后关闭TCP连接</p>
+<pre><code>最后通过四次挥手进行关闭；
+</code></pre><p>7.最后页面进行渲染；</p>
+<p>本章终。</p>
+<p>如果有什么不足的地方希望大家提出宝贵意见</p>
+<p>E-mail</p>
+<p><a href="mailto:jsntwangchenchen@outlook.com" target="_blank" rel="noopener">jsntwangchenchen@outlook.com</a></p>
 
                 
 
@@ -285,13 +265,9 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/Computer-Organization/19-05-02-网络连接-1/" data-toggle="tooltip" data-placement="top" title="19-05-02 网络连接(1)">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/HLS/19-03-24-了解HLS/" data-toggle="tooltip" data-placement="top" title="19-03-24 了解HLS">Next Post &rarr;</a>
+                            <a href="/HLS/19-03-24-m3uu8-字段解释/" data-toggle="tooltip" data-placement="top" title="19-03-24 m3u8字段解释">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -332,7 +308,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="nav">none</ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#主题"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><a href="#&#x4E3B;&#x9898;&#xFF1A;" class="headerlink" title="&#x4E3B;&#x9898;&#xFF1A;"></a>&#x4E3B;&#x9898;&#xFF1A;</span></a></li></ol>
         
         </div>
       </aside>
@@ -352,7 +328,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#HLS" title="HLS">HLS</a>
+                          <a class="tag" href="/tags/#Computer Organization" title="Computer Organization">Computer Organization</a>
                         
                     </div>
                 </section>
