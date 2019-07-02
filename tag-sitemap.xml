@@ -30,13 +30,6 @@
     </url>
 
     <url>
-        <loc>http://www.jsWangchenchen.com/tags/HLS/</loc>
-        <lastmod>2019-05-02T06:44:49.510Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.jsWangchenchen.com/tags/Computer-Organization/</loc>
         <lastmod>2019-05-02T13:15:15.789Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -51,8 +44,15 @@
     </url>
 
     <url>
+        <loc>http://www.jsWangchenchen.com/tags/HLS/</loc>
+        <lastmod>2019-07-02T16:58:02.695Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.jsWangchenchen.com/tags/Android/</loc>
-        <lastmod>2019-06-23T15:38:20.486Z</lastmod>
+        <lastmod>2019-07-02T17:03:27.784Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
