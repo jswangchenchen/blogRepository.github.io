@@ -209,6 +209,35 @@
 
 <div class="post-preview">
 
+    <a href="/预防多次点击/19-09-21-android预防连续多次点击/">
+        <h2 class="post-title">
+            19-09-21-android预防连续多次点击
+        </h2>
+        <h3 class="post-subtitle">
+            按键多次点击如何预防
+        </h3>
+        <div class="post-content-preview">
+            思路：​    利用时间段进行判断，首先获得当前时间，自己在定义一个时间(1s，5s….)一个你想让button停止工作的时间，通过获得当前时间和一个成员时间进行比较，得到的时间比较是否大于自己设定的休眠时间，如果小于休眠时间就直接跳出不操作相关内容；
+代码：123456789101112// 两次点击间隔不能少于1000ms    private static final int FAST......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by Wangchenchen on
+            2019-09-21
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Android" title="Android">Android</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/强制转屏/19-9-1-android强制转屏/">
         <h2 class="post-title">
             19-9-1-android强制转屏
@@ -274,14 +303,15 @@
 
     <a href="/C/19-08-25-C-基础语言-一/">
         <h2 class="post-title">
-            19-08-25-C++基础语言[一]
+            19-08-25-<C++ primer>整理1
         </h2>
         <h3 class="post-subtitle">
             c++基础
         </h3>
         <div class="post-content-preview">
             ​    目前为止已经做了两年c++，有一个很深的意识就是c++如过没有体统的学习还是对缺少很多的东西，对一些问题会一知半解，痛定思痛，从最基础的开始，一点点的打地基；
-1.快速入门1.1编写简单c++程序先编一个基本的main
+[TOC]
+1. 编写简单c++程序先编一个基本的main
 123int main()&#123;    return 0;&#125;
 ​    操作系统通过main执行返回0；正常c++会产生两个文件，一个是以.h(头文......
         </div>
@@ -493,48 +523,6 @@ IP(网络协议地址:Internet Protocol Address):在网络中所有设备都会�
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/HLS/19-03-24-m3uu8-字段解释/">
-        <h2 class="post-title">
-            19-03-24 m3u8字段解释
-        </h2>
-        <h3 class="post-subtitle">
-            m3u8文件字段解释
-        </h3>
-        <div class="post-content-preview">
-            上次我在之前的一篇博客又说HLS是基于Http协议的，里面的传输内容包括两部分，一个是m3u8文件还有一个就是ts的媒体文件；
- 在m3u8中会有许多的标签，每个标签都有自己相对应的意思；
-在
-今天我从一些博客找到一个关于标签解释的list如下：
-
-
-
-#EXTM3U
-每个M3U文件第一行必须是这个tag。
-
-
-
-
-#EXTINF:,
-duration表示持续的时间（秒）必须是整数，如果版本......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by Wangchenchen on
-            2019-03-24
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#HLS" title="HLS">HLS</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -586,7 +574,7 @@ duration表示持续的时间（秒）必须是整数，如果版本......
             
         
             
-            <a href="/tags/#Android" title="Android" rel="3">Android</a>
+            <a href="/tags/#Android" title="Android" rel="4">Android</a>
             
         
             
@@ -669,6 +657,10 @@ duration表示持续的时间（秒）必须是整数，如果版本......
     <ul>
       
         <li>
+          <a href="/预防多次点击/19-09-21-android预防连续多次点击/">19-09-21-android预防连续多次点击</a>
+        </li>
+      
+        <li>
           <a href="/强制转屏/19-9-1-android强制转屏/">19-9-1-android强制转屏</a>
         </li>
       
@@ -677,15 +669,11 @@ duration表示持续的时间（秒）必须是整数，如果版本......
         </li>
       
         <li>
-          <a href="/C/19-08-25-C-基础语言-一/">19-08-25-C++基础语言[一]</a>
+          <a href="/C/19-08-25-C-基础语言-一/">19-08-25-&lt;C++ primer&gt;整理1</a>
         </li>
       
         <li>
           <a href="/刷题/19-07-22-19年面试题整理/">19-07-22-19年面试题整理</a>
-        </li>
-      
-        <li>
-          <a href="/Android/19-06-30-android之页面跳转/">19-06-30-android之页面跳转</a>
         </li>
       
     </ul>
@@ -712,7 +700,7 @@ duration表示持续的时间（秒）必须是整数，如果版本......
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">3</span></li></ul>
     </div>
 
         <hr>
@@ -721,7 +709,7 @@ duration表示持续的时间（秒）必须是整数，如果版本......
 
     <h5>categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/AndroidStudio/">AndroidStudio</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-编译原理/">C++编译原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Organization/">Computer Organization</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GithubPage-hexo/">GithubPage; hexo;</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HLS/">HLS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VR-AR；-Vuforia；-Unity3D/">VR+AR； Vuforia； Unity3D</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity3D-3DMax下载安装指南/">unity3D+3DMax下载安装指南;</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/刷题/">刷题</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/强制转屏/">强制转屏</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/AndroidStudio/">AndroidStudio</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-编译原理/">C++编译原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Organization/">Computer Organization</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GithubPage-hexo/">GithubPage; hexo;</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HLS/">HLS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VR-AR；-Vuforia；-Unity3D/">VR+AR； Vuforia； Unity3D</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity3D-3DMax下载安装指南/">unity3D+3DMax下载安装指南;</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/刷题/">刷题</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/强制转屏/">强制转屏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/预防多次点击/">预防多次点击</a><span class="category-list-count">1</span></li></ul>
     </div>
 
         <hr>
