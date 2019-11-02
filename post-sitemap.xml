@@ -7,8 +7,16 @@
     </url>
 
     <url>
-        <loc>http://www.jsWangchenchen.com/C/19-08-25-C-%E5%9F%BA%E7%A1%80%E8%AF%AD%E8%A8%80-%E4%B8%80/</loc>
-        <lastmod>2019-10-26T11:13:50.930Z</lastmod>
+        <loc>http://www.jsWangchenchen.com/C-primer/19-10-29-C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%BA%8C/</loc>
+        <lastmod>2019-11-02T13:06:43.371Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/C-Primer/19-08-25-C-%E5%9F%BA%E7%A1%80%E8%AF%AD%E8%A8%80-%E4%B8%80/</loc>
+        <lastmod>2019-10-29T14:41:43.202Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

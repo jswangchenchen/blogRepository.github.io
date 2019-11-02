@@ -70,6 +70,13 @@
     </url>
 
     <url>
+        <loc>http://www.jsWangchenchen.com/categories/C/</loc>
+        <lastmod>2019-08-27T15:54:20.360Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.jsWangchenchen.com/categories/%E9%A2%84%E9%98%B2%E5%A4%9A%E6%AC%A1%E7%82%B9%E5%87%BB/</loc>
         <lastmod>2019-09-22T10:30:56.563Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -84,8 +91,15 @@
     </url>
 
     <url>
-        <loc>http://www.jsWangchenchen.com/categories/C/</loc>
-        <lastmod>2019-10-26T11:13:50.930Z</lastmod>
+        <loc>http://www.jsWangchenchen.com/categories/C-Primer/</loc>
+        <lastmod>2019-10-29T14:41:43.202Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/categories/C-primer/</loc>
+        <lastmod>2019-11-02T13:06:43.371Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
