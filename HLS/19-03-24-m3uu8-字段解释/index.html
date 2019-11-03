@@ -140,13 +140,6 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
@@ -155,6 +148,13 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -211,7 +211,7 @@
                 post-container">
 
                 <p>上次我在之前的一篇博客又说HLS是基于Http协议的，里面的传输内容包括两部分，一个是m3u8文件还有一个就是ts的媒体文件；</p>
-<p> 在m3u8中会有许多的标签，每个标签都有自己相对应的意思；</p>
+<p>在m3u8中会有许多的标签，每个标签都有自己相对应的意思；</p>
 <p>在</p>
 <p>今天我从一些博客找到一个关于标签解释的list如下：</p>
 <table>
@@ -252,17 +252,15 @@
 </tr>
 <tr>
 <td>#EXT-X-PROGRAM-DATE-TIME</td>
-<td style="text-align:left">将一个绝对时间或是日期和一个媒体段中的第一个sample相关联，只对下一个meida URI有效，格式如下：#EXT-X-PROGRAM-DATE-TIME:<a href="YYYY-MM-DDThh:mm:ssZ" target="_blank" rel="noopener">YYYY-MM-DDThh:mm:ssZ</a>例如:#EXT-X-PROGRAM-DATE-TIME:2010-02-19T14:54:23.031+08:00</td>
+<td style="text-align:left">将一个绝对时间或是日期和一个媒体段中的第一个sample相关联，只对下一个meida URI有效，格式如下：#EXT-X-PROGRAM-DATE-TIME:&lt;YYYY-MM-DDThh:mm:ssZ&gt;例如:#EXT-X-PROGRAM-DATE-TIME:2010-02-19T14:54:23.031+08:00</td>
 </tr>
 <tr>
 <td>#EXT-X-ALLOW-CACHE：</td>
-<td style="text-align:left">是否允许做cache，这个可以在PlayList文件中任意地方出现，并且最多出现一次，作用效果是所有的媒体段。格式如下：#EXT-X-ALLOW-CACHE:&lt;YES\</td>
-<td>NO&gt;</td>
+<td style="text-align:left">是否允许做cache，这个可以在PlayList文件中任意地方出现，并且最多出现一次，作用效果是所有的媒体段。格式如下：#EXT-X-ALLOW-CACHE:&lt;YES|NO&gt;</td>
 </tr>
 <tr>
 <td>#EXT-X-PLAYLIST-TYPE</td>
-<td style="text-align:left">提供关于PlayList的可变性的信息， 这个对整个PlayList文件有效，是可选的，格式如下：#EXT-X-PLAYLIST-TYPE:&lt;EVENT\</td>
-<td>VOD&gt; ：如果是VOD，则服务器不能改变PlayList 文件；如果是EVENT，则服务器不能改变或是删除PlayList文件中的任何部分，但是可以向该文件中增加新的一行内容。</td>
+<td style="text-align:left">提供关于PlayList的可变性的信息， 这个对整个PlayList文件有效，是可选的，格式如下：#EXT-X-PLAYLIST-TYPE:&lt;EVENT|VOD&gt; ：如果是VOD，则服务器不能改变PlayList 文件；如果是EVENT，则服务器不能改变或是删除PlayList文件中的任何部分，但是可以向该文件中增加新的一行内容。</td>
 </tr>
 <tr>
 <td>#EXT-X-ENDLIST</td>

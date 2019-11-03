@@ -14,7 +14,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          19-10-29-C++primer-基础学习2 - Wangchenchen | Blog
+          19-10-29&lt;C++primer&gt;基础学习2 - Wangchenchen | Blog
         
     </title>
 
@@ -89,8 +89,8 @@
                               <a class="tag" href="/tags/#C++" title="C++">C++</a>
                             
                         </div>
-                        <h1>19-10-29-C++primer-基础学习2</h1>
-                        <h2 class="subheading">基本类型和关键字</h2>
+                        <h1>19-10-29&lt;C++primer&gt;基础学习2</h1>
+                        <h2 class="subheading">C++</h2>
                         <span class="meta">
                             Posted by Wangchenchen on
                             2019-10-29
@@ -140,13 +140,6 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
@@ -155,6 +148,13 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -212,31 +212,36 @@
 
                 <p>上一篇对基础部分的<strong>编译流程</strong>,<strong>输入输出</strong>,<strong>控制结构</strong>，进行了介绍，这篇主要是对里面的<strong>变量</strong>以及<strong>基本类型</strong>，<strong>标准库</strong>，<strong>类的简介</strong>  进行相关的总结：</p>
 <p>[TOC]</p>
-<h5 id="变量"><a href="#变量" class="headerlink" title="变量:"></a>变量:</h5><p>​    <strong>·  什么是变量？</strong></p>
-<p>​        变量提供了程序可以操作的有名字的存储区，c++每个变量都有特定的类型，决定了变量内存大小和布局，能够存储于该内存中的值的取值范围以及可以在这个变量上的操作集，</p>
-<p>​    <strong>·  变量组成？</strong></p>
-<p>​        左值： 左值可以出现在赋值语句的左边或者右边。</p>
-<p>​        右值： 只能出现在赋值的右边；</p>
+<h5 id="变量">变量:</h5>
+<p>​	<strong>·  什么是变量？</strong></p>
+<p>​		变量提供了程序可以操作的有名字的存储区，c++每个变量都有特定的类型，决定了变量内存大小和布局，能够存储于该内存中的值的取值范围以及可以在这个变量上的操作集，</p>
+<p>​	<strong>·  变量组成？</strong></p>
+<p>​		左值： 左值可以出现在赋值语句的左边或者右边。</p>
+<p>​		右值： 只能出现在赋值的右边；</p>
 <p>例： int a = 19;</p>
 <p>a = a+0;</p>
-<h6 id="变量名"><a href="#变量名：" class="headerlink" title="变量名："></a>变量名：</h6><p>​        变量名是变量标识符，可以由字母，数字，下划线，组成变量名必须以字母，下划线开头，c++是区分大小写的，变量名不能是已经定义的关键字，比如，string,void, main, int,public等； </p>
-<h6 id="申明-定义"><a href="#申明-定义：" class="headerlink" title="申明 定义："></a>申明 定义：</h6><p>​        申明： 变量的申明是申明是什么类型，比如int a;在64位的机器中，则是告诉编译器这个变量a在内存中占用8个字节 ；</p>
-<p>​        定义： 对已经声明的变量进行，可以是常量值也可以是表达式，实际的赋值如 a = 1024*20，含义是编译器在内存中开辟出一块存储单元存放变量值：1024；</p>
+<h6 id="变量名">变量名：</h6>
+<p>​		变量名是变量标识符，可以由字母，数字，下划线，组成变量名必须以字母，下划线开头，c++是区分大小写的，变量名不能是已经定义的关键字，比如，string,void, main, int,public等；</p>
+<h6 id="申明-定义">申明 定义：</h6>
+<p>​		申明： 变量的申明是申明是什么类型，比如int a;在64位的机器中，则是告诉编译器这个变量a在内存中占用8个字节 ；</p>
+<p>​		定义： 对已经声明的变量进行，可以是常量值也可以是表达式，实际的赋值如 a = 1024*20，含义是编译器在内存中开辟出一块存储单元存放变量值：1024；</p>
 <p><strong>变量只可以声明一次但是可以定义多次；</strong></p>
-<h6 id="变量的作用域"><a href="#变量的作用域：" class="headerlink" title="变量的作用域："></a>变量的作用域：</h6><p>​        变量的作用域是可以嵌套的；申明的成员变量可以在同一个类中局部方法中调用；</p>
+<h6 id="变量的作用域">变量的作用域：</h6>
+<p>​		变量的作用域是可以嵌套的；申明的成员变量可以在同一个类中局部方法中调用；</p>
 <p>例：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>&#123;</span></span><br><span class="line">    String a = <span class="string">""</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">TestA</span><span class="params">()</span></span>&#123;</span><br><span class="line">        a = <span class="string">"局部a中可以使用成员变量"</span>；</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">void</span> TestB()&#123;</span><br><span class="line">        a = <span class="string">"局部b中可以使用成员变量"</span>；</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>定义成员变量a，在局部变量中又定义同类型的a，这两个不是同一个a在内存中地址不样；</p>
 <p>例：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">class <span class="title">Test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1024</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">TestA</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">2048</span>;</span><br><span class="line">        a += <span class="number">255</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"TestA print a = %d"</span>,a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"test print a = %d"</span>,a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面两个打印出来的a是不样的，第一个TestA打印出来的是2048+255 是 2303，第二个打印出来的内容还是1024；</p>
-<p>​    </p>
-<h5 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型:"></a>基本类型:</h5><p>​    c++定义了一组表示整数的，浮点数，单个字符和布尔值的<strong>算数类型</strong> ，另外还定义了一个叫<strong>void</strong>的<strong>特殊类型</strong>，void没有对应的值，仅仅在有限的情况下用作无返回值函数的返回类型；</p>
-<p>​    算术类型的存储空间依机器而定。这里的存储空间是指用来表示该类型的二进制位（bit）数。</p>
-<p>　　C++标准规定了每个算术类型的最小存储空间，但它并不阻止编译器使用<strong>更大</strong>的存储空间，事实上，对于int类型，几乎所有的编译器使用的存储空间都比所要求的大。</p>
-<p>　　因为位数不同，这些类型所能表示的最大（最小）值也因机器的不同而有所不同。</p>
-<p>　　</p>
-<p>​    类型+含义+最小存储空间如下：</p>
+<p>​</p>
+<h5 id="基本类型">基本类型:</h5>
+<p>​	c++定义了一组表示整数的，浮点数，单个字符和布尔值的<strong>算数类型</strong> ，另外还定义了一个叫<strong>void</strong>的<strong>特殊类型</strong>，void没有对应的值，仅仅在有限的情况下用作无返回值函数的返回类型；</p>
+<p>​	算术类型的存储空间依机器而定。这里的存储空间是指用来表示该类型的二进制位（bit）数。</p>
+<p>C++标准规定了每个算术类型的最小存储空间，但它并不阻止编译器使用<strong>更大</strong>的存储空间，事实上，对于int类型，几乎所有的编译器使用的存储空间都比所要求的大。</p>
+<p>因为位数不同，这些类型所能表示的最大（最小）值也因机器的不同而有所不同。</p>
+<p></p>
+<p>​	类型+含义+最小存储空间如下：</p>
 <table>
 <thead>
 <tr>
@@ -293,59 +298,78 @@
 </tr>
 </tbody>
 </table>
-<h6 id="整形"><a href="#整形：" class="headerlink" title="整形："></a>整形：</h6><p>​        表示整数，字符和布尔值的算数类型合成为整型。</p>
-<p>​        字符类型有两种，char和wchar_t，char能够存储机器基本字符集中任何字符相应的数值，因此char通常单个字节(byte)；wchar_t 用于扩展字符集中的一些字符，不能用单个字符表示。</p>
-<p>​        short, int , long 都表示整型，存储空间大小都不一样，，一般short类型为半个机器字长，int为一个机器字长，而long为一个或两个机器字长,（32位机器中，int和long的字长是一样的）；</p>
-<p>​    <strong>· 带符号和无符号类型</strong>：</p>
-<p>​        除了bool其他整型都是可以带符号的(正数)，也可以是不带符号的(负数)；</p>
-<p>​        整型，int, short,long 默认是带符号的，要不带符号就必须要指定该类型是unsigned，若unsigned后不带任何整型，默认是int</p>
-<p>​        char有三种不同的类型，char ，unsigned char ， signed char，</p>
-<p>​    <strong>· 整型值的表示：</strong></p>
-<p>​        无符号型中，所有的位数都表示数值，如果在某个机器中，定义一种类型使用8位表示，这个类型的无符号型可以取值 2^8 (0-255),同样的类型用signed，则取值范围是-128 ~ 127 或者是 -127 ~ 127；</p>
-<p>​        signed中有一位是符号位，表示正负，如果是1则为负数，反之则为正数；</p>
-<p>​    <strong>· 整型的赋值：</strong></p>
-<p>​        在赋值时有时会出现赋值的数超过取值范围的情况，这类情况分为无符号类型和有符号类型，比如是unsigned char 8位，正常情况它的取值范围是0-255；如果将336赋值，就会将336进行求模后得到的数 80 存入到 整型中；因为80是336对255求模后的值；</p>
-<h6 id="浮点型"><a href="#浮点型：" class="headerlink" title="浮点型："></a>浮点型：</h6><p>​    float, double, long double 分别表示单精度浮点和双精度浮点以及扩展精度浮点，</p>
-<p>​        float： 用一个字32位</p>
-<p>​        double： 用两个字节 64位</p>
-<p>​        long double： 用三个或四个字节 96-128位</p>
-<p>​    <strong>· 字面值规则：</strong></p>
-<p>​        通常可以用十进制和科学计数法来表示浮点字面值常量，使用科学计算法时指数用E或e表示，默认浮点数常量位double，在数值后面加上F或f 同样加上L或l表示扩展精度;    </p>
-<h6 id="布尔型"><a href="#布尔型：" class="headerlink" title="布尔型："></a>布尔型：</h6><p>​        bool表示的是真值true和假值false，也可以将算数类型赋值给bool对象， 0值表示的是false，任何非0表示true；</p>
-<h5 id="类简介"><a href="#类简介" class="headerlink" title="类简介:"></a>类简介:</h5><p>​    c++ 通过定义类来定义数据类型，类定义了该类型的对象包含的数据和该类型的对象可以执行的操作，例如，string，istream等标准库都定义成了类；</p>
-<p>​    <strong>· 结构 形成</strong></p>
-<p>​        成员变量, 成员函数这个是组成一个类的重要成分；</p>
+<h6 id="整形">整形：</h6>
+<p>​		表示整数，字符和布尔值的算数类型合成为整型。</p>
+<p>​		字符类型有两种，char和wchar_t，char能够存储机器基本字符集中任何字符相应的数值，因此char通常单个字节(byte)；wchar_t 用于扩展字符集中的一些字符，不能用单个字符表示。</p>
+<p>​		short, int , long 都表示整型，存储空间大小都不一样，，一般short类型为半个机器字长，int为一个机器字长，而long为一个或两个机器字长,（32位机器中，int和long的字长是一样的）；</p>
+<p>​	<strong>· 带符号和无符号类型</strong>：</p>
+<p>​		除了bool其他整型都是可以带符号的(正数)，也可以是不带符号的(负数)；</p>
+<p>​		整型，int, short,long 默认是带符号的，要不带符号就必须要指定该类型是unsigned，若unsigned后不带任何整型，默认是int</p>
+<p>​		char有三种不同的类型，char ，unsigned char ， signed char，</p>
+<p>​	<strong>· 整型值的表示：</strong></p>
+<p>​		无符号型中，所有的位数都表示数值，如果在某个机器中，定义一种类型使用8位表示，这个类型的无符号型可以取值 2^8 (0-255),同样的类型用signed，则取值范围是-128 ~ 127 或者是 -127 ~ 127；</p>
+<p>​		signed中有一位是符号位，表示正负，如果是1则为负数，反之则为正数；</p>
+<p>​	<strong>· 整型的赋值：</strong></p>
+<p>​		在赋值时有时会出现赋值的数超过取值范围的情况，这类情况分为无符号类型和有符号类型，比如是unsigned char 8位，正常情况它的取值范围是0-255；如果将336赋值，就会将336进行求模后得到的数 80 存入到 整型中；因为80是336对255求模后的值；</p>
+<h6 id="浮点型">浮点型：</h6>
+<p>​	float, double, long double 分别表示单精度浮点和双精度浮点以及扩展精度浮点，</p>
+<p>​		float： 用一个字32位</p>
+<p>​		double： 用两个字节 64位</p>
+<p>​		long double： 用三个或四个字节 96-128位</p>
+<p>​	<strong>· 字面值规则：</strong></p>
+<p>​		通常可以用十进制和科学计数法来表示浮点字面值常量，使用科学计算法时指数用E或e表示，默认浮点数常量位double，在数值后面加上F或f 同样加上L或l表示扩展精度;</p>
+<h6 id="布尔型">布尔型：</h6>
+<p>​		bool表示的是真值true和假值false，也可以将算数类型赋值给bool对象， 0值表示的是false，任何非0表示true；</p>
+<h5 id="类简介">类简介:</h5>
+<p>​	c++ 通过定义类来定义数据类型，类定义了该类型的对象包含的数据和该类型的对象可以执行的操作，例如，string，istream等标准库都定义成了类；</p>
+<p>​	<strong>· 结构 形成</strong></p>
+<p>​		成员变量, 成员函数这个是组成一个类的重要成分；</p>
 <p>例：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Student.h</span><br><span class="line"><span class="function">struct <span class="title">Student</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		String name;</span><br><span class="line">		<span class="keyword">int</span> age;</span><br><span class="line">		<span class="keyword">int</span> nub;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">public</span>：</span><br><span class="line">    	Student(String name <span class="keyword">int</span> age);</span><br><span class="line">    	~Student();</span><br><span class="line">    	<span class="function">String <span class="title">getName</span><span class="params">()</span></span>;</span><br><span class="line">    	void setName(String name)； </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Student.cpp</span><br><span class="line"><span class="function">class <span class="title">Student</span><span class="params">()</span></span>&#123;    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">String Student::getName()&#123;</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Student::setName(String n)&#123;</span><br><span class="line">    name = n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">main.cpp</span><br><span class="line">include <span class="string">"student.h"</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	String name = <span class="string">"Test"</span>；</span><br><span class="line">    <span class="keyword">int</span> age = <span class="number">26</span>;</span><br><span class="line">    </span><br><span class="line">    Student s = <span class="keyword">new</span> Student();</span><br><span class="line">    s.setName(name);</span><br><span class="line">    String nameResult = s.getName();    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上就是一个基础的c++程序；</p>
-<p>​    <strong>·  struct 和class的区别</strong></p>
-<p>​        struct也可以定义类类型，这个关键字是继承自c语言，首先使用class定义类那么定义在第一个访问标号前默认是private，如果是struct如果不特别定义默认是public，区别仅此而已；</p>
-<h5 id="extern-关键字"><a href="#extern-关键字：" class="headerlink" title="extern 关键字："></a>extern 关键字：</h5><p>​        extern 可以置于变量或者函数前，以标示变量或者函数的定义在别的文件中，提示编译器遇到这个变量或函数时在其他模块中寻找其定义；</p>
-<p>​        函数：extern ”C“ void fun(); 告诉编译器这个函数要按照c的风格进行编译；</p>
-<p>​        变量： extern int age；它的作用是声明函数或全局变量的作用范围的关键字，申明的变量或函数除了本模块还能在其他模块中使用，但他只是声明不是定义；</p>
-<p>​        extern char *a 这样的申明是不正确的，这个的意思是声明的是一个指针变量而不是字符数组因此与实际的定义不同；正确的是 extern char a[];</p>
-<h5 id="const-关键字"><a href="#const-关键字：" class="headerlink" title="const 关键字："></a>const 关键字：</h5><p>​        const 常量 是一个不能被修改的变量；默认是局部成员，但是把它放在全局的位置在任何地方就可以调用；</p>
+<p>​	<strong>·  struct 和class的区别</strong></p>
+<p>​		struct也可以定义类类型，这个关键字是继承自c语言，首先使用class定义类那么定义在第一个访问标号前默认是private，如果是struct如果不特别定义默认是public，区别仅此而已；</p>
+<h5 id="extern-关键字">extern 关键字：</h5>
+<p>​		extern 可以置于变量或者函数前，以标示变量或者函数的定义在别的文件中，提示编译器遇到这个变量或函数时在其他模块中寻找其定义；</p>
+<p>​		函数：extern ”C“ void fun(); 告诉编译器这个函数要按照c的风格进行编译；</p>
+<p>​		变量： extern int age；它的作用是声明函数或全局变量的作用范围的关键字，申明的变量或函数除了本模块还能在其他模块中使用，但他只是声明不是定义；</p>
+<p>​		extern char *a 这样的申明是不正确的，这个的意思是声明的是一个指针变量而不是字符数组因此与实际的定义不同；正确的是 extern char a[];</p>
+<h5 id="const-关键字">const 关键字：</h5>
+<p>​		const 常量 是一个不能被修改的变量；默认是局部成员，但是把它放在全局的位置在任何地方就可以调用；</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> buff = <span class="number">1024</span>;</span><br><span class="line">buff = <span class="number">2048</span>;<span class="comment">//错误，const 不能被重新赋值；</span></span><br></pre></td></tr></table></figure>
-<h5 id="引用"><a href="#引用：" class="headerlink" title="引用："></a>引用：</h5><p>​        就是对象的另一个名字；申明时在变量前面加上 &amp; 符号就好；</p>
+<h5 id="引用">引用：</h5>
+<p>​		就是对象的另一个名字；申明时在变量前面加上 &amp; 符号就好；</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">255</span>;</span><br><span class="line"><span class="keyword">int</span> &amp;buff = num;</span><br><span class="line">buff +=  <span class="number">127</span>;</span><br></pre></td></tr></table></figure>
 <p>上面的运行结束后，buff的大小是482；num 不会发生变化；</p>
-<p>​        const 引用</p>
+<p>​		const 引用</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> num = <span class="number">1024</span>;</span><br><span class="line"><span class="keyword">int</span> &amp;num1 = num;</span><br><span class="line"><span class="keyword">int</span> &amp;num2; <span class="comment">//错误，不能为空；</span></span><br><span class="line"><span class="keyword">int</span> &amp;num3 = <span class="number">10</span>; <span class="comment">//错误，不能直接赋值数字；</span></span><br></pre></td></tr></table></figure>
-<h5 id="typedef-关键字"><a href="#typedef-关键字：" class="headerlink" title="typedef 关键字："></a>typedef 关键字：</h5><p>​    定义一种类型的别名，不是简答的宏替换；可以用作指针类型的多个对象；</p>
+<h5 id="typedef-关键字">typedef 关键字：</h5>
+<p>​	定义一种类型的别名，不是简答的宏替换；可以用作指针类型的多个对象；</p>
 <p>比如：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* PCHAR  </span><br><span class="line">PCHAR pa,pb；</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tag</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">int</span> y;</span><br><span class="line">&#125;POINT;</span><br><span class="line"></span><br><span class="line">POINT p1;</span><br></pre></td></tr></table></figure>
-<h6 id="两大陷阱"><a href="#两大陷阱" class="headerlink" title="两大陷阱"></a>两大陷阱</h6><p>​    陷阱一：</p>
-<p>​        记住，typedef是定义了一种类型的新别名，不同于宏，它不是简单的字符串替换。比如：<br>先定义：<br>typedef char* PSTR;<br>然后：<br>int mystrcmp(const PSTR, const PSTR);</p>
-<p>const PSTR实际上相当于const char<em>吗？不是的，它实际上相当于char</em> const。<br>原因在于const给予了整个指针本身以常量性，也就是形成了常量指针char* const。<br>简单来说，记住当const和typedef一起出现时，typedef不会是简单的字符串替换就行。</p>
-<p>​    陷阱二：</p>
-<p>​        typedef在语法上是一个存储类的关键字（如auto、extern、mutable、static、register等一样），虽然它并不真正影响对象的存储特性，如：<br>typedef static int INT2; //不可行<br>编译将失败，会提示“指定了一个以上的存储类”。</p>
-<h5 id="枚举"><a href="#枚举：" class="headerlink" title="枚举："></a>枚举：</h5><p>​    自定义一组可选择的值,关键字enum；</p>
+<h6 id="两大陷阱">两大陷阱</h6>
+<p>​	陷阱一：</p>
+<p>​		记住，typedef是定义了一种类型的新别名，不同于宏，它不是简单的字符串替换。比如：<br>
+先定义：<br>
+typedef char* PSTR;<br>
+然后：<br>
+int mystrcmp(const PSTR, const PSTR);</p>
+<p>const PSTR实际上相当于const char<em>吗？不是的，它实际上相当于char</em> const。<br>
+原因在于const给予了整个指针本身以常量性，也就是形成了常量指针char* const。<br>
+简单来说，记住当const和typedef一起出现时，typedef不会是简单的字符串替换就行。</p>
+<p>​	陷阱二：</p>
+<p>​		typedef在语法上是一个存储类的关键字（如auto、extern、mutable、static、register等一样），虽然它并不真正影响对象的存储特性，如：<br>
+typedef static int INT2; //不可行<br>
+编译将失败，会提示“指定了一个以上的存储类”。</p>
+<h5 id="枚举">枚举：</h5>
+<p>​	自定义一组可选择的值,关键字enum；</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> open_modes</span><br><span class="line">&#123;</span><br><span class="line">    input,</span><br><span class="line">    output,</span><br><span class="line">    append</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>第一个默认赋值为0，下面的依次加1，若第二个赋值为20，则第三个自动赋值为21；</p>
-<h5 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h5><p>以上就是我对，变量，基本数据类型，类简介，和一些关键字的解释，以及枚举，下面将对标准库类型进行总结，我总结不对的地方希望可以批评指正，谢谢~</p>
+<h5 id="总结">总结:</h5>
+<p>以上就是我对，变量，基本数据类型，类简介，和一些关键字的解释，以及枚举，下面将对标准库类型进行总结，我总结不对的地方希望可以批评指正，谢谢~</p>
 <p>E-mail ： <a href="mailto:jsntWangchenchen@outlook.com" target="_blank" rel="noopener">jsntWangchenchen@outlook.com</a> 王晨晨</p>
 
                 
@@ -401,7 +425,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#变量"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><a href="#&#x53D8;&#x91CF;" class="headerlink" title="&#x53D8;&#x91CF;:"></a>&#x53D8;&#x91CF;:</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#变量名"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text"><a href="#&#x53D8;&#x91CF;&#x540D;&#xFF1A;" class="headerlink" title="&#x53D8;&#x91CF;&#x540D;&#xFF1A;"></a>&#x53D8;&#x91CF;&#x540D;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#申明-定义"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text"><a href="#&#x7533;&#x660E;-&#x5B9A;&#x4E49;&#xFF1A;" class="headerlink" title="&#x7533;&#x660E; &#x5B9A;&#x4E49;&#xFF1A;"></a>&#x7533;&#x660E; &#x5B9A;&#x4E49;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#变量的作用域"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text"><a href="#&#x53D8;&#x91CF;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#xFF1A;" class="headerlink" title="&#x53D8;&#x91CF;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#xFF1A;"></a>&#x53D8;&#x91CF;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#xFF1A;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#基本类型"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><a href="#&#x57FA;&#x672C;&#x7C7B;&#x578B;" class="headerlink" title="&#x57FA;&#x672C;&#x7C7B;&#x578B;:"></a>&#x57FA;&#x672C;&#x7C7B;&#x578B;:</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#整形"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text"><a href="#&#x6574;&#x5F62;&#xFF1A;" class="headerlink" title="&#x6574;&#x5F62;&#xFF1A;"></a>&#x6574;&#x5F62;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#浮点型"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text"><a href="#&#x6D6E;&#x70B9;&#x578B;&#xFF1A;" class="headerlink" title="&#x6D6E;&#x70B9;&#x578B;&#xFF1A;"></a>&#x6D6E;&#x70B9;&#x578B;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#布尔型"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text"><a href="#&#x5E03;&#x5C14;&#x578B;&#xFF1A;" class="headerlink" title="&#x5E03;&#x5C14;&#x578B;&#xFF1A;"></a>&#x5E03;&#x5C14;&#x578B;&#xFF1A;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#类简介"><span class="toc-nav-number">3.</span> <span class="toc-nav-text"><a href="#&#x7C7B;&#x7B80;&#x4ECB;" class="headerlink" title="&#x7C7B;&#x7B80;&#x4ECB;:"></a>&#x7C7B;&#x7B80;&#x4ECB;:</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#extern-关键字"><span class="toc-nav-number">4.</span> <span class="toc-nav-text"><a href="#extern-&#x5173;&#x952E;&#x5B57;&#xFF1A;" class="headerlink" title="extern &#x5173;&#x952E;&#x5B57;&#xFF1A;"></a>extern &#x5173;&#x952E;&#x5B57;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#const-关键字"><span class="toc-nav-number">5.</span> <span class="toc-nav-text"><a href="#const-&#x5173;&#x952E;&#x5B57;&#xFF1A;" class="headerlink" title="const &#x5173;&#x952E;&#x5B57;&#xFF1A;"></a>const &#x5173;&#x952E;&#x5B57;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#引用"><span class="toc-nav-number">6.</span> <span class="toc-nav-text"><a href="#&#x5F15;&#x7528;&#xFF1A;" class="headerlink" title="&#x5F15;&#x7528;&#xFF1A;"></a>&#x5F15;&#x7528;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#typedef-关键字"><span class="toc-nav-number">7.</span> <span class="toc-nav-text"><a href="#typedef-&#x5173;&#x952E;&#x5B57;&#xFF1A;" class="headerlink" title="typedef &#x5173;&#x952E;&#x5B57;&#xFF1A;"></a>typedef &#x5173;&#x952E;&#x5B57;&#xFF1A;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#两大陷阱"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text"><a href="#&#x4E24;&#x5927;&#x9677;&#x9631;" class="headerlink" title="&#x4E24;&#x5927;&#x9677;&#x9631;"></a>&#x4E24;&#x5927;&#x9677;&#x9631;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#枚举"><span class="toc-nav-number">8.</span> <span class="toc-nav-text"><a href="#&#x679A;&#x4E3E;&#xFF1A;" class="headerlink" title="&#x679A;&#x4E3E;&#xFF1A;"></a>&#x679A;&#x4E3E;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#总结"><span class="toc-nav-number">9.</span> <span class="toc-nav-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;:"></a>&#x603B;&#x7ED3;:</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#变量"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x53D8;&#x91CF;:</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#变量名"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">&#x53D8;&#x91CF;&#x540D;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#申明-定义"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">&#x7533;&#x660E; &#x5B9A;&#x4E49;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#变量的作用域"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">&#x53D8;&#x91CF;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#xFF1A;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#基本类型"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x57FA;&#x672C;&#x7C7B;&#x578B;:</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#整形"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">&#x6574;&#x5F62;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#浮点型"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">&#x6D6E;&#x70B9;&#x578B;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#布尔型"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">&#x5E03;&#x5C14;&#x578B;&#xFF1A;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#类简介"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">&#x7C7B;&#x7B80;&#x4ECB;:</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#extern-关键字"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">extern &#x5173;&#x952E;&#x5B57;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#const-关键字"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">const &#x5173;&#x952E;&#x5B57;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#引用"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">&#x5F15;&#x7528;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#typedef-关键字"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">typedef &#x5173;&#x952E;&#x5B57;&#xFF1A;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#两大陷阱"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">&#x4E24;&#x5927;&#x9677;&#x9631;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#枚举"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">&#x679A;&#x4E3E;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#总结"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">&#x603B;&#x7ED3;:</span></a></li></ol>
         
         </div>
       </aside>
