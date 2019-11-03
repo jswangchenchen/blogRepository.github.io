@@ -147,14 +147,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -211,27 +211,103 @@
                 post-container">
 
                 <p>在上一章，我介绍了密码学的来龙去脉，这一章将会围绕对称加密和非对称加密进行原理的分析，且，各举一个工作算法对它们的工作原理进行一些简单的解析；</p>
-<h4 id="1-对称加密"><a href="#1-对称加密：" class="headerlink" title="1. 对称加密："></a><strong>1. 对称加密：</strong></h4><p>​    对称加密主要有三种： AES  DES  IDEA ，今天就主要讲下AES  的工作原理和解密方式；</p>
-<h5 id="11-aes算法"><a href="#1-1-AES算法" class="headerlink" title="1.1 AES算法: "></a><strong>1.1 AES算法: </strong></h5><h5 id="111-aes-加密"><a href="#1-1-1-AES-加密：" class="headerlink" title="1.1.1 AES 加密："></a><strong>1.1.1 AES 加密：</strong></h5><p>​        DES算法的入口参数有三个：Key、Data、Mode。其中Key为8个字节共64位，是DES算法的工作密钥；Data也为8个字节64位，是要被加密或被解密的数据；Mode为DES的工作方式，有两种：加密或解密。</p>
-<p>​          DES算法把64位的明文输入块变为64位的密文输出块，它所使用的密钥也是64位，整个算法的主流程图如下：</p>
-<p>​        其功能是把输入的64位数据块按位重新组合，并把输出分为L0、R0两部分，每部分各长32位，其置换规则见下表：<br>58,50,12,34,26,18,10,2,60,52,44,36,28,20,12,4,<br>62,54,46,38,30,22,14,6,64,56,48,40,32,24,16,8,<br>57,49,41,33,25,17, 9,1,59,51,43,35,27,19,11,3,<br>61,53,45,37,29,21,13,5,63,55,47,39,31,23,15,7,<br>​        即将输入的第58位换到第一位，第50位换到第2位，…，依此类推，最后一位是原来的第7位。L0、R0则是换位输出后的两部分，L0是输出的左32位，R0 是右32位，例：设置换前的输入值为D1D2D3……D64，则经过初始置换后的结果为：L0=D58D50…D8；R0=D57D49…D7。<br>​        经过16次迭代运算后。得到L16、R16，将此作为输入，进行逆置换，即得到密文输出。逆置换正好是初始置的逆运算，例如，第1位经过初始置换后，处于第40位，而通过逆置换，又将第40位换回到第1位，其逆置换规则如下表所示：<br>40,8,48,16,56,24,64,32,39,7,47,15,55,23,63,31,<br>38,6,46,14,54,22,62,30,37,5,45,13,53,21,61,29,<br>36,4,44,12,52,20,60,28,35,3,43,11,51,19,59,27,<br>34,2,42,10,50,18,58 26,33,1,41, 9,49,17,57,25,<br>放大换位表<br>32, 1, 2, 3, 4, 5, 4, 5, 6, 7, 8, 9, 8, 9, 10,11,<br>12,13,12,13,14,15,16,17,16,17,18,19,20,21,20,21,<br>22,23,24,25,24,25,26,27,28,29,28,29,30,31,32, 1,<br>单纯换位表<br>16,7,20,21,29,12,28,17, 1,15,23,26, 5,18,31,10,<br>2,8,24,14,32,27, 3, 9,19,13,30, 6,22,11, 4,25,<br>​        在f(Ri,Ki)算法描述图中，S1,S2…S8为选择函数，其功能是把6bit数据变为4bit数据。下面给出选择函数Si(i=1,2……8)的功能表：<br>选择函数Si<br>S1:<br>14,4,13,1,2,15,11,8,3,10,6,12,5,9,0,7,<br>0,15,7,4,14,2,13,1,10,6,12,11,9,5,3,8,<br>4,1,14,8,13,6,2,11,15,12,9,7,3,10,5,0,<br>15,12,8,2,4,9,1,7,5,11,3,14,10,0,6,13,<br>S2:<br>15,1,8,14,6,11,3,4,9,7,2,13,12,0,5,10,<br>3,13,4,7,15,2,8,14,12,0,1,10,6,9,11,5,<br>0,14,7,11,10,4,13,1,5,8,12,6,9,3,2,15,<br>13,8,10,1,3,15,4,2,11,6,7,12,0,5,14,9,<br>S3:<br>10,0,9,14,6,3,15,5,1,13,12,7,11,4,2,8,<br>13,7,0,9,3,4,6,10,2,8,5,14,12,11,15,1,<br>13,6,4,9,8,15,3,0,11,1,2,12,5,10,14,7,<br>1,10,13,0,6,9,8,7,4,15,14,3,11,5,2,12,<br>S4:<br>7,13,14,3,0,6,9,10,1,2,8,5,11,12,4,15,<br>13,8,11,5,6,15,0,3,4,7,2,12,1,10,14,9,<br>10,6,9,0,12,11,7,13,15,1,3,14,5,2,8,4,<br>3,15,0,6,10,1,13,8,9,4,5,11,12,7,2,14,<br>S5:<br>2,12,4,1,7,10,11,6,8,5,3,15,13,0,14,9,<br>14,11,2,12,4,7,13,1,5,0,15,10,3,9,8,6,<br>4,2,1,11,10,13,7,8,15,9,12,5,6,3,0,14,<br>11,8,12,7,1,14,2,13,6,15,0,9,10,4,5,3,<br>S6:<br>12,1,10,15,9,2,6,8,0,13,3,4,14,7,5,11,<br>10,15,4,2,7,12,9,5,6,1,13,14,0,11,3,8,<br>9,14,15,5,2,8,12,3,7,0,4,10,1,13,11,6,<br>4,3,2,12,9,5,15,10,11,14,1,7,6,0,8,13,<br>S7:<br>4,11,2,14,15,0,8,13,3,12,9,7,5,10,6,1,<br>13,0,11,7,4,9,1,10,14,3,5,12,2,15,8,6,<br>1,4,11,13,12,3,7,14,10,15,6,8,0,5,9,2,<br>6,11,13,8,1,4,10,7,9,5,0,15,14,2,3,12,<br>S8:<br>13,2,8,4,6,15,11,1,10,9,3,14,5,0,12,7,<br>1,15,13,8,10,3,7,4,12,5,6,11,0,14,9,2,<br>7,11,4,1,9,12,14,2,0,6,10,13,15,3,5,8,<br>2,1,14,7,4,10,8,13,15,12,9,0,3,5,6,11,<br>​        在此以S1为例说明其功能，我们可以看到：在S1中，共有4行数据，命名为0，1、2、3行；每行有16列，命名为0、1、2、3，……，14、15列。<br>现设输入为： D＝D1D2D3D4D5D6<br>令：列＝D2D3D4D5<br>行＝D1D6<br>​        然后在S1表中查得对应的数，以4位二进制表示，此即为选择函数S1的输出。下面给出子密钥Ki(48bit)的生成算法<br>​        从子密钥Ki的生成算法描述图中我们可以看到：初始Key值为64位，但DES算法规定，其中第8、16、……64位是<a href="https://www.baidu.com/s?wd=%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E4%BD%8D&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">奇偶校验位</a>，不参与DES运算。故Key 实际可用位数便只有56位。即：经过缩小选择换位表1的变换后，Key 的位数由64 位变成了56位，此56位分为C0、D0两部分，各28位，然后分别进行第1次循环左移，得到C1、D1，将C1（28位）、D1（28位）合并得到56位，再经过缩小选择换位2，从而便得到了密钥K0（48位）。依此类推，便可得到<a href="https://www.baidu.com/s?wd=K1&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">K1</a>、K2、……、<a href="https://www.baidu.com/s?wd=K1&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">K1</a>5，不过需要注意的是，16次循环左移对应的左移位数要依据下述规则进行：<br>循环左移位数<br>1,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1  </p>
+<h4 id="1-对称加密"><strong>1. 对称加密：</strong></h4>
+<p>​	对称加密主要有三种： AES  DES  IDEA ，今天就主要讲下AES  的工作原理和解密方式；</p>
+<h5 id="11-aes算法">**1.1 AES算法: **</h5>
+<h5 id="111-aes-加密"><strong>1.1.1 AES 加密：</strong></h5>
+<p>​		DES算法的入口参数有三个：Key、Data、Mode。其中Key为8个字节共64位，是DES算法的工作密钥；Data也为8个字节64位，是要被加密或被解密的数据；Mode为DES的工作方式，有两种：加密或解密。</p>
+<p>​	 	 DES算法把64位的明文输入块变为64位的密文输出块，它所使用的密钥也是64位，整个算法的主流程图如下：</p>
+<p>​		其功能是把输入的64位数据块按位重新组合，并把输出分为L0、R0两部分，每部分各长32位，其置换规则见下表：<br>
+58,50,12,34,26,18,10,2,60,52,44,36,28,20,12,4,<br>
+62,54,46,38,30,22,14,6,64,56,48,40,32,24,16,8,<br>
+57,49,41,33,25,17, 9,1,59,51,43,35,27,19,11,3,<br>
+61,53,45,37,29,21,13,5,63,55,47,39,31,23,15,7,<br>
+​		即将输入的第58位换到第一位，第50位换到第2位，…，依此类推，最后一位是原来的第7位。L0、R0则是换位输出后的两部分，L0是输出的左32位，R0 是右32位，例：设置换前的输入值为D1D2D3…D64，则经过初始置换后的结果为：L0=D58D50…D8；R0=D57D49…D7。<br>
+​		经过16次迭代运算后。得到L16、R16，将此作为输入，进行逆置换，即得到密文输出。逆置换正好是初始置的逆运算，例如，第1位经过初始置换后，处于第40位，而通过逆置换，又将第40位换回到第1位，其逆置换规则如下表所示：<br>
+40,8,48,16,56,24,64,32,39,7,47,15,55,23,63,31,<br>
+38,6,46,14,54,22,62,30,37,5,45,13,53,21,61,29,<br>
+36,4,44,12,52,20,60,28,35,3,43,11,51,19,59,27,<br>
+34,2,42,10,50,18,58 26,33,1,41, 9,49,17,57,25,<br>
+放大换位表<br>
+32, 1, 2, 3, 4, 5, 4, 5, 6, 7, 8, 9, 8, 9, 10,11,<br>
+12,13,12,13,14,15,16,17,16,17,18,19,20,21,20,21,<br>
+22,23,24,25,24,25,26,27,28,29,28,29,30,31,32, 1,<br>
+单纯换位表<br>
+16,7,20,21,29,12,28,17, 1,15,23,26, 5,18,31,10,<br>
+2,8,24,14,32,27, 3, 9,19,13,30, 6,22,11, 4,25,<br>
+​		在f(Ri,Ki)算法描述图中，S1,S2…S8为选择函数，其功能是把6bit数据变为4bit数据。下面给出选择函数Si(i=1,2…8)的功能表：<br>
+选择函数Si<br>
+S1:<br>
+14,4,13,1,2,15,11,8,3,10,6,12,5,9,0,7,<br>
+0,15,7,4,14,2,13,1,10,6,12,11,9,5,3,8,<br>
+4,1,14,8,13,6,2,11,15,12,9,7,3,10,5,0,<br>
+15,12,8,2,4,9,1,7,5,11,3,14,10,0,6,13,<br>
+S2:<br>
+15,1,8,14,6,11,3,4,9,7,2,13,12,0,5,10,<br>
+3,13,4,7,15,2,8,14,12,0,1,10,6,9,11,5,<br>
+0,14,7,11,10,4,13,1,5,8,12,6,9,3,2,15,<br>
+13,8,10,1,3,15,4,2,11,6,7,12,0,5,14,9,<br>
+S3:<br>
+10,0,9,14,6,3,15,5,1,13,12,7,11,4,2,8,<br>
+13,7,0,9,3,4,6,10,2,8,5,14,12,11,15,1,<br>
+13,6,4,9,8,15,3,0,11,1,2,12,5,10,14,7,<br>
+1,10,13,0,6,9,8,7,4,15,14,3,11,5,2,12,<br>
+S4:<br>
+7,13,14,3,0,6,9,10,1,2,8,5,11,12,4,15,<br>
+13,8,11,5,6,15,0,3,4,7,2,12,1,10,14,9,<br>
+10,6,9,0,12,11,7,13,15,1,3,14,5,2,8,4,<br>
+3,15,0,6,10,1,13,8,9,4,5,11,12,7,2,14,<br>
+S5:<br>
+2,12,4,1,7,10,11,6,8,5,3,15,13,0,14,9,<br>
+14,11,2,12,4,7,13,1,5,0,15,10,3,9,8,6,<br>
+4,2,1,11,10,13,7,8,15,9,12,5,6,3,0,14,<br>
+11,8,12,7,1,14,2,13,6,15,0,9,10,4,5,3,<br>
+S6:<br>
+12,1,10,15,9,2,6,8,0,13,3,4,14,7,5,11,<br>
+10,15,4,2,7,12,9,5,6,1,13,14,0,11,3,8,<br>
+9,14,15,5,2,8,12,3,7,0,4,10,1,13,11,6,<br>
+4,3,2,12,9,5,15,10,11,14,1,7,6,0,8,13,<br>
+S7:<br>
+4,11,2,14,15,0,8,13,3,12,9,7,5,10,6,1,<br>
+13,0,11,7,4,9,1,10,14,3,5,12,2,15,8,6,<br>
+1,4,11,13,12,3,7,14,10,15,6,8,0,5,9,2,<br>
+6,11,13,8,1,4,10,7,9,5,0,15,14,2,3,12,<br>
+S8:<br>
+13,2,8,4,6,15,11,1,10,9,3,14,5,0,12,7,<br>
+1,15,13,8,10,3,7,4,12,5,6,11,0,14,9,2,<br>
+7,11,4,1,9,12,14,2,0,6,10,13,15,3,5,8,<br>
+2,1,14,7,4,10,8,13,15,12,9,0,3,5,6,11,<br>
+​		在此以S1为例说明其功能，我们可以看到：在S1中，共有4行数据，命名为0，1、2、3行；每行有16列，命名为0、1、2、3，…，14、15列。<br>
+现设输入为： D＝D1D2D3D4D5D6<br>
+令：列＝D2D3D4D5<br>
+行＝D1D6<br>
+​		然后在S1表中查得对应的数，以4位二进制表示，此即为选择函数S1的输出。下面给出子密钥Ki(48bit)的生成算法<br>
+​		从子密钥Ki的生成算法描述图中我们可以看到：初始Key值为64位，但DES算法规定，其中第8、16、…64位是<a href="https://www.baidu.com/s?wd=%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E4%BD%8D&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">奇偶校验位</a>，不参与DES运算。故Key 实际可用位数便只有56位。即：经过缩小选择换位表1的变换后，Key 的位数由64 位变成了56位，此56位分为C0、D0两部分，各28位，然后分别进行第1次循环左移，得到C1、D1，将C1（28位）、D1（28位）合并得到56位，再经过缩小选择换位2，从而便得到了密钥K0（48位）。依此类推，便可得到<a href="https://www.baidu.com/s?wd=K1&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">K1</a>、K2、…、<a href="https://www.baidu.com/s?wd=K1&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">K1</a>5，不过需要注意的是，16次循环左移对应的左移位数要依据下述规则进行：<br>
+循环左移位数<br>
+1,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1</p>
 <p><strong>AES加密流程图：</strong></p>
-<p>​            <img src="/article/密码学关键总结/DES加密流程图.png" alt="DES加密流程图"></p>
-<p>​        <strong>1.1.2 AES 解密：</strong></p>
-<p>​        DES解密用的函数和加密使用的是同一个函数所以就直接将k依次代入进去（反序）就好，比如之前是 k1，k2，k3，…….k16, 那解密就是 k16, k15, k14……k1;</p>
-<h4 id="2-非对称加密"><a href="#2-非对称加密：" class="headerlink" title="2. 非对称加密："></a><strong>2. 非对称加密：</strong></h4><p>非对称加密，主要有三个 RSA Elgamal 及椭圆曲线密码体制； 并将对RSA的工作原理进行简单的说明；</p>
-<h5 id="21-rsa-密钥对的产生"><a href="#2-1-RSA-密钥对的产生：" class="headerlink" title="2.1 RSA 密钥对的产生："></a><strong>2.1 RSA 密钥对的产生：</strong></h5><p>​    选择两个大素数，p和q 计算： </p>
-<p>​            n = pq</p>
-<p>​    然后随机选择加密密钥e，要求e 和(p-1)(q-1)互素，最后，利用欧几里得算法计算解密密钥d，使其满足：</p>
-<p>​            ed = 1mod[(p-1)(q-1)]</p>
-<p>​    最后数 e和n是公钥，d是私钥，两个素数p和q不在需要，应该丢弃不让任何人知道；</p>
-<h5 id="22-rsa加密"><a href="#2-2-RSA加密：" class="headerlink" title="2.2 RSA加密："></a><strong>2.2 RSA加密：</strong></h5><p>​    对消息m(长度小于或等于n，否则，首先把m分成若干个数据块)    加密时，对应的密文是：</p>
-<p>​            C = m e(mod n);</p>
-<h5 id="23-rsa-解密"><a href="#2-3-RSA-解密：" class="headerlink" title="2.3 RSA 解密："></a><strong>2.3 RSA 解密：</strong></h5><p>​    为解密密文c做如下计算：</p>
-<p>​            m = c d（mod n）；</p>
-<p>​    如果第三者进行窃听就，他必须要想办法得到几个数：m n(=pq),e,如果要解密就要先得到d，所以先对n，做质因数分解，要防止他分解成功，最有效的方法是找两个非常大的质数，是第三者做因素分解是发生可困难；</p>
-<h4 id="3-pki技术"><a href="#3-PKI技术" class="headerlink" title="3. PKI技术"></a><strong>3. PKI技术</strong></h4><p>PKI是Public Key Infrastructure的首字母缩写，翻译过来就是公钥基础设施；PKI是一种遵循标准的利用公钥加密技术为电子商务的开展提供一套安全基础平台的技术和规范。</p>
-<h5 id="31-pki组成部分"><a href="#3-1-PKI组成部分" class="headerlink" title="3.1 PKI组成部分"></a><strong>3.1 PKI组成部分</strong></h5><p>​    PKI的基础技术包括加密、数字签名、数据完整性机制、数字信封、双重数字签名等。一个典型、完整、有效的PKI应用系统至少应具有以下部分：</p>
+<p>​			<img src="/article/密码学关键总结/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%B3%E9%94%AE%E6%80%BB%E7%BB%93%5CDES%E5%8A%A0%E5%AF%86%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="DES加密流程图"></p>
+<p>​		<strong>1.1.2 AES 解密：</strong></p>
+<p>​		DES解密用的函数和加密使用的是同一个函数所以就直接将k依次代入进去（反序）就好，比如之前是 k1，k2，k3，…k16, 那解密就是 k16, k15, k14…k1;</p>
+<h4 id="2-非对称加密"><strong>2. 非对称加密：</strong></h4>
+<p>非对称加密，主要有三个 RSA Elgamal 及椭圆曲线密码体制； 并将对RSA的工作原理进行简单的说明；</p>
+<h5 id="21-rsa-密钥对的产生"><strong>2.1 RSA 密钥对的产生：</strong></h5>
+<p>​	选择两个大素数，p和q 计算：</p>
+<p>​			n = pq</p>
+<p>​	然后随机选择加密密钥e，要求e 和(p-1)(q-1)互素，最后，利用欧几里得算法计算解密密钥d，使其满足：</p>
+<p>​			ed = 1mod[(p-1)(q-1)]</p>
+<p>​	最后数 e和n是公钥，d是私钥，两个素数p和q不在需要，应该丢弃不让任何人知道；</p>
+<h5 id="22-rsa加密"><strong>2.2 RSA加密：</strong></h5>
+<p>​	对消息m(长度小于或等于n，否则，首先把m分成若干个数据块)	加密时，对应的密文是：</p>
+<p>​			C = m e(mod n);</p>
+<h5 id="23-rsa-解密"><strong>2.3 RSA 解密：</strong></h5>
+<p>​	为解密密文c做如下计算：</p>
+<p>​			m = c d（mod n）；</p>
+<p>​	如果第三者进行窃听就，他必须要想办法得到几个数：m n(=pq),e,如果要解密就要先得到d，所以先对n，做质因数分解，要防止他分解成功，最有效的方法是找两个非常大的质数，是第三者做因素分解是发生可困难；</p>
+<h4 id="3-pki技术"><strong>3. PKI技术</strong></h4>
+<p>PKI是Public Key Infrastructure的首字母缩写，翻译过来就是公钥基础设施；PKI是一种遵循标准的利用公钥加密技术为电子商务的开展提供一套安全基础平台的技术和规范。</p>
+<h5 id="31-pki组成部分"><strong>3.1 PKI组成部分</strong></h5>
+<p>​	PKI的基础技术包括加密、数字签名、数据完整性机制、数字信封、双重数字签名等。一个典型、完整、有效的PKI应用系统至少应具有以下部分：</p>
 <p>· 公钥密码证书管理。</p>
 <p>· 黑名单的发布和管理。</p>
 <p>· 密钥的备份和恢复。</p>
@@ -244,18 +320,22 @@
 <p>证书作废系统：证书作废处理系统是PKI的一个必备的组件。与日常生活中的各种身份证件一样,证书有效期以内也可能需要作废，原因可能是密钥介质丢失或用户身份变更等。为实现这一点,PKI必须提供作废证书的一系列机制。</p>
 <p>应用接口（<a href="https://baike.baidu.com/item/API" target="_blank" rel="noopener">API</a>）：PKI的价值在于使用户能够方便地使用加密、数字签名等安全服务，因此一个完整的PKI必须提供良好的应用接口系统，使得各种各样的应用能够以安全、一致、可信的方式与PKI交互，确保安全网络环境的完整性和易用性。</p>
 <p>通常来说，CA是证书的签发机构,它是PKI的核心。众所周知，构建密码服务系统的核心内容是如何实现密钥管理。公钥体制涉及到一对密钥（即私钥和公钥），私钥只由用户独立掌握，无须在网上传输，而公钥则是公开的，需要在网上传送，故公钥体制的密钥管理主要是针对公钥的管理问题，时下较好的解决方案是数字证书机制。</p>
-<h5 id="32-pki应用场景"><a href="#3-2-PKI应用场景：" class="headerlink" title="3.2 PKI应用场景："></a><strong>3.2 PKI应用场景：</strong></h5><p>​    Bob和Alice需要通信前面有提过，由Alice将自己的公钥发给Bob,然后Bob利用Alice的公钥加密明文，在将内容传回给Alice，这样看起来很完美，Evn即使拿到内容在没有Alice的私钥的情况下也不可能解密，但是，Evn比较狡猾，她将Alice发个Bob的公钥截获了，并换上自己的公钥，可是Bob并不知情，Alice也不知情，那它们之间的通信也就不在安全了，那怎样确定Bob拿到的公钥是Alice的公钥呢，这时候就需要一个专业的公正的机构站出来，那所有人的公钥都交由这个机构管理，我们叫它CA，如果Bob需要Alice的公钥时直接去向CA请求，CA收到请求后会会将，Alice的公钥用自己的私钥加密在发给Bob，这样Bob利用CA公开在自己网站上自己的公钥就能够得到Alice的正确公钥；这个利用CA的技术就是PKI技术；</p>
-<h4 id="4-签名和散列"><a href="#4-签名和散列" class="headerlink" title="4. 签名和散列"></a><strong>4. 签名和散列</strong></h4><h5 id="41-签名使用场景"><a href="#4-1-签名使用场景：" class="headerlink" title="4.1 签名使用场景："></a><strong>4.1 签名使用场景：</strong></h5><p>​    •签名是非对称加密的一种应用。使用私钥加密数据，就是对数据的签名</p>
-<p>​    •签名是将数据通过运算后得到签名信息，被签名的数据发生不论什么改变哪怕这样的改变很细微，也无法获得相同的签名信息。</p>
-<p>​    同样是上面的Bob和Evn通信，防止Evn窃听，这时Bob已经拿到了Alice的公钥对自己的内容进行加密，但是他还是担心Evn会自己有Alice的公钥替换掉他的信，于是他就在写完信后，将整个信利用HASH算法进行了编译(HASH算法编译出来的内容不能在反编回去，而且一但原文有任何细小的变化那再生成的HASH和之前的比都天差地别)；在将这个算出来的Hash用自己的私钥进行加密，这个就是签名；最后交给了Alice，Alice拿到信后去CA取到了Bob的公钥，先将签名解密得到Hash，得到后将Bob的信进行Hash运算，然后将两个Hash进行比较，如果一样就说明Bob的信是没有人改变过，而且也能确定是Bob本人发的；</p>
-<h5 id="42-什么是散列常用的是什么"><a href="#4-2-什么是散列常用的是什么：" class="headerlink" title="4.2 什么是散列常用的是什么："></a><strong>4.2 什么是散列常用的是什么：</strong></h5><p>​    •就是把随意长度的输入（又叫做预映射），通过散列算法，变换成固定长度的输出。该输出就是散列值。这样的转换是一种压缩映射。也就是。散列值的空间通常远小于输入的空间，不同的输入可能会散列成同样的输出，而不可能从散列值来唯一的确定输入值。简单的说就是一种将随意长度的消息压缩到某一固定长度的消息摘要的函数。</p>
-<p>​    •常用的散列算法：SHA-1 , SHA-256、MD5 , MD2     </p>
-<p>​    特点：</p>
-<p>​    •无法反向运行散列算法恢复最初的明文</p>
-<p>​    •得到的摘要不会告诉不论什么关于最初明文的信息</p>
-<p>​    •同一明文用同一散列算法，生成后的值唯一</p>
+<h5 id="32-pki应用场景"><strong>3.2 PKI应用场景：</strong></h5>
+<p>​	Bob和Alice需要通信前面有提过，由Alice将自己的公钥发给Bob,然后Bob利用Alice的公钥加密明文，在将内容传回给Alice，这样看起来很完美，Evn即使拿到内容在没有Alice的私钥的情况下也不可能解密，但是，Evn比较狡猾，她将Alice发个Bob的公钥截获了，并换上自己的公钥，可是Bob并不知情，Alice也不知情，那它们之间的通信也就不在安全了，那怎样确定Bob拿到的公钥是Alice的公钥呢，这时候就需要一个专业的公正的机构站出来，那所有人的公钥都交由这个机构管理，我们叫它CA，如果Bob需要Alice的公钥时直接去向CA请求，CA收到请求后会会将，Alice的公钥用自己的私钥加密在发给Bob，这样Bob利用CA公开在自己网站上自己的公钥就能够得到Alice的正确公钥；这个利用CA的技术就是PKI技术；</p>
+<h4 id="4-签名和散列"><strong>4. 签名和散列</strong></h4>
+<h5 id="41-签名使用场景"><strong>4.1 签名使用场景：</strong></h5>
+<p>​	•签名是非对称加密的一种应用。使用私钥加密数据，就是对数据的签名</p>
+<p>​	•签名是将数据通过运算后得到签名信息，被签名的数据发生不论什么改变哪怕这样的改变很细微，也无法获得相同的签名信息。</p>
+<p>​	同样是上面的Bob和Evn通信，防止Evn窃听，这时Bob已经拿到了Alice的公钥对自己的内容进行加密，但是他还是担心Evn会自己有Alice的公钥替换掉他的信，于是他就在写完信后，将整个信利用HASH算法进行了编译(HASH算法编译出来的内容不能在反编回去，而且一但原文有任何细小的变化那再生成的HASH和之前的比都天差地别)；在将这个算出来的Hash用自己的私钥进行加密，这个就是签名；最后交给了Alice，Alice拿到信后去CA取到了Bob的公钥，先将签名解密得到Hash，得到后将Bob的信进行Hash运算，然后将两个Hash进行比较，如果一样就说明Bob的信是没有人改变过，而且也能确定是Bob本人发的；</p>
+<h5 id="42-什么是散列常用的是什么"><strong>4.2 什么是散列常用的是什么：</strong></h5>
+<p>​	•就是把随意长度的输入（又叫做预映射），通过散列算法，变换成固定长度的输出。该输出就是散列值。这样的转换是一种压缩映射。也就是。散列值的空间通常远小于输入的空间，不同的输入可能会散列成同样的输出，而不可能从散列值来唯一的确定输入值。简单的说就是一种将随意长度的消息压缩到某一固定长度的消息摘要的函数。</p>
+<p>​	•常用的散列算法：SHA-1 , SHA-256、MD5 , MD2</p>
+<p>​	特点：</p>
+<p>​	•无法反向运行散列算法恢复最初的明文</p>
+<p>​	•得到的摘要不会告诉不论什么关于最初明文的信息</p>
+<p>​	•同一明文用同一散列算法，生成后的值唯一</p>
 <p>以上就是我整理的关于密码学的所有知识，如果有理解不对的地方希望大家能够提出来，我也会切实的去修改；</p>
-<p>邮箱：<a href="mailto:jsntwangchenchen@outlook.com" target="_blank" rel="noopener">jsntwangchenchen@outlook.com</a></p>
+<p>邮箱：jsntwangchenchen@outlook.com</p>
 
                 
 
@@ -310,7 +390,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-对称加密"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><a href="#1-&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#xFF1A;" class="headerlink" title="1. &#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#xFF1A;"></a><strong>1. &#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#xFF1A;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#11-aes算法"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text"><a href="#1-1-AES&#x7B97;&#x6CD5;" class="headerlink" title="1.1 AES&#x7B97;&#x6CD5;: "></a><strong>1.1 AES&#x7B97;&#x6CD5;: </strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#111-aes-加密"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text"><a href="#1-1-1-AES-&#x52A0;&#x5BC6;&#xFF1A;" class="headerlink" title="1.1.1 AES &#x52A0;&#x5BC6;&#xFF1A;"></a><strong>1.1.1 AES &#x52A0;&#x5BC6;&#xFF1A;</strong></span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-非对称加密"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><a href="#2-&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#xFF1A;" class="headerlink" title="2. &#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#xFF1A;"></a><strong>2. &#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#xFF1A;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#21-rsa-密钥对的产生"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text"><a href="#2-1-RSA-&#x5BC6;&#x94A5;&#x5BF9;&#x7684;&#x4EA7;&#x751F;&#xFF1A;" class="headerlink" title="2.1 RSA &#x5BC6;&#x94A5;&#x5BF9;&#x7684;&#x4EA7;&#x751F;&#xFF1A;"></a><strong>2.1 RSA &#x5BC6;&#x94A5;&#x5BF9;&#x7684;&#x4EA7;&#x751F;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#22-rsa加密"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text"><a href="#2-2-RSA&#x52A0;&#x5BC6;&#xFF1A;" class="headerlink" title="2.2 RSA&#x52A0;&#x5BC6;&#xFF1A;"></a><strong>2.2 RSA&#x52A0;&#x5BC6;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#23-rsa-解密"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text"><a href="#2-3-RSA-&#x89E3;&#x5BC6;&#xFF1A;" class="headerlink" title="2.3 RSA &#x89E3;&#x5BC6;&#xFF1A;"></a><strong>2.3 RSA &#x89E3;&#x5BC6;&#xFF1A;</strong></span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-pki技术"><span class="toc-nav-number">3.</span> <span class="toc-nav-text"><a href="#3-PKI&#x6280;&#x672F;" class="headerlink" title="3. PKI&#x6280;&#x672F;"></a><strong>3. PKI&#x6280;&#x672F;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#31-pki组成部分"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text"><a href="#3-1-PKI&#x7EC4;&#x6210;&#x90E8;&#x5206;" class="headerlink" title="3.1 PKI&#x7EC4;&#x6210;&#x90E8;&#x5206;"></a><strong>3.1 PKI&#x7EC4;&#x6210;&#x90E8;&#x5206;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#32-pki应用场景"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text"><a href="#3-2-PKI&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;" class="headerlink" title="3.2 PKI&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;"></a><strong>3.2 PKI&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;</strong></span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-签名和散列"><span class="toc-nav-number">4.</span> <span class="toc-nav-text"><a href="#4-&#x7B7E;&#x540D;&#x548C;&#x6563;&#x5217;" class="headerlink" title="4. &#x7B7E;&#x540D;&#x548C;&#x6563;&#x5217;"></a><strong>4. &#x7B7E;&#x540D;&#x548C;&#x6563;&#x5217;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#41-签名使用场景"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text"><a href="#4-1-&#x7B7E;&#x540D;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;" class="headerlink" title="4.1 &#x7B7E;&#x540D;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;"></a><strong>4.1 &#x7B7E;&#x540D;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#42-什么是散列常用的是什么"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text"><a href="#4-2-&#x4EC0;&#x4E48;&#x662F;&#x6563;&#x5217;&#x5E38;&#x7528;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#xFF1A;" class="headerlink" title="4.2 &#x4EC0;&#x4E48;&#x662F;&#x6563;&#x5217;&#x5E38;&#x7528;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#xFF1A;"></a><strong>4.2 &#x4EC0;&#x4E48;&#x662F;&#x6563;&#x5217;&#x5E38;&#x7528;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#xFF1A;</strong></span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-对称加密"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><strong>1. &#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#xFF1A;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#11-aes算法"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">**1.1 AES&#x7B97;&#x6CD5;: **</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#111-aes-加密"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text"><strong>1.1.1 AES &#x52A0;&#x5BC6;&#xFF1A;</strong></span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-非对称加密"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><strong>2. &#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#xFF1A;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#21-rsa-密钥对的产生"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text"><strong>2.1 RSA &#x5BC6;&#x94A5;&#x5BF9;&#x7684;&#x4EA7;&#x751F;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#22-rsa加密"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text"><strong>2.2 RSA&#x52A0;&#x5BC6;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#23-rsa-解密"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text"><strong>2.3 RSA &#x89E3;&#x5BC6;&#xFF1A;</strong></span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-pki技术"><span class="toc-nav-number">3.</span> <span class="toc-nav-text"><strong>3. PKI&#x6280;&#x672F;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#31-pki组成部分"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text"><strong>3.1 PKI&#x7EC4;&#x6210;&#x90E8;&#x5206;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#32-pki应用场景"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text"><strong>3.2 PKI&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;</strong></span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-签名和散列"><span class="toc-nav-number">4.</span> <span class="toc-nav-text"><strong>4. &#x7B7E;&#x540D;&#x548C;&#x6563;&#x5217;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#41-签名使用场景"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text"><strong>4.1 &#x7B7E;&#x540D;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#42-什么是散列常用的是什么"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text"><strong>4.2 &#x4EC0;&#x4E48;&#x662F;&#x6563;&#x5217;&#x5E38;&#x7528;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#xFF1A;</strong></span></a></li></ol></li></ol>
         
         </div>
       </aside>

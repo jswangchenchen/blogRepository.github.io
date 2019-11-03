@@ -147,14 +147,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -210,47 +210,52 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h6 id="版本"><a href="#版本" class="headerlink" title="版本:"></a>版本:</h6><p>​    unity 2018.2.14f1   Vuforia 7.2.20</p>
-<h6 id="关键"><a href="#关键" class="headerlink" title="关键:"></a>关键:</h6><p>​    添加cardboard</p>
-<p>​    将视觉改变为“video see Through”（windows-&gt; Vuforia Configuration-&gt;Digtal Eyewear），</p>
-<h6 id="简介"><a href="#简介：" class="headerlink" title="简介："></a>简介：</h6><p>​    准备工作：</p>
-<p>​        本地正确安装，并且成功配置Android SDK，NDK ，java JDK 的unity3D（注意版本，可参考我的版本）</p>
-<p>​        Vurforia官网利用待测物体分析模型成功得到.unitypage的数据集 并成功生成 public key。</p>
-<p>​        附：版本很重要，Vuforia 6.5之前的版本并没有自带VR眼镜的的功能，建议在安装U3D（unity3D以下用U3D代替）的时候确保在Vuforia一栏点选了默认安装系统会自动下载最新的Vuforia。</p>
-<h6 id="步骤"><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h6><p>​        下面开始干活。进入U3D， 首先导入上面提到的待检测的.unitypage数据集:下面工具栏中project界面中的Assects，右击-&gt;import Package -&gt;Custom Package-&gt;进入自己存放数据集的地方直接点击import</p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/导入待测数据集.png" alt="导入待测数据集"></p>
-<p>​        下一步添加ARCamera（正常的MainCamera在AR的时候是不够的）：\<sample sence\="">空白处右击-&gt;vuforia-&gt;ARCamera（记得删除原有的MainCamera哦，右击delete）；</sample></p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\导入ARCamera.png" alt="导入ARCamera"></p>
-<p>​        设置Camera的数据，在主屏右侧Inspector中选择（贴图参考）；</p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\ARCamera参数参考.png" alt="ARCamera参数参考"></p>
-<p>​        添加AR参照物(image Target)到Scence中：\<sample sence\="">空白处右击-&gt;Vuforia-&gt;Image</sample></p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\添加Image Traget.png" alt="添加Image Traget"></p>
-<p>​        添加你想显示的虚拟对象，这里就直接从Asset Store中找一个免费的红武士进入搜索栏搜索“red Samurai”直接回车第二个标注Free的就是。没错点它-&gt;import</p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\添加 红武士.png" alt="添加 红武士"></p>
-<p>​        将添加到本地项目的红武士添加到界面中：Assets-&gt;prefab-&gt;红武士文件直接拖到image Target子目录下。</p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\导入红武士.png" alt="导入红武士"></p>
-<p>​        导入Vuforia配置：File-Bulid Setting 进入Build Setting界面点击android，右侧bulid system 选择Internal，-&gt;点击Player Settings进入inspector做以下几件事：</p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\play Settings 改system.png" alt="play Settings 改system"></p>
-<p>​            1.填写Company Name （随便填）；</p>
-<p>​            2.点击Other Setting-&gt;identification 填写Package Name 注意格式com.Company Name.Product Name，需要注意的是，Company Name必须和上面填写的一样，Product Name可以不填。我的是com.chenchen.ProductName(参考)；</p>
-<p>​            3.更改Minimum ARI Level等级，默认是16但是里面并不能支持此次开发，需要改成19，</p>
-<p>​            4.在上面的基础上下拉，到Configurition栏，找到Android TV Compatbility系统默认是将这个选项是选上的你需要的是将它取消选择。</p>
-<p>​            5.点开XR Settings三个选择点击第三个（Virtual augmented Reality）和第一个（Virtual Reality supported ），第三个如果不点在手机端生成的就是支持VR的不是不是AR的（看不到画面），第一个选择-&gt;为Virtual Reality SDKs添加-&gt;右下角“+”号-&gt;点击最下面的Vuforia</p>
-<p>​        前四步：</p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\play settings 前期多步.png" alt="play settings 前期多步"></p>
-<p>​        第五步：<img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\添加vuforia.png" alt="添加vuforia"></p>
-<p>​        下面一步比较重要，将Vuforia官网生成的PublicKey，配置进系统中激活U3D中的Vuforia：上面工具栏Window-&gt;Vuforia configuration,进入inspect，APP License Key 中将相关key 复制进去（这部是激活Vuforia）；</p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\导入publicKey.png" alt="导入publicKey"></p>
-<p>​        安装Cardboard：File-Bulid Setting 进入Build Setting界面点击android-&gt;点击Player Settings进入inspector-&gt;XR Settings 点击刚刚的第一个-&gt;“+”号-&gt;选择第一cardboard；</p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\填加cardboard.png" alt="填加cardboard"></p>
+                <h6 id="版本">版本:</h6>
+<p>​	unity 2018.2.14f1   Vuforia 7.2.20</p>
+<h6 id="关键">关键:</h6>
+<p>​	添加cardboard</p>
+<p>​	将视觉改变为“video see Through”（windows-&gt; Vuforia Configuration-&gt;Digtal Eyewear），</p>
+<h6 id="简介">简介：</h6>
+<p>​	准备工作：</p>
+<p>​		本地正确安装，并且成功配置Android SDK，NDK ，java JDK 的unity3D（注意版本，可参考我的版本）</p>
+<p>​		Vurforia官网利用待测物体分析模型成功得到.unitypage的数据集 并成功生成 public key。</p>
+<p>​		附：版本很重要，Vuforia 6.5之前的版本并没有自带VR眼镜的的功能，建议在安装U3D（unity3D以下用U3D代替）的时候确保在Vuforia一栏点选了默认安装系统会自动下载最新的Vuforia。</p>
+<h6 id="步骤">步骤：</h6>
+<p>​		下面开始干活。进入U3D， 首先导入上面提到的待检测的.unitypage数据集:下面工具栏中project界面中的Assects，右击-&gt;import Package -&gt;Custom Package-&gt;进入自己存放数据集的地方直接点击import</p>
+<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img%5C%E5%AF%BC%E5%85%A5%E5%BE%85%E6%B5%8B%E6%95%B0%E6%8D%AE%E9%9B%86.png" alt="导入待测数据集"></p>
+<p>​		下一步添加ARCamera（正常的MainCamera在AR的时候是不够的）：&lt;Sample Sence&gt;空白处右击-&gt;vuforia-&gt;ARCamera（记得删除原有的MainCamera哦，右击delete）；</p>
+<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97%5Ccontent_img%5C%E5%AF%BC%E5%85%A5ARCamera.png" alt="导入ARCamera"></p>
+<p>​		设置Camera的数据，在主屏右侧Inspector中选择（贴图参考）；</p>
+<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97%5Ccontent_img%5CARCamera%E5%8F%82%E6%95%B0%E5%8F%82%E8%80%83.png" alt="ARCamera参数参考"></p>
+<p>​		添加AR参照物(image Target)到Scence中：&lt;Sample Sence&gt;空白处右击-&gt;Vuforia-&gt;Image</p>
+<p>![添加Image Traget]([U3D+Vuforia+VR眼镜]分屏设置指南\content_img\添加Image Traget.png)</p>
+<p>​		添加你想显示的虚拟对象，这里就直接从Asset Store中找一个免费的红武士进入搜索栏搜索“red Samurai”直接回车第二个标注Free的就是。没错点它-&gt;import</p>
+<p>![添加 红武士]([U3D+Vuforia+VR眼镜]分屏设置指南\content_img\添加 红武士.png)</p>
+<p>​		将添加到本地项目的红武士添加到界面中：Assets-&gt;prefab-&gt;红武士文件直接拖到image Target子目录下。</p>
+<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97%5Ccontent_img%5C%E5%AF%BC%E5%85%A5%E7%BA%A2%E6%AD%A6%E5%A3%AB.png" alt="导入红武士"></p>
+<p>​		导入Vuforia配置：File-Bulid Setting 进入Build Setting界面点击android，右侧bulid system 选择Internal，-&gt;点击Player Settings进入inspector做以下几件事：</p>
+<p>![play Settings 改system]([U3D+Vuforia+VR眼镜]分屏设置指南\content_img\play Settings 改system.png)</p>
+<p>​			1.填写Company Name （随便填）；</p>
+<p>​			2.点击Other Setting-&gt;identification 填写Package Name 注意格式com.Company Name.Product Name，需要注意的是，Company Name必须和上面填写的一样，Product Name可以不填。我的是com.chenchen.ProductName(参考)；</p>
+<p>​			3.更改Minimum ARI Level等级，默认是16但是里面并不能支持此次开发，需要改成19，</p>
+<p>​			4.在上面的基础上下拉，到Configurition栏，找到Android TV Compatbility系统默认是将这个选项是选上的你需要的是将它取消选择。</p>
+<p>​			5.点开XR Settings三个选择点击第三个（Virtual augmented Reality）和第一个（Virtual Reality supported ），第三个如果不点在手机端生成的就是支持VR的不是不是AR的（看不到画面），第一个选择-&gt;为Virtual Reality SDKs添加-&gt;右下角“+”号-&gt;点击最下面的Vuforia</p>
+<p>​		前四步：</p>
+<p>![play settings 前期多步]([U3D+Vuforia+VR眼镜]分屏设置指南\content_img\play settings 前期多步.png)</p>
+<p>​		第五步：<img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97%5Ccontent_img%5C%E6%B7%BB%E5%8A%A0vuforia.png" alt="添加vuforia"></p>
+<p>​		下面一步比较重要，将Vuforia官网生成的PublicKey，配置进系统中激活U3D中的Vuforia：上面工具栏Window-&gt;Vuforia configuration,进入inspect，APP License Key 中将相关key 复制进去（这部是激活Vuforia）；</p>
+<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97%5Ccontent_img%5C%E5%AF%BC%E5%85%A5publicKey.png" alt="导入publicKey"></p>
+<p>​		安装Cardboard：File-Bulid Setting 进入Build Setting界面点击android-&gt;点击Player Settings进入inspector-&gt;XR Settings 点击刚刚的第一个-&gt;“+”号-&gt;选择第一cardboard；</p>
+<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97%5Ccontent_img%5C%E5%A1%AB%E5%8A%A0cardboard.png" alt="填加cardboard"></p>
 <p>下一步更改视觉成像，改变成“video see Through”；回到上面加key的页面下面Digital Eyewear-&gt;Device Type -&gt;选择最后一个Phone + viewer 其他的根据自己的实际情况进行选择，我都是直接默认的。</p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\public Key+Through.png" alt="public Key+Through"></p>
-<p>​        最后一步直接生成apk 文件File-Bulid Setting 进入Build Setting 界面-&gt;android-&gt;Build;<img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\生成build.png" alt="生成build"></p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\生成apk文件.png" alt="生成apk文件"></p>
+<p>![public Key+Through]([U3D+Vuforia+VR眼镜]分屏设置指南\content_img\public Key+Through.png)</p>
+<p>​		最后一步直接生成apk 文件File-Bulid Setting 进入Build Setting 界面-&gt;android-&gt;Build;<img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97%5Ccontent_img%5C%E7%94%9F%E6%88%90build.png" alt="生成build"></p>
+<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97%5Ccontent_img%5C%E7%94%9F%E6%88%90apk%E6%96%87%E4%BB%B6.png" alt="生成apk文件"></p>
 <p>以上就会用U3D Vuforia为基础创建一个在VR眼镜上的AR程序，手机显示分屏的哦。</p>
-<p>​    手机成果：</p>
-<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/content_img\手机生成结果.png" alt="手机生成结果"></p>
-<h6 id="结语"><a href="#结语：" class="headerlink" title="结语："></a>结语：</h6><p>如有不足之处望各位大佬打脸，如果对你有帮助也希望有机会一起提高。</p>
+<p>​	手机成果：</p>
+<p><img src="/VR-AR；-Vuforia；-Unity3D/[U3D+Vuforia+VR眼镜]分屏设置指南/%5BU3D+Vuforia+VR%E7%9C%BC%E9%95%9C%5D%E5%88%86%E5%B1%8F%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97%5Ccontent_img%5C%E6%89%8B%E6%9C%BA%E7%94%9F%E6%88%90%E7%BB%93%E6%9E%9C.png" alt="手机生成结果"></p>
+<h6 id="结语">结语：</h6>
+<p>如有不足之处望各位大佬打脸，如果对你有帮助也希望有机会一起提高。</p>
 
                 
 
@@ -299,7 +304,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#版本"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><a href="#&#x7248;&#x672C;" class="headerlink" title="&#x7248;&#x672C;:"></a>&#x7248;&#x672C;:</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#关键"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><a href="#&#x5173;&#x952E;" class="headerlink" title="&#x5173;&#x952E;:"></a>&#x5173;&#x952E;:</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#简介"><span class="toc-nav-number">3.</span> <span class="toc-nav-text"><a href="#&#x7B80;&#x4ECB;&#xFF1A;" class="headerlink" title="&#x7B80;&#x4ECB;&#xFF1A;"></a>&#x7B80;&#x4ECB;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#步骤"><span class="toc-nav-number">4.</span> <span class="toc-nav-text"><a href="#&#x6B65;&#x9AA4;&#xFF1A;" class="headerlink" title="&#x6B65;&#x9AA4;&#xFF1A;"></a>&#x6B65;&#x9AA4;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#结语"><span class="toc-nav-number">5.</span> <span class="toc-nav-text"><a href="#&#x7ED3;&#x8BED;&#xFF1A;" class="headerlink" title="&#x7ED3;&#x8BED;&#xFF1A;"></a>&#x7ED3;&#x8BED;&#xFF1A;</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#版本"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x7248;&#x672C;:</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#关键"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x5173;&#x952E;:</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#简介"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">&#x7B80;&#x4ECB;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#步骤"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">&#x6B65;&#x9AA4;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#结语"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">&#x7ED3;&#x8BED;&#xFF1A;</span></a></li></ol>
         
         </div>
       </aside>
