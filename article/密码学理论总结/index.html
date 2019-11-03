@@ -210,68 +210,59 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>​	在过去的一年中因为工作需要接触了密码学相关的知识，现在开一篇文章从六个点对密码学做个简单的概括总结：</p>
+                <p>​    在过去的一年中因为工作需要接触了密码学相关的知识，现在开一篇文章从六个点对密码学做个简单的概括总结：</p>
 <p>在开始之前先感谢几位老师，有的是在工作中对我悉心指导，有的是发表的书籍，还有的一些网络课程很生动如下: Philips  researcher 葛博士，在最初的时候耐心讲解和指导尤其在项目应用上，《密码学基础与安全应用》的各位作者，在里面找到了很多答案，《得到-密码学30奖》作者 卓客老师，文中的历史方面的卓老师给了很好的答案；</p>
-<h4 id="1-历史介绍"><strong>1. 历史介绍</strong></h4>
-<p>​		通过历史，总体的来说密码学可以分为两部分来看，一部分是在计算计出来之前叫做<strong>古典密码学</strong>,之后的就叫做<strong>现代密码学</strong>；</p>
-<p>​		其实不管是古代还是现代都有一条关键的主线，那就是加密和解密；它们一直都在迭代，此消彼长，有的时候任何加密都不保险，有的时候任何解密都没有效果；</p>
-<p>​		密码大致被分为七个阶段分别为：</p>
-<p>​		<strong>隐藏法，移位发/替代法，维吉尼亚密码，恩尼格玛机(Enigma)，魔王加密系统(Lucifer)</strong></p>
-<p>​		第一代和第二代时间跨度较长花费了4500年，但从第三代开始迭代就开始变快，从第四代开始出现了钥匙的概念，而钥匙就是最重要的突破口；从第五代开始出现计算机分水岭就这样产生了，</p>
-<p>​		<strong>RSA加密系统   量子加密</strong></p>
-<p>​		70年代末，第六代RSA加密系统出现了，它就是目前互联网加密的底层，它解决了第五代中的漏洞，虽然它并不是无法破解的，但因为计算量太大，在理论上破解的时间是无限长；第七代量子加密，背后的理论支撑是测不准原理和特殊的 ，在物理学和数学的原理上是不可破解的；</p>
-<h5 id="11-隐藏法的特征"><strong>1.1 隐藏法的特征：</strong></h5>
-<p>​		这段是最古老密码学开端，就是将新建藏匿；</p>
-<h5 id="12-移位法的特征"><strong>1.2 移位法的特征：</strong></h5>
-<p>​		密文的内容是在原文的基础上，对里面的字母进行向前或者向后移位的，最后形成的就是只有加密者自己能看懂了，这个还包含个故事：16世纪苏格兰女王玛丽一世，被她的姑姑英格兰女王伊丽莎白一世关押18年，在狱里的玛丽和反叛军都想杀伊丽莎白于是之间传递信息就是用的移位法，但是玛丽身边有个双面间谍，所以每次的信都是被伊丽莎白截获送到当时的密码学校在破译好了在交给玛丽但是后面可想而知玛丽最后被杀了；但在这之中密码学校所使用的解密方法就是频率分析法，利用的就是英文中字母的使用频率是不一样的，通过不最高的频率确定一个点在确定一个单词接着一句话；</p>
+<h4 id="1-历史介绍"><a href="#1-历史介绍" class="headerlink" title="1. 历史介绍"></a><strong>1. 历史介绍</strong></h4><p>​        通过历史，总体的来说密码学可以分为两部分来看，一部分是在计算计出来之前叫做<strong>古典密码学</strong>,之后的就叫做<strong>现代密码学</strong>；</p>
+<p>​        其实不管是古代还是现代都有一条关键的主线，那就是加密和解密；它们一直都在迭代，此消彼长，有的时候任何加密都不保险，有的时候任何解密都没有效果；</p>
+<p>​        密码大致被分为七个阶段分别为：</p>
+<p>​        <strong>隐藏法，移位发/替代法，维吉尼亚密码，恩尼格玛机(Enigma)，魔王加密系统(Lucifer)</strong></p>
+<p>​        第一代和第二代时间跨度较长花费了4500年，但从第三代开始迭代就开始变快，从第四代开始出现了钥匙的概念，而钥匙就是最重要的突破口；从第五代开始出现计算机分水岭就这样产生了，</p>
+<p>​        <strong>RSA加密系统   量子加密</strong></p>
+<p>​        70年代末，第六代RSA加密系统出现了，它就是目前互联网加密的底层，它解决了第五代中的漏洞，虽然它并不是无法破解的，但因为计算量太大，在理论上破解的时间是无限长；第七代量子加密，背后的理论支撑是测不准原理和特殊的 ，在物理学和数学的原理上是不可破解的；</p>
+<h5 id="11-隐藏法的特征"><a href="#1-1-隐藏法的特征：" class="headerlink" title="1.1 隐藏法的特征："></a><strong>1.1 隐藏法的特征：</strong></h5><p>​        这段是最古老密码学开端，就是将新建藏匿；</p>
+<h5 id="12-移位法的特征"><a href="#1-2-移位法的特征：" class="headerlink" title="1.2 移位法的特征："></a><strong>1.2 移位法的特征：</strong></h5><p>​        密文的内容是在原文的基础上，对里面的字母进行向前或者向后移位的，最后形成的就是只有加密者自己能看懂了，这个还包含个故事：16世纪苏格兰女王玛丽一世，被她的姑姑英格兰女王伊丽莎白一世关押18年，在狱里的玛丽和反叛军都想杀伊丽莎白于是之间传递信息就是用的移位法，但是玛丽身边有个双面间谍，所以每次的信都是被伊丽莎白截获送到当时的密码学校在破译好了在交给玛丽但是后面可想而知玛丽最后被杀了；但在这之中密码学校所使用的解密方法就是频率分析法，利用的就是英文中字母的使用频率是不一样的，通过不最高的频率确定一个点在确定一个单词接着一句话；</p>
 <p>下面放三张图一张是玛丽的密信及原文，一张是字母的使用频率，最后是一些其他语言的使用频率；</p>
 <p><strong>玛丽使用密文及原文：</strong></p>
-<p><img src="/article/密码学理论总结/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%90%86%E8%AE%BA%E6%80%BB%E7%BB%93%5C%E7%8E%9B%E4%B8%BD%E5%A5%B3%E7%8E%8B%E4%BD%BF%E7%94%A8%E5%AF%86%E7%A0%81%E7%9A%84%E5%8E%9F%E6%96%87%E5%92%8C%E5%AF%86%E6%96%87.png" alt="玛丽女王使用密码的原文和密文"></p>
+<p><img src="/article/密码学理论总结/玛丽女王使用密码的原文和密文.png" alt="玛丽女王使用密码的原文和密文"></p>
 <p><strong>英语使用频率：</strong></p>
-<p><img src="/article/密码学理论总结/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%90%86%E8%AE%BA%E6%80%BB%E7%BB%93%5C%E8%8B%B1%E8%AF%AD%E4%B8%AD%E5%AD%97%E6%AF%8D%E9%A2%91%E7%8E%87%E7%BB%9F%E8%AE%A1.png" alt="英语中字母频率统计"></p>
+<p><img src="/article/密码学理论总结/英语中字母频率统计.png" alt="英语中字母频率统计"></p>
 <p><strong>各语言中字母排列统计：</strong></p>
-<p><img src="/article/密码学理论总结/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%90%86%E8%AE%BA%E6%80%BB%E7%BB%93%5C%E5%90%84%E8%AF%AD%E8%A8%80%E4%B8%AD%E5%AD%97%E6%AF%8D%E6%8E%92%E5%88%97%E7%BB%9F%E8%AE%A1.png" alt="各语言中字母排列统计"></p>
-<h5 id="13-维吉尼亚加密法特征"><strong>1.3 维吉尼亚加密法特征：</strong></h5>
-<p>​		这个还要说到第二代替换和移位加密法的漏洞，就是能够计算出字母的使用频率，于是就出现了“多套符号加密法”为了掩盖字母使用中暴露的频率特征，解决办法就是用多套符号代替原来的文字，比如原文字母A 以前只是把它替换成H，现在把它替换成H或J，至于什么时候换H 什么时候换J，可以自己规定，比如基数位换H 偶数位换J；多套符号加密法并没有满足2-3套，经典一共有26套，而这26套加密的就是维吉尼亚加密法；会制定一个钥匙，比如yes y 是第25个字母，把原文第一个向后移25个，第二个是5个就向后移5个这样即使相同的字母就会得到不同的结果；</p>
+<p><img src="/article/密码学理论总结/各语言中字母排列统计.png" alt="各语言中字母排列统计"></p>
+<h5 id="13-维吉尼亚加密法特征"><a href="#1-3-维吉尼亚加密法特征：" class="headerlink" title="1.3 维吉尼亚加密法特征："></a><strong>1.3 维吉尼亚加密法特征：</strong></h5><p>​        这个还要说到第二代替换和移位加密法的漏洞，就是能够计算出字母的使用频率，于是就出现了“多套符号加密法”为了掩盖字母使用中暴露的频率特征，解决办法就是用多套符号代替原来的文字，比如原文字母A 以前只是把它替换成H，现在把它替换成H或J，至于什么时候换H 什么时候换J，可以自己规定，比如基数位换H 偶数位换J；多套符号加密法并没有满足2-3套，经典一共有26套，而这26套加密的就是维吉尼亚加密法；会制定一个钥匙，比如yes y 是第25个字母，把原文第一个向后移25个，第二个是5个就向后移5个这样即使相同的字母就会得到不同的结果；</p>
 <p><strong>维吉尼亚密码表：</strong></p>
-<p>​	第一行是原文，下面每一列表示每个字母有几个字符来替换，一共26*26；</p>
-<p><img src="/article/密码学理论总结/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%90%86%E8%AE%BA%E6%80%BB%E7%BB%93%5C%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E8%A1%A8.png" alt="维吉尼亚密码表"></p>
-<h5 id="14-恩尼格玛机加密法特征"><strong>1.4 恩尼格玛机加密法特征：</strong></h5>
-<p>​		恩尼格玛机，相信有一些小伙伴已经听过了，在二战时这个还比较出名，也是被图灵破译的那个，它使用的加密方式本质还是第二代加密法，移位和替换，它是一种机械电子式加密机，由一堆齿轮，电线灯泡转盘和遥杆组成，通过对抗无穷多的加密配套组合，能有效对抗频率分析；机器分三部分，键盘，编码器（原文-&gt;密文），屏幕显示密文；</p>
-<p>​		编码器：硬件是由一堆可以手动设置的机械部件组成的，任何地方调整都可以改便加密结果；里面有个齿轮式字母盘，齿轮和键盘还有屏幕利用导线连接，输入明文后齿轮直接得到密文显示在屏幕上，关键是每加密一个字母齿轮会自动向下转一格，齿轮每转动一格表示换一套加密方法，战时最高标准是8套，附图：</p>
+<p>​    第一行是原文，下面每一列表示每个字母有几个字符来替换，一共26*26；</p>
+<p><img src="/article/密码学理论总结/维吉尼亚密码表.png" alt="维吉尼亚密码表"></p>
+<h5 id="14-恩尼格玛机加密法特征"><a href="#1-4-恩尼格玛机加密法特征：" class="headerlink" title="1.4 恩尼格玛机加密法特征："></a><strong>1.4 恩尼格玛机加密法特征：</strong></h5><p>​        恩尼格玛机，相信有一些小伙伴已经听过了，在二战时这个还比较出名，也是被图灵破译的那个，它使用的加密方式本质还是第二代加密法，移位和替换，它是一种机械电子式加密机，由一堆齿轮，电线灯泡转盘和遥杆组成，通过对抗无穷多的加密配套组合，能有效对抗频率分析；机器分三部分，键盘，编码器（原文-&gt;密文），屏幕显示密文；</p>
+<p>​        编码器：硬件是由一堆可以手动设置的机械部件组成的，任何地方调整都可以改便加密结果；里面有个齿轮式字母盘，齿轮和键盘还有屏幕利用导线连接，输入明文后齿轮直接得到密文显示在屏幕上，关键是每加密一个字母齿轮会自动向下转一格，齿轮每转动一格表示换一套加密方法，战时最高标准是8套，附图：</p>
 <p><strong>恩尼格玛机三组齿轮：</strong></p>
-<p><img src="/article/密码学理论总结/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%90%86%E8%AE%BA%E6%80%BB%E7%BB%93%5C%E4%B8%89%E7%BB%84%E9%BD%BF%E8%BD%AE%E7%9A%84%E6%81%A9%E5%B0%BC%E6%A0%BC%E7%8E%9B%E6%9C%BA.png" alt="三组齿轮的恩尼格玛机"></p>
+<p><img src="/article/密码学理论总结/三组齿轮的恩尼格玛机.png" alt="三组齿轮的恩尼格玛机"></p>
 <p><strong>恩尼格玛机八组齿轮：</strong></p>
-<p><img src="/article/密码学理论总结/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%90%86%E8%AE%BA%E6%80%BB%E7%BB%93%5C%E5%85%AB%E7%BB%84%E9%BD%BF%E8%BD%AE%E7%9A%84%E6%81%A9%E5%B0%BC%E6%A0%BC%E7%8E%9B%E6%9C%BA.png" alt="八组齿轮的恩尼格玛机"></p>
-<p>​</p>
-<p>​		<strong>1.5 魔王加密系统特征：</strong></p>
-<p>​		是不是觉得名字很有意思，其实它原来的名字叫做Demostration（示范算法）；但当时70年代对操作系统名字有限制，只能取Demo，而demo又是&quot;恶魔&quot;的意思后来大家就用另一个恶魔的名字Lucifer 也就是魔王来称呼了，从魔王开始，就不在是操作字母了而是数字并且使用上了机器，不是再像以前一样是用的笔和本子； 在这个算法中有个比较重要的几个人IT虚拟人物分别是 Alice(爱丽丝) Bob(鲍勃) Eve(伊芙)希望你能记住，我将会用它们的来解释信息加密后钥匙安全是怎么保证的；</p>
-<p>​		主体是利用数学上的“模运算”(modelar arithmetic),它有时是不可逆的操作，大概意思如下：2+3 =5（mod7）；但11* 9=8(mode13);正向可以推但是如果反向，什么数乘9余数是8，相信这个数是无穷大的；具体的过程是这样的 Alice和Bob事先约定一个函数(不可逆函数)和模数，在加密前两人各自想一个数字通过函数计算得到结果，两人在打电话将自己的结果告诉对方，拿到对方的答案后将答案带入到函数中这时它们算出的结果就是同一个数了，这个数就是它们共同的密钥；</p>
-<p>​		例子：约定函数：7^X ，模等于11的情况下运行； Alice 想的数 A 是 3   代入函数算出的 P，Bob 想的数是 B 是 6 代入函数算出的是 R； 相互交换 Alice 计算 R ^ A(mod11)  Bob 计算 P^B(mod11);最后两人得出的结论都是九，就可以用九做key；  （上面的方法就是 sun 高级工程师 Whitifield  Diffie和 斯坦福电子系统教授 Martin Hellman 找出的函数，因此这套方法称为 “迪菲 - 黑尔曼钥匙交换方案”）；</p>
-<h5 id="16-rsa加密算法特征"><strong>1.6 RSA加密算法特征：</strong></h5>
-<p>​		好了，下面就开始这篇blog最核心的理论 第六代加密法，RSA加密算法；当然在这段还是介绍它的大概原理里面的具体组成和衍生出的算法我将在下面一段重点进行描述；</p>
-<p>​		在说RSA之前还是得说魔王加密的缺点，这个就是要求双方同时在线才能启动，而现实中我的微信，短信，邮件都是不用对方立刻回复的，这个问题不解决这套方法就没有办法商用；为了解决这个问题就产生了第六代加密系统 RSA加密系统；</p>
-<p>​		可能有的朋友对这个会对RSA有点陌生，其实它现在已经在我们的生活中无处不在了，比如手机支付加密，网银加密，网络的底层也都是这套原理；</p>
-<p>​		具体过程：我们还是用上面三个IT虚拟人物进行讲解，Alice 和 Bob 通信 但是Even 想要窃听；</p>
-<p>​		例子：Alice 有很多把锁，每把锁都有两把不同的钥匙分别是:一把给自己的，除自己外，任何都不能拿到(private key,CK)，而另一把是给一个或多个通信对象的(public key PK) ；这两把钥匙都不能解开自己上的锁，但是都能用自己的钥匙解开对方钥匙上的锁； 她想和Bob通话就将提前将 PK 给 Bob，Bob拿到PK 后将想写的话放到盒子里然后直接将盒子传给Alice，用自己的CK将盒子打开就能得带Bob的内容了；在这里使用的加密和解密的钥匙不是同一个而是分开的这种加密方式叫做&quot;非对称加密&quot;，而采用同一个钥匙进行加解密的属于“对称加密”；</p>
-<h5 id="17-量子加密法"><strong>1.7 量子加密法：</strong></h5>
-<p>​		最后一个量子加密，有兴趣的童鞋可以查阅相关资料，这里就不做解释；</p>
-<h4 id="2密码系统的组成"><strong>2.密码系统的组成：</strong></h4>
-<p>​	上面对密码学的历史做了大概的介绍，下面向大家介绍密码系统的组成部分，主要有以下的内容组成的，分别是未加密的消息也称明文(MP)，加密后的消息也称作密文©，加密的设备或者加密的算法(D()/E())，最后以及加密解密的密钥(PK/CK)；</p>
-<p>​	结合上面的内容对加密和解密利用简单的数学公式表示：</p>
-<p>​		没有密钥时加密可以表示为：</p>
-<p>​			加密：E(MP)  = C  其中E()表示加密的函数；</p>
-<p>​			解密：D© = MP  其中 D()表示解密的函数；</p>
-<p>​		对称密钥，加密解密只用同一个密钥时表示为：</p>
-<p>​			加密：E k(MP) = C  其中k表示钥匙；</p>
-<p>​			解密：D k© = MP</p>
-<p>​		非对称密钥，加密解密不是同一个密钥时表示为：</p>
-<p>​			加密：E pk（MP） = C   其中pk指公钥；</p>
-<p>​			解密：D ck（sk） = MP 其中ck指私钥；</p>
-<h5 id="21什么是算法"><strong>2.1.什么是算法：</strong></h5>
-<p>​		密码算法是指用于加密和解密的数学函数(通常情况下，有两个相关的函数中一个用作加密，另一个用作解密)，在历史上都是通过对算法的保密从而增强生成密码的安全性，但在现在中这样的模式肯定是不安全的，所以现在的算法方式都是公开的，所有人都可以看到，但是通过传入安全的钥匙就可以生成安全的密文，这个才是现在主流使用的；</p>
-<p>​		<strong>2.2 什么是协议：</strong></p>
-<p>​		如果一个加密算法必须由多个(多余两个) 实体共同参加才能完成，则称之为密码协议，如果一组规则仅有一个实体执行，则它的只是一种程序，而不能称之为协议；除了提供机密性外密码学还拥有一下作用：1. 鉴别，消息的接收着应该能够确认消息的来源，入侵者不可能伪装成他人；2. 完整性检验，消息的接收者应该能够在传送过程中消息没有被修改；入侵者不可能用假消息代替合法消息；3.抗抵赖，发送者一旦发送消息，事后不可能虚假地否认他曾经发送的消息；</p>
+<p><img src="/article/密码学理论总结/八组齿轮的恩尼格玛机.png" alt="八组齿轮的恩尼格玛机"></p>
+<p>​    </p>
+<p>​        <strong>1.5 魔王加密系统特征：</strong></p>
+<p>​        是不是觉得名字很有意思，其实它原来的名字叫做Demostration（示范算法）；但当时70年代对操作系统名字有限制，只能取Demo，而demo又是”恶魔”的意思后来大家就用另一个恶魔的名字Lucifer 也就是魔王来称呼了，从魔王开始，就不在是操作字母了而是数字并且使用上了机器，不是再像以前一样是用的笔和本子； 在这个算法中有个比较重要的几个人IT虚拟人物分别是 Alice(爱丽丝) Bob(鲍勃) Eve(伊芙)希望你能记住，我将会用它们的来解释信息加密后钥匙安全是怎么保证的；</p>
+<p>​        主体是利用数学上的“模运算”(modelar arithmetic),它有时是不可逆的操作，大概意思如下：2+3 =5（mod7）；但11* 9=8(mode13);正向可以推但是如果反向，什么数乘9余数是8，相信这个数是无穷大的；具体的过程是这样的 Alice和Bob事先约定一个函数(不可逆函数)和模数，在加密前两人各自想一个数字通过函数计算得到结果，两人在打电话将自己的结果告诉对方，拿到对方的答案后将答案带入到函数中这时它们算出的结果就是同一个数了，这个数就是它们共同的密钥；</p>
+<p>​        例子：约定函数：7^X ，模等于11的情况下运行； Alice 想的数 A 是 3   代入函数算出的 P，Bob 想的数是 B 是 6 代入函数算出的是 R； 相互交换 Alice 计算 R ^ A(mod11)  Bob 计算 P^B(mod11);最后两人得出的结论都是九，就可以用九做key；  （上面的方法就是 sun 高级工程师 Whitifield  Diffie和 斯坦福电子系统教授 Martin Hellman 找出的函数，因此这套方法称为 “迪菲 - 黑尔曼钥匙交换方案”）；</p>
+<h5 id="16-rsa加密算法特征"><a href="#1-6-RSA加密算法特征：" class="headerlink" title="1.6 RSA加密算法特征："></a><strong>1.6 RSA加密算法特征：</strong></h5><p>​        好了，下面就开始这篇blog最核心的理论 第六代加密法，RSA加密算法；当然在这段还是介绍它的大概原理里面的具体组成和衍生出的算法我将在下面一段重点进行描述；</p>
+<p>​        在说RSA之前还是得说魔王加密的缺点，这个就是要求双方同时在线才能启动，而现实中我的微信，短信，邮件都是不用对方立刻回复的，这个问题不解决这套方法就没有办法商用；为了解决这个问题就产生了第六代加密系统 RSA加密系统；</p>
+<p>​        可能有的朋友对这个会对RSA有点陌生，其实它现在已经在我们的生活中无处不在了，比如手机支付加密，网银加密，网络的底层也都是这套原理；</p>
+<p>​        具体过程：我们还是用上面三个IT虚拟人物进行讲解，Alice 和 Bob 通信 但是Even 想要窃听；</p>
+<p>​        例子：Alice 有很多把锁，每把锁都有两把不同的钥匙分别是:一把给自己的，除自己外，任何都不能拿到(private key,CK)，而另一把是给一个或多个通信对象的(public key PK) ；这两把钥匙都不能解开自己上的锁，但是都能用自己的钥匙解开对方钥匙上的锁； 她想和Bob通话就将提前将 PK 给 Bob，Bob拿到PK 后将想写的话放到盒子里然后直接将盒子传给Alice，用自己的CK将盒子打开就能得带Bob的内容了；在这里使用的加密和解密的钥匙不是同一个而是分开的这种加密方式叫做”非对称加密”，而采用同一个钥匙进行加解密的属于“对称加密”；</p>
+<h5 id="17-量子加密法"><a href="#1-7-量子加密法：" class="headerlink" title="1.7 量子加密法："></a><strong>1.7 量子加密法：</strong></h5><p>​        最后一个量子加密，有兴趣的童鞋可以查阅相关资料，这里就不做解释；</p>
+<h4 id="2密码系统的组成"><a href="#2-密码系统的组成：" class="headerlink" title="2.密码系统的组成："></a><strong>2.密码系统的组成：</strong></h4><p>​    上面对密码学的历史做了大概的介绍，下面向大家介绍密码系统的组成部分，主要有以下的内容组成的，分别是未加密的消息也称明文(MP)，加密后的消息也称作密文(C)，加密的设备或者加密的算法(D()/E())，最后以及加密解密的密钥(PK/CK)；</p>
+<p>​    结合上面的内容对加密和解密利用简单的数学公式表示：</p>
+<p>​        没有密钥时加密可以表示为：</p>
+<p>​            加密：E(MP)  = C  其中E()表示加密的函数； </p>
+<p>​            解密：D(C) = MP  其中 D()表示解密的函数；</p>
+<p>​        对称密钥，加密解密只用同一个密钥时表示为：</p>
+<p>​            加密：E k(MP) = C  其中k表示钥匙；</p>
+<p>​            解密：D k(C) = MP </p>
+<p>​        非对称密钥，加密解密不是同一个密钥时表示为：</p>
+<p>​            加密：E pk（MP） = C   其中pk指公钥；</p>
+<p>​            解密：D ck（sk） = MP 其中ck指私钥；</p>
+<h5 id="21什么是算法"><a href="#2-1-什么是算法：" class="headerlink" title="2.1.什么是算法："></a><strong>2.1.什么是算法：</strong></h5><p>​        密码算法是指用于加密和解密的数学函数(通常情况下，有两个相关的函数中一个用作加密，另一个用作解密)，在历史上都是通过对算法的保密从而增强生成密码的安全性，但在现在中这样的模式肯定是不安全的，所以现在的算法方式都是公开的，所有人都可以看到，但是通过传入安全的钥匙就可以生成安全的密文，这个才是现在主流使用的；</p>
+<p>​        <strong>2.2 什么是协议：</strong> </p>
+<p>​        如果一个加密算法必须由多个(多余两个) 实体共同参加才能完成，则称之为密码协议，如果一组规则仅有一个实体执行，则它的只是一种程序，而不能称之为协议；除了提供机密性外密码学还拥有一下作用：1. 鉴别，消息的接收着应该能够确认消息的来源，入侵者不可能伪装成他人；2. 完整性检验，消息的接收者应该能够在传送过程中消息没有被修改；入侵者不可能用假消息代替合法消息；3.抗抵赖，发送者一旦发送消息，事后不可能虚假地否认他曾经发送的消息；</p>
 <p>以上就是密码学的历史轨道，以及对密码学大概有一定的了解，下一篇我将会对密码学中的 对称加密，非对称加密，各举一个常用的例子向大家介绍它们的工作原理，并且对，PKI，签名的概念进行讲解，最后在对两个密码学的框架 SSH SSL ,中的其中一个进行简单讲解；</p>
 
                 
@@ -327,7 +318,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-历史介绍"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><strong>1. &#x5386;&#x53F2;&#x4ECB;&#x7ECD;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#11-隐藏法的特征"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text"><strong>1.1 &#x9690;&#x85CF;&#x6CD5;&#x7684;&#x7279;&#x5F81;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#12-移位法的特征"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text"><strong>1.2 &#x79FB;&#x4F4D;&#x6CD5;&#x7684;&#x7279;&#x5F81;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#13-维吉尼亚加密法特征"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text"><strong>1.3 &#x7EF4;&#x5409;&#x5C3C;&#x4E9A;&#x52A0;&#x5BC6;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#14-恩尼格玛机加密法特征"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text"><strong>1.4 &#x6069;&#x5C3C;&#x683C;&#x739B;&#x673A;&#x52A0;&#x5BC6;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#16-rsa加密算法特征"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text"><strong>1.6 RSA&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#17-量子加密法"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text"><strong>1.7 &#x91CF;&#x5B50;&#x52A0;&#x5BC6;&#x6CD5;&#xFF1A;</strong></span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2密码系统的组成"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><strong>2.&#x5BC6;&#x7801;&#x7CFB;&#x7EDF;&#x7684;&#x7EC4;&#x6210;&#xFF1A;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#21什么是算法"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text"><strong>2.1.&#x4EC0;&#x4E48;&#x662F;&#x7B97;&#x6CD5;&#xFF1A;</strong></span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-历史介绍"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><a href="#1-&#x5386;&#x53F2;&#x4ECB;&#x7ECD;" class="headerlink" title="1. &#x5386;&#x53F2;&#x4ECB;&#x7ECD;"></a><strong>1. &#x5386;&#x53F2;&#x4ECB;&#x7ECD;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#11-隐藏法的特征"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text"><a href="#1-1-&#x9690;&#x85CF;&#x6CD5;&#x7684;&#x7279;&#x5F81;&#xFF1A;" class="headerlink" title="1.1 &#x9690;&#x85CF;&#x6CD5;&#x7684;&#x7279;&#x5F81;&#xFF1A;"></a><strong>1.1 &#x9690;&#x85CF;&#x6CD5;&#x7684;&#x7279;&#x5F81;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#12-移位法的特征"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text"><a href="#1-2-&#x79FB;&#x4F4D;&#x6CD5;&#x7684;&#x7279;&#x5F81;&#xFF1A;" class="headerlink" title="1.2 &#x79FB;&#x4F4D;&#x6CD5;&#x7684;&#x7279;&#x5F81;&#xFF1A;"></a><strong>1.2 &#x79FB;&#x4F4D;&#x6CD5;&#x7684;&#x7279;&#x5F81;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#13-维吉尼亚加密法特征"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text"><a href="#1-3-&#x7EF4;&#x5409;&#x5C3C;&#x4E9A;&#x52A0;&#x5BC6;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;" class="headerlink" title="1.3 &#x7EF4;&#x5409;&#x5C3C;&#x4E9A;&#x52A0;&#x5BC6;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;"></a><strong>1.3 &#x7EF4;&#x5409;&#x5C3C;&#x4E9A;&#x52A0;&#x5BC6;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#14-恩尼格玛机加密法特征"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text"><a href="#1-4-&#x6069;&#x5C3C;&#x683C;&#x739B;&#x673A;&#x52A0;&#x5BC6;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;" class="headerlink" title="1.4 &#x6069;&#x5C3C;&#x683C;&#x739B;&#x673A;&#x52A0;&#x5BC6;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;"></a><strong>1.4 &#x6069;&#x5C3C;&#x683C;&#x739B;&#x673A;&#x52A0;&#x5BC6;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#16-rsa加密算法特征"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text"><a href="#1-6-RSA&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;" class="headerlink" title="1.6 RSA&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;"></a><strong>1.6 RSA&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7279;&#x5F81;&#xFF1A;</strong></span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#17-量子加密法"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text"><a href="#1-7-&#x91CF;&#x5B50;&#x52A0;&#x5BC6;&#x6CD5;&#xFF1A;" class="headerlink" title="1.7 &#x91CF;&#x5B50;&#x52A0;&#x5BC6;&#x6CD5;&#xFF1A;"></a><strong>1.7 &#x91CF;&#x5B50;&#x52A0;&#x5BC6;&#x6CD5;&#xFF1A;</strong></span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2密码系统的组成"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><a href="#2-&#x5BC6;&#x7801;&#x7CFB;&#x7EDF;&#x7684;&#x7EC4;&#x6210;&#xFF1A;" class="headerlink" title="2.&#x5BC6;&#x7801;&#x7CFB;&#x7EDF;&#x7684;&#x7EC4;&#x6210;&#xFF1A;"></a><strong>2.&#x5BC6;&#x7801;&#x7CFB;&#x7EDF;&#x7684;&#x7EC4;&#x6210;&#xFF1A;</strong></span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#21什么是算法"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text"><a href="#2-1-&#x4EC0;&#x4E48;&#x662F;&#x7B97;&#x6CD5;&#xFF1A;" class="headerlink" title="2.1.&#x4EC0;&#x4E48;&#x662F;&#x7B97;&#x6CD5;&#xFF1A;"></a><strong>2.1.&#x4EC0;&#x4E48;&#x662F;&#x7B97;&#x6CD5;&#xFF1A;</strong></span></a></li></ol></li></ol>
         
         </div>
       </aside>
