@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          19-11-10-C++primer基础语言4 - Wangchenchen | Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://www.jsWangchenchen.com/C-Primer/19-11-10-C-基础语言-四/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/A014.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#C++" title="C++">C++</a>
+                            
+                        </div>
+                        <h1>19-11-10-C++primer基础语言4</h1>
+                        <h2 class="subheading">C++数组和指针</h2>
+                        <span class="meta">
+                            Posted by Wangchenchen on
+                            2019-11-10
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Wangchenchen</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p><strong>上一节，我主要介绍了标准库的使用，这节我主要是对数组指针进行做出一些总结发表一些看法；</strong></p>
+<h5 id="一数组"><a href="#一：数组" class="headerlink" title="一：数组"></a>一：数组</h5><p>​        数组是由类型名，标识符和维数组组成的符合数据类型，类型名还规定了存放在数组中的元素的类型，而维数则指定数组中包含的元素个数；</p>
+<h6 id="数组的定义和初始化"><a href="#数组的定义和初始化：" class="headerlink" title="数组的定义和初始化："></a>数组的定义和初始化：</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*这是个一维数组*/</span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">2</span>]   <span class="comment">//[]中的数必须用大于等于1的常量表示，如果没有将会变成一个无效的数组；</span></span><br><span class="line">a = &#123;<span class="number">65</span>,<span class="number">64</span>&#125;</span><br><span class="line"><span class="comment">/*这是个二维数组*/</span></span><br><span class="line"><span class="keyword">int</span> b[<span class="number">3</span>][<span class="number">4</span>] <span class="comment">//同样，在二维数组中两个[][]也必须是const；</span></span><br><span class="line">b = &#123;&#123;<span class="number">5</span>，<span class="number">8</span>，<span class="number">4</span>，<span class="number">2</span>&#125;，&#123;<span class="number">8</span>，<span class="number">9</span>，<span class="number">4</span>，<span class="number">5</span>&#125;，&#123;<span class="number">8</span>，<span class="number">4</span>，<span class="number">5</span>，<span class="number">45</span>&#125;&#125;；</span><br></pre></td></tr></table></figure>
+<p>注意在初始化过程分为显示赋值和隐式赋值，这两种赋值的不同点同上，没有赋初始值的是隐性赋值，表示只是在内存中通过初始的类型开辟相应大小的内存，而显示赋值除了将开辟一块相应的内存区域，还将花括号的值放入到相应的内存中；</p>
+<p>​        <strong>注意：数组的赋值不支持将一个数组赋值给另一个数组；</strong></p>
+<h6 id="数组的操作"><a href="#数组的操作：" class="headerlink" title="数组的操作："></a><strong>数组的操作：</strong></h6><p>​        与vector一样数组的操作是通过下标来表示的，访问数组是从0开始计数，在用下标访问元素时，vector使用vector::siize_type作为下标的类型，而数组下标的正确类型是size_t;</p>
+<p>​        <strong>注意：在使用数组时最常见的是数组下标越界的；所以在使用的时候要注意数组下标的问题；</strong></p>
+<h5 id="二指针"><a href="#二：指针：" class="headerlink" title="二：指针："></a>二：指针：</h5><p>​        指针是指向某种类型对象的复合数据类型，是用于数组的迭代器：指向数组的一个元素，在指向数组的元素上使用解引用操作符 * 和自增加操作符++ 与在迭代器上的用法类似；对指针进行解引用的操作，可获得该指针的所指对象的值，而指针做自增操作时，则移动指针指向数组的下一个元素；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">char a = 'Hello World';</span><br><span class="line"><span class="keyword">char</span> *b = &amp;a;       <span class="comment">//定义了一个指向char类型的指针b，并初始化b使其指向char类型的对象 a；</span></span><br><span class="line"><span class="comment">/*符号解释：*b 指针类型，表示指向值所在内存的第一个空间下标 ，&amp;a（取地址操作符） 取到的是a的地址，*/</span></span><br></pre></td></tr></table></figure>
+<h6 id="指针定义和初始化"><a href="#指针定义和初始化：" class="headerlink" title="指针定义和初始化："></a>指针定义和初始化：</h6><p>需要分清什么是指针类型什么是指针所指向的类型：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *p;			<span class="comment">//指针的类型是char*    指针所指向的型行是char</span></span><br><span class="line"><span class="keyword">char</span> **p;			<span class="comment">//指针类型是char**	  指针所指向的类型是char*</span></span><br><span class="line"><span class="keyword">char</span> (*p)[<span class="number">3</span>];		<span class="comment">//指针类型是char(*)[3]	指针所指向的类型是int()[3]</span></span><br><span class="line"><span class="keyword">char</span> *(*ptr)[<span class="number">4</span>];	<span class="comment">//指针类型是char *（*）[4] 指针所指向的类型是char *（）[4]</span></span><br></pre></td></tr></table></figure>
+<p>​        指针可能的取值：</p>
+<p>​        一个有效的指针必定有三种状态；保存一个特定对象的地址：指向某个对象后面的另一个对象：或者是0值，若指针保存0值，表明它不指向任何对象，未初始化的指针是无效的，直到给该指针赋值后，才可以使用它，同时<strong>避免使用没有初始化的指针</strong>；</p>
+<h6 id="指针使用"><a href="#指针使用：" class="headerlink" title="指针使用："></a>指针使用：</h6><p>指针和引用的比较：虽然指针都是指向另一个值，但是，引用不会修改被引用的内容，而修改指针就相当于修改了被指向的内容；</p>
+<p>​        多级指针：</p>
+<p>​        在c中有多级指针的概念就是在指针的基础上，在定义一个指针，指向另一个指针的地址，这样二级指针所对应的值就是一级指针所指向的值（注意，这里二级指针不是直接指向值的而是通过一级指针指向值的）；</p>
+<h6 id="const和指针"><a href="#const和指针：" class="headerlink" title="const和指针："></a>const和指针：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const double p = 3.14;</span><br><span class="line">double *pi = &amp;p;			//错误</span><br><span class="line">const double *pi = &amp;p;		//正确，因为定义的const类型的指针必须是const类型的地址才可以；</span><br></pre></td></tr></table></figure>
+<h6 id="指针和typedef"><a href="#指针和typedef：" class="headerlink" title="指针和typedef："></a>指针和typedef：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">typedef string *pstring;</span><br><span class="line">const pstring cstr;</span><br></pre></td></tr></table></figure>
+<p>上面定义的typedef很容易让人搞错，因为typedef不是普通的文本扩展，很多人以为上面的内容是：</p>
+<p>const string <em> cstr; 其实不是，**正确的因该是： string </em>const cstr；**</p>
+<h5 id="三总结"><a href="#三：总结：" class="headerlink" title="三：总结："></a>三：总结：</h5><p>​    以上就是我对数组指针的理解；下面会对表达式和异常进行总结学习，如果您发现有什么不对的地方欢迎给我批评指正，谢谢~</p>
+<p>e-mail：<a href="mailto:jsntwangchenchen@outlook.com" target="_blank" rel="noopener">jsntwangchenchen@outlook.com</a> 王晨晨</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/C-Primer/19-11-3-C-基础学习三/" data-toggle="tooltip" data-placement="top" title="19-11-3-C++primer-基础学习3">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+                
+                <!-- require APlayer -->
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#一数组"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><a href="#&#x4E00;&#xFF1A;&#x6570;&#x7EC4;" class="headerlink" title="&#x4E00;&#xFF1A;&#x6570;&#x7EC4;"></a>&#x4E00;&#xFF1A;&#x6570;&#x7EC4;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#数组的定义和初始化"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text"><a href="#&#x6570;&#x7EC4;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x521D;&#x59CB;&#x5316;&#xFF1A;" class="headerlink" title="&#x6570;&#x7EC4;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x521D;&#x59CB;&#x5316;&#xFF1A;"></a>&#x6570;&#x7EC4;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x521D;&#x59CB;&#x5316;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#数组的操作"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text"><a href="#&#x6570;&#x7EC4;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;" class="headerlink" title="&#x6570;&#x7EC4;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;"></a><strong>&#x6570;&#x7EC4;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;</strong></span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#二指针"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><a href="#&#x4E8C;&#xFF1A;&#x6307;&#x9488;&#xFF1A;" class="headerlink" title="&#x4E8C;&#xFF1A;&#x6307;&#x9488;&#xFF1A;"></a>&#x4E8C;&#xFF1A;&#x6307;&#x9488;&#xFF1A;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#指针定义和初始化"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text"><a href="#&#x6307;&#x9488;&#x5B9A;&#x4E49;&#x548C;&#x521D;&#x59CB;&#x5316;&#xFF1A;" class="headerlink" title="&#x6307;&#x9488;&#x5B9A;&#x4E49;&#x548C;&#x521D;&#x59CB;&#x5316;&#xFF1A;"></a>&#x6307;&#x9488;&#x5B9A;&#x4E49;&#x548C;&#x521D;&#x59CB;&#x5316;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#指针使用"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text"><a href="#&#x6307;&#x9488;&#x4F7F;&#x7528;&#xFF1A;" class="headerlink" title="&#x6307;&#x9488;&#x4F7F;&#x7528;&#xFF1A;"></a>&#x6307;&#x9488;&#x4F7F;&#x7528;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#const和指针"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text"><a href="#const&#x548C;&#x6307;&#x9488;&#xFF1A;" class="headerlink" title="const&#x548C;&#x6307;&#x9488;&#xFF1A;"></a>const&#x548C;&#x6307;&#x9488;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#指针和typedef"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text"><a href="#&#x6307;&#x9488;&#x548C;typedef&#xFF1A;" class="headerlink" title="&#x6307;&#x9488;&#x548C;typedef&#xFF1A;"></a>&#x6307;&#x9488;&#x548C;typedef&#xFF1A;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#三总结"><span class="toc-nav-number">3.</span> <span class="toc-nav-text"><a href="#&#x4E09;&#xFF1A;&#x603B;&#x7ED3;&#xFF1A;" class="headerlink" title="&#x4E09;&#xFF1A;&#x603B;&#x7ED3;&#xFF1A;"></a>&#x4E09;&#xFF1A;&#x603B;&#x7ED3;&#xFF1A;</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#C++" title="C++">C++</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="" target="_blank">CSDN Blog Wangchenchen</a></li>
+                    
+                        <li><a href="" target="_blank">DockOne Wangchenchen</a></li>
+                    
+                        <li><a href="" target="_blank">Wangchenchen</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Wangchenchen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/Wangchenchen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Wangchenchen 2019 
+                    <br>
+                    Theme by <a href="http://beantech.org">BeanTech</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://www.jsWangchenchen.com">Wangchenchen</a> | 
+                    <!-- <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huweihuang&repo=hexo-theme-huweihuang&type=star&count=true" >
+                    </iframe> -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://www.jsWangchenchen.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'r45fhy7653897235wg5ye709d930f62e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://www.jsWangchenchen.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
