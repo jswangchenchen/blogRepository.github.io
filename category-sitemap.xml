@@ -7,41 +7,6 @@
     </url>
 
     <url>
-        <loc>http://www.jsWangchenchen.com/categories/HLS/</loc>
-        <lastmod>2019-07-02T16:58:02.695Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/categories/Typora/</loc>
-        <lastmod>2019-11-10T11:38:41.334Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/categories/VR/</loc>
-        <lastmod>2019-11-10T11:39:03.472Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/categories/network/</loc>
-        <lastmod>2019-11-10T11:41:14.693Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/categories/AndroidStudio/</loc>
-        <lastmod>2019-11-10T11:41:22.347Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.jsWangchenchen.com/categories/%E9%9D%A2%E8%AF%95/</loc>
         <lastmod>2019-11-10T11:42:01.690Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,50 +14,85 @@
     </url>
 
     <url>
+        <loc>http://www.jsWangchenchen.com/categories/VR/</loc>
+        <lastmod>2019-11-10T14:26:53.874Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/categories/Typora/</loc>
+        <lastmod>2019-11-10T14:27:06.426Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/categories/HLS/</loc>
+        <lastmod>2019-11-10T14:27:38.521Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/categories/network/</loc>
+        <lastmod>2019-11-10T14:28:19.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/categories/AndroidStudio/</loc>
+        <lastmod>2019-11-10T14:28:37.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.jsWangchenchen.com/categories/Android/</loc>
-        <lastmod>2019-11-10T11:42:54.140Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/categories/C/</loc>
-        <lastmod>2019-11-10T11:43:42.900Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/categories/Hexo/</loc>
-        <lastmod>2019-11-10T11:43:57.709Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/categories/Hexo/</loc>
-        <lastmod>2019-11-10T11:44:07.603Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/categories/AR/</loc>
-        <lastmod>2019-11-10T11:44:37.885Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/categories/Encryption/</loc>
-        <lastmod>2019-11-10T11:45:04.259Z</lastmod>
+        <lastmod>2019-11-10T14:29:59.791Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://www.jsWangchenchen.com/categories/C-Primer/</loc>
-        <lastmod>2019-11-10T14:24:26.355Z</lastmod>
+        <lastmod>2019-11-10T14:30:24.658Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/categories/C/</loc>
+        <lastmod>2019-11-10T14:30:33.781Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/categories/Hexo/</loc>
+        <lastmod>2019-11-10T14:30:43.717Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/categories/Hexo/</loc>
+        <lastmod>2019-11-10T14:30:55.071Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/categories/XR/</loc>
+        <lastmod>2019-11-10T14:31:09.059Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/categories/Encryption/</loc>
+        <lastmod>2019-11-10T14:31:29.010Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -2,27 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://www.jsWangchenchen.com/tags/HLS/</loc>
-        <lastmod>2019-07-02T16:58:02.695Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/tags/Computer-Organization/</loc>
-        <lastmod>2019-11-10T11:41:14.693Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/tags/AndroidStudio/</loc>
-        <lastmod>2019-11-10T11:41:22.347Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.jsWangchenchen.com/tags/%E5%88%B7%E9%A2%98/</loc>
         <lastmod>2019-11-10T11:42:01.690Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -30,36 +9,57 @@
     </url>
 
     <url>
+        <loc>http://www.jsWangchenchen.com/tags/HLS/</loc>
+        <lastmod>2019-11-10T14:27:38.521Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/tags/Computer-Organization/</loc>
+        <lastmod>2019-11-10T14:28:19.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/tags/AndroidStudio/</loc>
+        <lastmod>2019-11-10T14:28:37.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.jsWangchenchen.com/tags/Android/</loc>
-        <lastmod>2019-11-10T11:42:54.140Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/tags/Blog/</loc>
-        <lastmod>2019-11-10T11:44:07.603Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/tags/XR/</loc>
-        <lastmod>2019-11-10T11:44:37.885Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.jsWangchenchen.com/tags/encryption/</loc>
-        <lastmod>2019-11-10T11:45:04.259Z</lastmod>
+        <lastmod>2019-11-10T14:29:59.791Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://www.jsWangchenchen.com/tags/C/</loc>
-        <lastmod>2019-11-10T14:24:26.355Z</lastmod>
+        <lastmod>2019-11-10T14:30:33.781Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/tags/Blog/</loc>
+        <lastmod>2019-11-10T14:30:55.071Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/tags/XR/</loc>
+        <lastmod>2019-11-10T14:31:09.059Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.jsWangchenchen.com/tags/encryption/</loc>
+        <lastmod>2019-11-10T14:31:29.010Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
