@@ -211,52 +211,52 @@
                 post-container">
 
                 <p><strong>前言：</strong></p>
-<p>​    最近一段时间因为工作的原因，需要开发android的程序，所以最近就一直在Android的坑里徘徊，今天主要讲一下，当初遇到的一个相对重要的问题，就是安装好androidStudio(AS) 中的 SDK,NDK,以及相关的工具包后怎样生成一个简单的android程序以及需要 用到C/C++支持库时，怎样操作;</p>
+<p>​	最近一段时间因为工作的原因，需要开发android的程序，所以最近就一直在Android的坑里徘徊，今天主要讲一下，当初遇到的一个相对重要的问题，就是安装好androidStudio(AS) 中的 SDK,NDK,以及相关的工具包后怎样生成一个简单的android程序以及需要 用到C/C++支持库时，怎样操作;</p>
 <p><strong>介绍：</strong></p>
-<p>​    首先简单介绍下android，它是google公司的产品，是一个手机的操作系统，核心是liunx经过一系列的改变产生的，语言，android生成已经挺长时间了，也已经很完善了，它不但支持java，在安装了NDK包的情况下是能够支持C/C++语言的，甚至在同一个项目中包含java和C/C++语言，在第三方库方面，支持.jar .a .so 的native 库；设备方面，除了支持手机，还支持平板，手表，日常智能设备;</p>
+<p>​	首先简单介绍下android，它是google公司的产品，是一个手机的操作系统，核心是liunx经过一系列的改变产生的，语言，android生成已经挺长时间了，也已经很完善了，它不但支持java，在安装了NDK包的情况下是能够支持C/C++语言的，甚至在同一个项目中包含java和C/C++语言，在第三方库方面，支持.jar .a .so 的native 库；设备方面，除了支持手机，还支持平板，手表，日常智能设备;</p>
 <p><strong>前期检测:</strong></p>
-<p>​    当准备走这一步之前说明你的基础都已经安装好了(这个很easy可以去官网直直接下SDKTools的包 解压后有个SDKMessage.exe文件直接点击安装就可以，可能有的人会有进去后空的情况，别慌，更改下网络就好，还有种方法下面会说)，先测试以下：</p>
+<p>​	当准备走这一步之前说明你的基础都已经安装好了(这个很easy可以去官网直直接下SDKTools的包 解压后有个SDKMessage.exe文件直接点击安装就可以，可能有的人会有进去后空的情况，别慌，更改下网络就好，还有种方法下面会说)，先测试以下：</p>
 <p>File-&gt;Other Setting -&gt; Default Project Structrue-&gt;SDK Location 如下：</p>
-<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/SDK路径查看.png" alt="SDK路径查看"></p>
+<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/19-05-25-AS%E4%B8%ADandroid%E9%A1%B9%E7%9B%AE%E8%A7%A3%E9%87%8A%5CSDK%E8%B7%AF%E5%BE%84%E6%9F%A5%E7%9C%8B.png" alt="SDK路径查看"></p>
 <p>这步是检查，androidStudio和本地的连接，确保androidStudio能够找到SDK(NDK，如果不做C/C++开发的童鞋可以跳过)</p>
-<p>​    第二步是检测相关Tools安装是否成功，以及androidStudio是否能联网</p>
+<p>​	第二步是检测相关Tools安装是否成功，以及androidStudio是否能联网</p>
 <p>Tools-&gt;SDK Message -&gt;Android SDK</p>
-<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/SDK联网检测_1.png" alt="SDK联网检测_1"></p>
+<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/19-05-25-AS%E4%B8%ADandroid%E9%A1%B9%E7%9B%AE%E8%A7%A3%E9%87%8A%5CSDK%E8%81%94%E7%BD%91%E6%A3%80%E6%B5%8B_1.png" alt="SDK联网检测_1"></p>
 <p>如果出现上面的情况说明是能联网的(AS联网并不是走的本地浏览器的上网路径是走的自己的)若是不能联网就点击本页面 左边 Http Proxy  进行代理设置;</p>
-<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/代理配置.png" alt="代理配置"></p>
+<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/19-05-25-AS%E4%B8%ADandroid%E9%A1%B9%E7%9B%AE%E8%A7%A3%E9%87%8A%5C%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE.png" alt="代理配置"></p>
 <p>成功后回到 AndroidSdk 点击SDK Tools 按照自己项目需求下载相应的内容</p>
-<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/blogRepository\blogRepository.github.io\source\_posts\19-05-25-AS中android项目解释\SDKTools配置.png" alt="SDKTools配置"></p>
+<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/E:%5CblogRepository%5CblogRepository.github.io%5Csource_posts%5C19-05-25-AS%E4%B8%ADandroid%E9%A1%B9%E7%9B%AE%E8%A7%A3%E9%87%8A%5CSDKTools%E9%85%8D%E7%BD%AE.png" alt="SDKTools配置"></p>
 <p>满足以上要求，就可以建立一个入门的android项目了;</p>
 <p><strong>新建项目：</strong></p>
-<p>​    File-&gt;New-&gt;new Project：</p>
-<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/生成project.png" alt="生成project"></p>
+<p>​	File-&gt;New-&gt;new Project：</p>
+<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/19-05-25-AS%E4%B8%ADandroid%E9%A1%B9%E7%9B%AE%E8%A7%A3%E9%87%8A%5C%E7%94%9F%E6%88%90project.png" alt="生成project"></p>
 <p>我今天以创建一个native的项目作为例子进行介绍;</p>
 <p>点击native C++ -&gt;Next</p>
-<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/new Project_2.png" alt="new Project_2"></p>
+<p>![new Project_2](19-05-25-AS中android项目解释\new Project_2.png)</p>
 <p>点击next</p>
-<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/new Project_3.png" alt="new Project_3"></p>
+<p>![new Project_3](19-05-25-AS中android项目解释\new Project_3.png)</p>
 <p>最后点击Filish</p>
-<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/new Project_4.png" alt="new Project_4"></p>
+<p>![new Project_4](19-05-25-AS中android项目解释\new Project_4.png)</p>
 <p>当开始进入时就会gradle就会进行安装配置，gradle的版本很重要(gradle主要是做对jar包的管理，和apache有点类似)；</p>
 <p>下面就是最后生成的目录：</p>
-<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/解释_1.png" alt="解释_1"></p>
-<p>​    <strong>App</strong>我们写的程序都在里面，一个项目中可以有多个<strong>App</strong>每个App就表示一个子项目；</p>
-<p>​    <strong>build</strong>我们平时不会对这个文件里面的内容进行更改，因为这个是项目中编译环节自动生成buildConfig的文件;</p>
-<p>​    <strong>Libs</strong>  jar包都要放在这个文件夹下面。</p>
-<p>​    <strong>Src</strong> 编程体，Cpp文件和java文件都是在这个里面的，里面项目的具体下面详细讲;</p>
-<p>​    <strong>build.gradle</strong> 一个项目可以有多个App但是每个App下只能有一个build.gradle，在项目下面也有一个小心搞混;</p>
-<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/build.gradle.png" alt="build.gradle"></p>
+<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/19-05-25-AS%E4%B8%ADandroid%E9%A1%B9%E7%9B%AE%E8%A7%A3%E9%87%8A%5C%E8%A7%A3%E9%87%8A_1.png" alt="解释_1"></p>
+<p>​	<strong>App</strong>我们写的程序都在里面，一个项目中可以有多个<strong>App</strong>每个App就表示一个子项目；</p>
+<p>​	<strong>build</strong>我们平时不会对这个文件里面的内容进行更改，因为这个是项目中编译环节自动生成buildConfig的文件;</p>
+<p>​	<strong>Libs</strong>  jar包都要放在这个文件夹下面。</p>
+<p>​	<strong>Src</strong> 编程体，Cpp文件和java文件都是在这个里面的，里面项目的具体下面详细讲;</p>
+<p>​	<strong>build.gradle</strong> 一个项目可以有多个App但是每个App下只能有一个build.gradle，在项目下面也有一个小心搞混;</p>
+<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/19-05-25-AS%E4%B8%ADandroid%E9%A1%B9%E7%9B%AE%E8%A7%A3%E9%87%8A%5Cbuild.gradle.png" alt="build.gradle"></p>
 <p>主要是App的ID 以及APP支持jar包的管理;</p>
-<p>​    <strong>项目名.iml</strong> 里面不需要有什么操作，里面主要是一些项目的配置，有动态的地址配置；</p>
-<p>​    <strong>Settings.gradle</strong>   里面的内容很少但是as会第一个运行它，它是对子项目个数的定义，include’：app ‘ 说明只有一个子项目，在app下.iml的名字是:app</p>
+<p>​	<strong>项目名.iml</strong> 里面不需要有什么操作，里面主要是一些项目的配置，有动态的地址配置；</p>
+<p>​	<strong>Settings.gradle</strong>   里面的内容很少但是as会第一个运行它，它是对子项目个数的定义，include’：app ’ 说明只有一个子项目，在app下.iml的名字是:app</p>
 <p>下面具体说说<strong>Src</strong></p>
-<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/SRC.png" alt="SRC"></p>
+<p><img src="/AndroidStudio/19-05-25-AS中android项目解释/19-05-25-AS%E4%B8%ADandroid%E9%A1%B9%E7%9B%AE%E8%A7%A3%E9%87%8A%5CSRC.png" alt="SRC"></p>
 <p>如上，圈上的都是常会改动的地方;</p>
-<p>​    <strong>CMakeList.text</strong> 在c++开发中这是个很重要的文件，里面主要包含，引入库的申明，cpp文件申明，生成 .so库的配置，相当于 C++中 .pro文件</p>
-<p>​    <strong>layout</strong>  前端的编写都在这里;</p>
-<p>​    <strong>values </strong> 参数的配置</p>
-<p>​    <strong>androidManifest.xml</strong> 手机中需要显示的信息都在这里是对手机端APP的总配置包括名字，背景颜色等；</p>
-<p>——————————————————end</p>
+<p>​	<strong>CMakeList.text</strong> 在c++开发中这是个很重要的文件，里面主要包含，引入库的申明，cpp文件申明，生成 .so库的配置，相当于 C++中 .pro文件</p>
+<p>​	<strong>layout</strong>  前端的编写都在这里;</p>
+<p>​	**values ** 参数的配置</p>
+<p>​	<strong>androidManifest.xml</strong> 手机中需要显示的信息都在这里是对手机端APP的总配置包括名字，背景颜色等；</p>
+<p>------------------------------------------------------end</p>
 <p>不足之处，望多提宝贵意见，一定虚心接受，谢谢~</p>
 <p>e-mail： <a href="mailto:jsntwangchenchen@outlook.com" target="_blank" rel="noopener">jsntwangchenchen@outlook.com</a>  王晨晨</p>
 <p>​</p>

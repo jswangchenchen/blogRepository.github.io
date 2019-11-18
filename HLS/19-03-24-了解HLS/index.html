@@ -210,47 +210,55 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>​    HLS 是由苹果公司提出并且进行推广的，我们直接引用一段维基百科的内容:</p>
+                <p>​	HLS 是由苹果公司提出并且进行推广的，我们直接引用一段维基百科的内容:</p>
 <blockquote>
-<p><strong>HTTP Live Streaming</strong>（缩写是<strong>HLS</strong>）是一个由<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E8%8B%B9%E6%9E%9C%E5%85%AC%E5%8F%B8" target="_blank" rel="noopener">苹果公司</a>提出的基于<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/HTTP" target="_blank" rel="noopener">HTTP</a>的<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E6%B5%81%E5%AA%92%E4%BD%93" target="_blank" rel="noopener">流媒体</a><a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">网络传输协议</a>。是苹果公司<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/w/index.php?title=QuickTime_X&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">QuickTime X</a>和<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/IPhone" target="_blank" rel="noopener">iPhone</a>软件系统的一部分。它的工作原理是把整个流分成一个个小的基于HTTP的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。在开始一个流媒体会话时，客户端会下载一个包含元数据的<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/w/index.php?title=Extended_M3U&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">extended M3U (m3u8)</a><a href="https://link.jianshu.com?t=https://zh.wikipedia.org/w/index.php?title=Playlist&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">playlist</a>文件，用于寻找可用的媒体流。<br> HLS只请求基本的HTTP报文，与<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E5%AE%9E%E6%97%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">实时传输协议（RTP)</a>不同，HLS可以穿过任何允许HTTP数据通过的<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E5%A2%99" target="_blank" rel="noopener">防火墙</a>或者<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" rel="noopener">代理服务器</a>。它也很容易使用<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91%E7%BD%91%E7%BB%9C" target="_blank" rel="noopener">内容分发网络</a>来传输媒体流。<br> 苹果公司把HLS协议作为一个<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/w/index.php?title=Internet-Draft&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">互联网草案</a>（逐步提交），在第一阶段中已作为一个非正式的标准提交到<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/IETF" target="_blank" rel="noopener">IETF</a>。但是，即使苹果偶尔地提交一些小的更新，IETF却没有关于制定此标准的有关进一步的动作。</p>
+<p><strong>HTTP Live Streaming</strong>（缩写是<strong>HLS</strong>）是一个由<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E8%8B%B9%E6%9E%9C%E5%85%AC%E5%8F%B8" target="_blank" rel="noopener">苹果公司</a>提出的基于<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/HTTP" target="_blank" rel="noopener">HTTP</a>的<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E6%B5%81%E5%AA%92%E4%BD%93" target="_blank" rel="noopener">流媒体</a><a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">网络传输协议</a>。是苹果公司<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/w/index.php?title=QuickTime_X&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">QuickTime X</a>和<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/IPhone" target="_blank" rel="noopener">iPhone</a>软件系统的一部分。它的工作原理是把整个流分成一个个小的基于HTTP的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。在开始一个流媒体会话时，客户端会下载一个包含元数据的<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/w/index.php?title=Extended_M3U&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">extended M3U (m3u8)</a><a href="https://link.jianshu.com?t=https://zh.wikipedia.org/w/index.php?title=Playlist&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">playlist</a>文件，用于寻找可用的媒体流。<br>
+HLS只请求基本的HTTP报文，与<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E5%AE%9E%E6%97%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">实时传输协议（RTP)</a>不同，HLS可以穿过任何允许HTTP数据通过的<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E5%A2%99" target="_blank" rel="noopener">防火墙</a>或者<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" rel="noopener">代理服务器</a>。它也很容易使用<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91%E7%BD%91%E7%BB%9C" target="_blank" rel="noopener">内容分发网络</a>来传输媒体流。<br>
+苹果公司把HLS协议作为一个<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/w/index.php?title=Internet-Draft&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">互联网草案</a>（逐步提交），在第一阶段中已作为一个非正式的标准提交到<a href="https://link.jianshu.com?t=https://zh.wikipedia.org/wiki/IETF" target="_blank" rel="noopener">IETF</a>。但是，即使苹果偶尔地提交一些小的更新，IETF却没有关于制定此标准的有关进一步的动作。</p>
 </blockquote>
-<p>​    </p>
-<p>​    <strong>协议内容：</strong></p>
-<p>​        HLS协议规定：</p>
+<p>​</p>
+<p>​	<strong>协议内容：</strong></p>
+<p>​		HLS协议规定：</p>
 <ol>
-<li><p>首先，整个视屏都是TS格式的，一部影片并不是只有一个下载链接，而是有许多的ts文件地址组成；</p>
+<li>
+<p>首先，整个视屏都是TS格式的，一部影片并不是只有一个下载链接，而是有许多的ts文件地址组成；</p>
 </li>
-<li><p>视频的编码格式是H264，音频编码格式是MP3，ACC或者AC-3</p>
+<li>
+<p>视频的编码格式是H264，音频编码格式是MP3，ACC或者AC-3</p>
 </li>
-<li><p>其次在整个HLS的格式中有个很重要的文件 M3U8(文本文件)，主要是用来控制和记录播放的每个ts地址；</p>
-<p>​        </p>
-<p>​    苹果研究这个协议的主要原因：</p>
-<ol>
-<li>不被频闭：正常的视屏传输都是基于TCP协议的进行传输，这就要求双方都要实时在线，而且在一些特殊网络环境中会将TCP的端口禁掉这就会使是视屏无法播放；</li>
-<li>负载，面对这个问题，HLS因为是基于Http请求的所以就不需要实时在线，服务端需要内容时就直接通过Http协议向server端进行请求下载就可以了；</li>
-<li>码率，又叫比特率，首先对于码率是越高，说明他每秒的传送数据就越多，画质就会越清晰；在回到HLS中，在HLS中对于码率是自适应的，不同带宽的设备可以自动切换到最合适自己的码率的视频播放上。</li>
-<li>缺点：前面说了那么多好处是不是就感觉他完美了呢？其实并不是，在他兼顾了前面的哪些之后在面对实时性这个问题上就不是那么完美了，在和其他协议(例如 RTMP协议)进行比较时在视频延迟方面是有无法跨越的沟，HLS直播的视屏延迟无法到10秒以下，但是RTMP 最低的延迟能够降到 3   4 秒左右；</li>
-</ol>
+<li>
+<p>其次在整个HLS的格式中有个很重要的文件 M3U8(文本文件)，主要是用来控制和记录播放的每个ts地址；</p>
 </li>
 </ol>
-<p>​    <strong>HLS的index文件—M3U8文件：</strong></p>
+<pre><code> ​		
+
+ ​	苹果研究这个协议的主要原因：
+
+ 1. 不被频闭：正常的视屏传输都是基于TCP协议的进行传输，这就要求双方都要实时在线，而且在一些特殊网络环境中会将TCP的端口禁掉这就会使是视屏无法播放；
+ 2. 负载，面对这个问题，HLS因为是基于Http请求的所以就不需要实时在线，服务端需要内容时就直接通过Http协议向server端进行请求下载就可以了；
+ 3. 码率，又叫比特率，首先对于码率是越高，说明他每秒的传送数据就越多，画质就会越清晰；在回到HLS中，在HLS中对于码率是自适应的，不同带宽的设备可以自动切换到最合适自己的码率的视频播放上。
+ 4. 缺点：前面说了那么多好处是不是就感觉他完美了呢？其实并不是，在他兼顾了前面的哪些之后在面对实时性这个问题上就不是那么完美了，在和其他协议(例如 RTMP协议)进行比较时在视频延迟方面是有无法跨越的沟，HLS直播的视屏延迟无法到10秒以下，但是RTMP 最低的延迟能够降到 3   4 秒左右；
+</code></pre>
+<p>​	<strong>HLS的index文件—M3U8文件：</strong></p>
 <ol>
-<li><p>如果你下了一个M3U8文件，这是你的同事也下了一个但是你发现你们两个人的文件内容不一样如图：</p>
+<li>
+<p>如果你下了一个M3U8文件，这是你的同事也下了一个但是你发现你们两个人的文件内容不一样如图：</p>
 <p>A1</p>
 </li>
 </ol>
-<p><img src="/HLS/19-03-24-了解HLS/m3u8一级文件.png" alt="m3u8一级文件"></p>
+<p><img src="/HLS/19-03-24-了解HLS/19-03-24-%E4%BA%86%E8%A7%A3HLS%5Cm3u8%E4%B8%80%E7%BA%A7%E6%96%87%E4%BB%B6.png" alt="m3u8一级文件"></p>
 <p>A2：</p>
-<p><img src="/HLS/19-03-24-了解HLS/m3u8二级文件.png" alt="m3u8二级文件"></p>
+<p><img src="/HLS/19-03-24-了解HLS/19-03-24-%E4%BA%86%E8%A7%A3HLS%5Cm3u8%E4%BA%8C%E7%BA%A7%E6%96%87%E4%BB%B6.png" alt="m3u8二级文件"></p>
 <p>上面的内容就用A1，和A2表示，A1的格式属于一级文件；A2的格式属于二级文件；</p>
 <p>什么是一级文件，什么是二级文件？</p>
-<p>​    一级文件：如A1在进入页面中直接能够看到以ts结尾的文件路劲名；</p>
-<p>​    二级文件：如A2在进入文件中时并不能直接看到以ts结尾的文件名而是.m3u8的文件名这时候就需要进行一个文件拼接将A1的路劲+A2中所能看到的一级路径，就能得到二级路径，里面就是ts的链接段；</p>
-<p>​    总结: 一级文件能够直接得到ts的文件，但是在二级文件中不能直接得到ts下载连接，只有通过地址拼接才能从一级连接中获得二级连接文件，在二级文件中得到ts下载连接；</p>
-<p>​    <strong>关于播放模式：</strong></p>
+<p>​	一级文件：如A1在进入页面中直接能够看到以ts结尾的文件路劲名；</p>
+<p>​	二级文件：如A2在进入文件中时并不能直接看到以ts结尾的文件名而是.m3u8的文件名这时候就需要进行一个文件拼接将A1的路劲+A2中所能看到的一级路径，就能得到二级路径，里面就是ts的链接段；</p>
+<p>​	总结: 一级文件能够直接得到ts的文件，但是在二级文件中不能直接得到ts下载连接，只有通过地址拼接才能从一级连接中获得二级连接文件，在二级文件中得到ts下载连接；</p>
+<p>​	<strong>关于播放模式：</strong></p>
 <pre><code>1. 点播VOD：这个是直接得到当前所有的一级文件和二级文件，以及所有的ts文件，这种模式允许服务端访问所有的内容；
 2. Live 实时生成M3U8和ts文件。它的索引文件一直动态变化，播的时候需要不断下载二级index如果末尾没有#EXT-X-ENDLST，说明他是一个live视屏流；
-</code></pre><p>以上就是关于HLS总结，如果不足之处希望批评指针；欢迎留言，邮箱如下：</p>
+</code></pre>
+<p>以上就是关于HLS总结，如果不足之处希望批评指针；欢迎留言，邮箱如下：</p>
 <p><a href="mailto:jsntwangchenchen@outlook.com" target="_blank" rel="noopener">jsntwangchenchen@outlook.com</a>;</p>
 
                 
