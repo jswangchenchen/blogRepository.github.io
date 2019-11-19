@@ -210,43 +210,33 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>​	写了这么长时间重构了n次的惨痛教训下毅然决定总结一套关于c++的编写代码风格，在之前参考了[google编程规范中文网站]( &lt;<a href="http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/" target="_blank" rel="noopener">http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/</a>)，在这个的基础上整理了一套属于自己的规范风格；</p>
+                <p>​    写了这么长时间重构了n次的惨痛教训下毅然决定总结一套关于c++的编写代码风格，在之前参考了<a href="http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/" target="_blank" rel="noopener">google编程规范中文网站</a>，在这个的基础上整理了一套属于自己的规范风格；</p>
 <pre><code>顺便推荐两个宝贝[《匈牙利命名法的辩思》](http://blog.csdn.net/fullsail/article/details/8039253) [Google代码规范工具Cpplint的使用](http://blog.csdn.net/fengbingchun/article/details/47341765)
-</code></pre>
-<p>[TOC]</p>
+</code></pre><p>[TOC]</p>
 <p><strong>以下正文</strong></p>
-<h5 id="1文件命名规则">1.文件命名规则：</h5>
-<p>​			创建文件，全部小写:内容精简，可以含下划线 如：player.cpp；http_server.cpp，securityreq.cpp，若是类中含大量内联函数可以在末尾加-ini如：</p>
+<h5 id="1文件命名规则"><a href="#1-文件命名规则：" class="headerlink" title="1.文件命名规则："></a>1.文件命名规则：</h5><p>​            创建文件，全部小写:内容精简，可以含下划线 如：player.cpp；http_server.cpp，securityreq.cpp，若是类中含大量内联函数可以在末尾加-ini如：</p>
 <p>user.h, user.cpp, user-ini.h;</p>
-<h5 id="2头文件布局">2.头文件布局：</h5>
-<p>​			对访问权限位置的规定：从上到下分别是先成员变量在成员函数；变量和函数的权限位置分别是private,protected,public例：</p>
+<h5 id="2头文件布局"><a href="#2-头文件布局：" class="headerlink" title="2.头文件布局："></a>2.头文件布局：</h5><p>​            对访问权限位置的规定：从上到下分别是先成员变量在成员函数；变量和函数的权限位置分别是private,protected,public例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Student()&#123;</span><br><span class="line">private:    	</span><br><span class="line">    int Id;</span><br><span class="line">protected:</span><br><span class="line">	int age;    </span><br><span class="line">public:</span><br><span class="line">	String name;</span><br><span class="line">    </span><br><span class="line">private:</span><br><span class="line">	int getId();    </span><br><span class="line">protected:</span><br><span class="line">	int setAge();  </span><br><span class="line">public:</span><br><span class="line">	String setName();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​	以上关于头文件的分布，下面对里面的变量名，方法名，常量，等详细解释，切记不要出现student1之类的名字，在规范中是不允许的这样，因为会给整段代码的可读性增加难度，编写名字最好要见名知意；</p>
-<h5 id="3类命名规则">3.类命名规则：</h5>
-<p>​	类型命名时每个单词首字母都要大写，不含下划线，以名词形式，如：MyBook，SendMessage，其实不单单是类名，结构体，枚举，等都是这样的；</p>
-<h5 id="4变量命名规范">4.变量命名规范：</h5>
-<p>​	变量名一律小写，单词用下划线相连，例如：</p>
-<p>​	in student_id; string student_name;</p>
-<p>​	类成员变量以m_开头 如：m_cert；</p>
-<p>​	若类成员变量中的指针类型则以p开头 如：m_pcert;</p>
-<p>​	全局变量则以g_开头，比如：g_cert;</p>
-<p>​	结构体成员变量和类成员变量一样；</p>
-<h5 id="5常量命名规则">5.常量命名规则：</h5>
-<p>​	k后面跟大写字母开头的单词，比如：</p>
-<p>​	const int kMyname = “wangchenchen”</p>
-<h5 id="6函数命名规则">6.函数命名规则：</h5>
-<p>​	常规函数使用驼峰命名规则，使用命令式语气，如：openFile(); checkFileName();</p>
-<p>​	对应于存储函数和内联函数使用小写加下划线的方式，如 set_num_errors();</p>
-<h5 id="7名字命名空间">7.名字命名空间：</h5>
-<p>​	命名空间全部小写，基于项目名称和项目目录，如：</p>
-<p>​	google_anesome_project</p>
-<h5 id="8枚举命名规范">8.枚举命名规范：</h5>
-<p>​	枚举类名属于类型名，按类命名，枚举值全大写加下划线，比如：ENUM_NAME</p>
-<h5 id="9宏变量命名规则">9.宏变量命名规则：</h5>
-<p>​	如果你一定要用到宏，全大写加下划线，比如：</p>
-<p>​	define PI_ROUND 3.0</p>
+<p>​    以上关于头文件的分布，下面对里面的变量名，方法名，常量，等详细解释，切记不要出现student1之类的名字，在规范中是不允许的这样，因为会给整段代码的可读性增加难度，编写名字最好要见名知意；</p>
+<h5 id="3类命名规则"><a href="#3-类命名规则：" class="headerlink" title="3.类命名规则："></a>3.类命名规则：</h5><p>​    类型命名时每个单词首字母都要大写，不含下划线，以名词形式，如：MyBook，SendMessage，其实不单单是类名，结构体，枚举，等都是这样的；</p>
+<h5 id="4变量命名规范"><a href="#4-变量命名规范：" class="headerlink" title="4.变量命名规范："></a>4.变量命名规范：</h5><p>​    变量名一律小写，单词用下划线相连，例如：</p>
+<p>​    in student_id; string student_name;</p>
+<p>​    类成员变量以m_开头 如：m_cert；</p>
+<p>​    若类成员变量中的指针类型则以p开头 如：m_pcert;    </p>
+<p>​    全局变量则以g_开头，比如：g_cert;</p>
+<p>​    结构体成员变量和类成员变量一样；</p>
+<h5 id="5常量命名规则"><a href="#5-常量命名规则：" class="headerlink" title="5.常量命名规则："></a>5.常量命名规则：</h5><p>​    k后面跟大写字母开头的单词，比如：</p>
+<p>​    const int kMyname = “wangchenchen”</p>
+<h5 id="6函数命名规则"><a href="#6-函数命名规则：" class="headerlink" title="6.函数命名规则："></a>6.函数命名规则：</h5><p>​    常规函数使用驼峰命名规则，使用命令式语气，如：openFile(); checkFileName();</p>
+<p>​    对应于存储函数和内联函数使用小写加下划线的方式，如 set_num_errors();</p>
+<h5 id="7名字命名空间"><a href="#7-名字命名空间：" class="headerlink" title="7.名字命名空间："></a>7.名字命名空间：</h5><p>​    命名空间全部小写，基于项目名称和项目目录，如：</p>
+<p>​    google_anesome_project</p>
+<h5 id="8枚举命名规范"><a href="#8-枚举命名规范：" class="headerlink" title="8.枚举命名规范："></a>8.枚举命名规范：</h5><p>​    枚举类名属于类型名，按类命名，枚举值全大写加下划线，比如：ENUM_NAME </p>
+<h5 id="9宏变量命名规则"><a href="#9-宏变量命名规则：" class="headerlink" title="9.宏变量命名规则："></a>9.宏变量命名规则：</h5><p>​    如果你一定要用到宏，全大写加下划线，比如：</p>
+<p>​    define PI_ROUND 3.0</p>
 <p>=============================== End ===============================</p>
-<p>e-mail：E-mail:jsntwangchenchen@outlook.com; 王晨晨</p>
+<p>e-mail：E-mail:<a href="mailto:jsntwangchenchen@outlook.com" target="_blank" rel="noopener">jsntwangchenchen@outlook.com</a>; 王晨晨</p>
 
                 
 
@@ -301,7 +291,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1文件命名规则"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1.&#x6587;&#x4EF6;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2头文件布局"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2.&#x5934;&#x6587;&#x4EF6;&#x5E03;&#x5C40;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#3类命名规则"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3.&#x7C7B;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#4变量命名规范"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4.&#x53D8;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#5常量命名规则"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">5.&#x5E38;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#6函数命名规则"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">6.&#x51FD;&#x6570;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#7名字命名空间"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">7.&#x540D;&#x5B57;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#8枚举命名规范"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">8.&#x679A;&#x4E3E;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#9宏变量命名规则"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">9.&#x5B8F;&#x53D8;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1文件命名规则"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><a href="#1-&#x6587;&#x4EF6;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;" class="headerlink" title="1.&#x6587;&#x4EF6;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;"></a>1.&#x6587;&#x4EF6;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2头文件布局"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><a href="#2-&#x5934;&#x6587;&#x4EF6;&#x5E03;&#x5C40;&#xFF1A;" class="headerlink" title="2.&#x5934;&#x6587;&#x4EF6;&#x5E03;&#x5C40;&#xFF1A;"></a>2.&#x5934;&#x6587;&#x4EF6;&#x5E03;&#x5C40;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#3类命名规则"><span class="toc-nav-number">3.</span> <span class="toc-nav-text"><a href="#3-&#x7C7B;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;" class="headerlink" title="3.&#x7C7B;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;"></a>3.&#x7C7B;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#4变量命名规范"><span class="toc-nav-number">4.</span> <span class="toc-nav-text"><a href="#4-&#x53D8;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF1A;" class="headerlink" title="4.&#x53D8;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF1A;"></a>4.&#x53D8;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#5常量命名规则"><span class="toc-nav-number">5.</span> <span class="toc-nav-text"><a href="#5-&#x5E38;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;" class="headerlink" title="5.&#x5E38;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;"></a>5.&#x5E38;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#6函数命名规则"><span class="toc-nav-number">6.</span> <span class="toc-nav-text"><a href="#6-&#x51FD;&#x6570;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;" class="headerlink" title="6.&#x51FD;&#x6570;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;"></a>6.&#x51FD;&#x6570;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#7名字命名空间"><span class="toc-nav-number">7.</span> <span class="toc-nav-text"><a href="#7-&#x540D;&#x5B57;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF1A;" class="headerlink" title="7.&#x540D;&#x5B57;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF1A;"></a>7.&#x540D;&#x5B57;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#8枚举命名规范"><span class="toc-nav-number">8.</span> <span class="toc-nav-text"><a href="#8-&#x679A;&#x4E3E;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF1A;" class="headerlink" title="8.&#x679A;&#x4E3E;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF1A;"></a>8.&#x679A;&#x4E3E;&#x547D;&#x540D;&#x89C4;&#x8303;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#9宏变量命名规则"><span class="toc-nav-number">9.</span> <span class="toc-nav-text"><a href="#9-&#x5B8F;&#x53D8;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;" class="headerlink" title="9.&#x5B8F;&#x53D8;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;"></a>9.&#x5B8F;&#x53D8;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF1A;</span></a></li></ol>
         
         </div>
       </aside>
