@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>19-12-8-国际加密VS国产加密</title>
+      <link href="/encryption/19-12-8-%E5%9B%BD%E9%99%85%E5%8A%A0%E5%AF%86VS%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86/"/>
+      <url>/encryption/19-12-8-%E5%9B%BD%E9%99%85%E5%8A%A0%E5%AF%86VS%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86/</url>
+      
+        <content type="html"><![CDATA[<p>​      <strong>这段时间因为需要自己研究以下国密的使用和一些情况，乘着今天在这里做一个记录和总结，以下内容因为服务于应用层开发所以总结的内容主要是在应用层，对底层不做解释；</strong></p><h5 id="1-国产加密vs国际加密"><a href="#1-国产加密VS国际加密" class="headerlink" title="1. 国产加密VS国际加密"></a>1. 国产加密VS国际加密</h5><table><thead><tr><th style="text-align:center"></th><th style="text-align:center">对应国际算法</th><th style="text-align:center">国密算法</th><th style="text-align:center">应用范围及描述</th></tr></thead><tbody><tr><td style="text-align:center">对称加密</td><td style="text-align:center">AES(128),AES192,AES256,DES,3DES,</td><td style="text-align:center">SM4，SM1(硬件专用)</td><td style="text-align:center">128位数据加密</td></tr><tr><td style="text-align:center">非对称加密</td><td style="text-align:center">RAS，RSA4096</td><td style="text-align:center">SM2</td><td style="text-align:center">身份认证，数据签名，密码交换，256位椭圆曲线</td></tr><tr><td style="text-align:center">摘要</td><td style="text-align:center">SHA1，SHA-256，SHA-384,SHA-512</td><td style="text-align:center">SM3</td><td style="text-align:center">256位数据摘要计算，相当于SHA256</td></tr></tbody></table><h5 id="2什么是对称加密"><a href="#2-什么是对称加密" class="headerlink" title="2.什么是对称加密"></a>2.什么是对称加密</h5><p>​        <strong>加密和解密都是共用一个密钥；</strong></p><h5 id="3什么是非对称加密"><a href="#3-什么是非对称加密" class="headerlink" title="3.什么是非对称加密"></a><strong>3.什么是非对称加密</strong></h5><p>​        3.1加密解密需要两个不同的密钥 每个用户生成密钥会生成一对密钥：公钥(pk),私钥(sk)[公钥都是公开的，私钥只有自己知道]，用公钥加密只能使用和他匹配的私钥才能解开，反之，用私钥加密也只能使用与之配对的公钥才能解开(即使是一对公私钥，它们分别对同一段内容加密，得到的内容也是不一样的，同时它们自己解不开自己加密的内容);</p><p>​            3.2加密： 用对方公钥进行加密；</p><p>​            3.3解密：收到对方用自己公钥加密的内容后，用自己的私钥就能解开；</p><h5 id="4什么是数字签名"><a href="#4-什么是数字签名" class="headerlink" title="4.什么是数字签名"></a>4.什么是数字签名</h5><p>​        4.1作用：验证双方传递的消息中途没有被第三方更改；</p><p>​        4.2步骤：将要我发送的内容进行一个不可逆的运算(摘要算法)如MD5算法；接着通过自己的私钥进行加密最后将加密的内容作为签名保存到发送的内容中，最后将整个内容用接收者的公钥加密，发送给接收者；</p><p>​            4.2.1接收者接到后：将内容用对方的公钥解开，在用自己私钥将签名解开，最后用约定的算法也将内容进行不可逆运算，将内容中的签名和自己运算的内容比较；</p><h5 id="5什么是数字证书"><a href="#5-什么是数字证书" class="headerlink" title="5.什么是数字证书"></a>5.什么是数字证书</h5><p>​    数字证书的出现就是为了解决上述提到的问题，数字证书是一个经证书授权中心数字签名的包含公开密钥拥有者信息以及公开密钥的文件。</p><p>数字证书里一般会包含公钥、公钥拥有者名称、CA 的数字签名、有效期、授权中心名称、证书序列号等信息。</p><h5 id="6什么是pki"><a href="#6-什么是PKI" class="headerlink" title="6.什么是PKI"></a>6.什么是PKI</h5><p>​        <strong>Public Key Infrastructure（PKI)，中文叫做<a href="https://www.baidu.com/s?wd=%E5%85%AC%E5%BC%80%E5%AF%86%E9%92%A5&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">公开密钥</a>基础设施，也就是利用<a href="https://www.baidu.com/s?wd=%E5%85%AC%E5%BC%80%E5%AF%86%E9%92%A5&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">公开密钥</a>机制建立起来的基础设施。</strong></p><p>​        6.1 组成：PKI 有 <strong>证书机构 CA</strong>，<strong>证书注册机构RA</strong>  <strong>证书发布系统</strong> 这及部分组成；</p><p>​        6.2.1 证书机构CA</p><p>​            证书机构CA是PKI的信任基础，它管理公钥的整个生命周期，其作用包括：发放证书、规定证书的有效期和通过发布证书废除列表(CRL)确保必要时可以废除证书。 [1] </p><p>​        6.2.2注册机构RA</p><p>​            注册机构RA提供用户和CA之间的一个接口，它获取并认证用户的身份，向CA提出证书请求。它主要完成收集用户信息和确认用户身份的功能。这里指的用户，是指将要向认证中心(即CA)申请数字证书的客户，可以是个人，也可以是集团或团体、某政府机构等。注册管理一般由一个独立的注册机构(即RA)来承担。它接受用户的注册申请，审查用户的申请资格，并决定是否同意CA给其签发数字证书。注册机构并不给用户签发证书，而只是对用户进行资格审查。因此，RA可以设置在直接面对客户的业务部门，如银行的营业部、机构认识部门等。当然，对于一个规模较小的PKI应用系统来说，可把注册管理的职能由认证中心CA来完成，而不设立独立运行的RA。但这并不是取消了PKI的注册功能，而只是将其作为CA的一项功能而已。PKI国际标准推荐由一个独立的RA来完成注册管理的任务，可以增强应用系统的安全。 [1] </p><p>​        6.2.3证书发布系统</p><p>​            证书发布系统负责证书的发放，如可以通过用户自己，或是通过目录服务器发放。目录服务器可以是一个组织中现存的，也可以是PKI方案中提供的</p><p>​        6.3 PKI介绍：PKI是一个标准，它包括一些基本的组件，不同的组件提供不同的服务，主要由一下几个组件组成：</p><ul><li>认证中心 CA(证书签发)：CA 机构，又称为证书授证 (Certificate Authority) 中心，是 PKI 的”核心”，即数字证书的申请及签发机关，CA 必须具备权威性的特征，它负责管理 PKI 结构下的所有用户(包括各种应用程序)的证书，把用户的公钥和用户的其他信息捆绑在一起，在网上验证用户的身份，CA 还要负责用户证书的黑名单登记和黑名单发布</li></ul><p><strong>以上就是这次的总结归纳，如果有不好的地方欢迎，批评指正；</strong></p><p>邮箱：<a href="mailto:jsntwangchenchen@outlook.com" target="_blank" rel="noopener">jsntwangchenchen@outlook.com</a> 王晨；</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> encryption </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> encryption </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>19-11-10-C++primer基础语言4</title>
       <link href="/C-Primer/19-11-10-C-%E5%9F%BA%E7%A1%80%E8%AF%AD%E8%A8%80-%E5%9B%9B/"/>
       <url>/C-Primer/19-11-10-C-%E5%9F%BA%E7%A1%80%E8%AF%AD%E8%A8%80-%E5%9B%9B/</url>
